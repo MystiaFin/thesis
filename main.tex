@@ -1,0 +1,79 @@
+%! TeX program = xelatex
+
+\documentclass[12pt,a4paper]{report}
+\usepackage{fontspec}
+\IfFontExistsTF{Calibri}{
+  \setmainfont{Calibri}
+}{
+  \setmainfont{Carlito}
+}
+\usepackage[indonesian]{babel}
+\usepackage[none]{hyphenat}
+\sloppy
+\usepackage[
+  left=4cm,
+  right=3cm,
+  top=3cm,
+  bottom=3cm
+]{geometry}
+\usepackage{setspace}
+\doublespacing
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0.75cm}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{float}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\fontsize{12pt}{14.4pt}\selectfont\centering}
+  {BAB \Roman{chapter}}
+  {0pt}
+  {}
+
+\titlespacing*{\chapter}
+  {0pt}
+  {0pt}
+  {\baselineskip}
+
+\titleformat{\section}[hang]
+  {\normalfont\bfseries\fontsize{12pt}{14.4pt}\selectfont}
+  {\thesection}
+  {1em}
+  {}
+
+\titlespacing*{\section}
+  {0pt}
+  {\baselineskip}
+  {0.5\baselineskip}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\setlist[enumerate]{
+  itemsep=0pt,
+  topsep=0pt
+}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% =========================================================
+% DOCUMENT
+% =========================================================
+\begin{document}
+
+\input{chapters/1}
+\input{chapters/2}
+\input{chapters/3}
+
+% =========================================================
+% REFERENCES — BibTeX
+% =========================================================
+\clearpage
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

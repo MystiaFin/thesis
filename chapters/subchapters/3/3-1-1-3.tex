@@ -1,0 +1,9 @@
+\subsubsection{Pembagian Dataset}
+
+Dataset yang telah dianotasi selanjutnya dibagi menjadi data pelatihan, validasi, dan pengujian. Pembagian tersebut dilakukan agar proses pelatihan dan evaluasi menggunakan bagian dataset yang berbeda.
+
+Dataset dibagi dengan proporsi 70\% untuk data pelatihan, 15\% untuk data validasi, dan 15\% untuk data pengujian. Jumlah citra pada setiap bagian ditentukan berdasarkan jumlah akhir citra yang telah lolos tahap seleksi dan anotasi. Pembagian dilakukan dengan memperhatikan keterwakilan sembilan kelas penelitian pada setiap bagian dataset.
+
+Data pelatihan digunakan dalam proses pembelajaran dan pembaruan bobot YOLO11-seg. Data validasi digunakan untuk memantau performa model selama pelatihan dan membantu menentukan model terbaik. Data pengujian disimpan secara terpisah dan hanya digunakan untuk mengevaluasi performa model akhir pada citra yang tidak digunakan dalam proses pelatihan.
+
+Pembagian dataset dilakukan sebelum proses augmentasi untuk mencegah citra asli dan hasil augmentasinya tersebar pada bagian dataset yang berbeda. Citra duplikat, citra yang memiliki kemiripan tinggi, dan citra yang berasal dari sumber dasar yang sama ditempatkan pada bagian dataset yang sama untuk mengurangi risiko kebocoran data \cite{tampu2022}. Augmentasi selanjutnya hanya diterapkan pada data pelatihan.

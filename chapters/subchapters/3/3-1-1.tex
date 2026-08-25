@@ -1,0 +1,20 @@
+\subsection{Perencanaan Sistem}
+
+Perencanaan sistem \textit{checkout} otomatis Nasi Padang dilakukan melalui beberapa tahap yang dimulai dari persiapan data hingga model dapat digunakan dalam proses \textit{checkout}. Tahap awal dilakukan dengan mengumpulkan citra Nasi Padang yang memuat objek dari kelas yang akan dikenali. Citra yang telah dikumpulkan kemudian diperiksa dan dipilih agar dapat digunakan sebagai dataset dalam penelitian.
+
+Setiap citra yang digunakan pada proses pelatihan selanjutnya diberikan anotasi untuk menunjukkan kelas dan area dari setiap instans lauk. Anotasi dibuat dalam bentuk \textit{segmentation mask} sehingga setiap objek pada citra memiliki informasi kelas dan batas objek yang digunakan sebagai \textit{ground truth} pada proses pelatihan YOLO11-seg.
+
+Dataset yang telah dianotasi kemudian dibagi menjadi data pelatihan, validasi, dan pengujian. Pembagian dilakukan sebelum proses augmentasi agar citra hasil augmentasi tidak tersebar pada bagian dataset yang berbeda. Augmentasi hanya diterapkan pada data pelatihan untuk menambah variasi citra yang digunakan selama proses pembelajaran model \cite{yang2022augmentation,tampu2022}.
+
+Data pelatihan selanjutnya digunakan untuk melatih YOLO11-seg. Pada proses pelatihan, model menerima citra beserta \textit{ground truth} dan menghasilkan prediksi lokasi objek, kelas, serta \textit{segmentation mask}. Hasil prediksi dibandingkan dengan \textit{ground truth} untuk memperoleh nilai \textit{loss}, kemudian bobot model diperbarui melalui proses \textit{backpropagation}. Proses tersebut dilakukan secara berulang hingga diperoleh model akhir yang digunakan pada tahap inferensi.
+
+Pada tahap inferensi, citra piring yang diperoleh dari kamera diberikan kepada model yang telah dilatih. Model menghasilkan sejumlah instans objek yang masing-masing memiliki informasi kelas dan \textit{segmentation mask}. Setiap instans yang dikenali kemudian dihitung berdasarkan kelasnya sehingga diperoleh jumlah lauk dari masing-masing kelas.
+
+Hasil penghitungan tersebut selanjutnya diteruskan ke program kalkulasi harga. Program mencocokkan setiap kelas lauk dengan harga tetap yang telah ditentukan, kemudian menghitung subtotal berdasarkan jumlah instans pada kelas tersebut. Seluruh subtotal dijumlahkan untuk menghasilkan total harga yang harus dibayarkan pada proses \textit{checkout}.
+
+Tahap persiapan dataset yang digunakan dalam perencanaan sistem dijelaskan lebih lanjut pada subbagian berikut.
+
+\input{chapters/subchapters/3/3-1-1-1}
+\input{chapters/subchapters/3/3-1-1-2}
+\input{chapters/subchapters/3/3-1-1-3}
+\input{chapters/subchapters/3/3-1-1-4}

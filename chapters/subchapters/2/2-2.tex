@@ -1,0 +1,13 @@
+\section{Komponen/Subsistem/Modul yang Dirancang}
+
+Sistem \textit{checkout} otomatis yang dirancang dalam penelitian ini dibagi menjadi tiga modul utama, yaitu modul akuisisi citra, modul pengenalan lauk menggunakan YOLO11-seg, dan modul kalkulasi harga. Ketiga modul tersebut bekerja secara berurutan mulai dari pengambilan citra piring hingga diperolehnya total harga berdasarkan lauk yang dikenali.
+
+Modul akuisisi citra berfungsi memperoleh citra piring yang berisi lauk pilihan pelanggan sebagai masukan bagi sistem. Citra yang diperoleh selanjutnya diproses oleh modul pengenalan lauk menggunakan YOLO11-seg untuk mengenali kelas dan memisahkan setiap instans lauk melalui \textit{instance segmentation}. Hasil pengenalan tersebut berupa informasi kelas dan instans objek yang kemudian digunakan untuk menentukan jumlah lauk dari masing-masing kelas.
+
+Informasi jenis dan jumlah lauk selanjutnya diteruskan ke modul kalkulasi harga. Modul ini mencocokkan setiap kelas lauk dengan harga tetap yang telah ditentukan dan menghitung total pembayaran berdasarkan jumlah instans yang dikenali. Dengan demikian, keluaran dari setiap modul menjadi masukan bagi modul berikutnya hingga sistem menghasilkan total harga \textit{checkout}.
+
+Konsep, spesifikasi, dan prinsip perancangan dari masing-masing modul dijelaskan pada subbagian berikut.
+
+\input{chapters/subchapters/2/2-2-1}
+\input{chapters/subchapters/2/2-2-2}
+\input{chapters/subchapters/2/2-2-3}

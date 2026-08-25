@@ -1,0 +1,25 @@
+\subsection{Analisis Sistem}
+
+Tahap analisis sistem dilakukan untuk menentukan kebutuhan yang diperlukan dalam perancangan sistem \textit{checkout} otomatis Nasi Padang. Analisis mencakup kebutuhan perangkat keras, perangkat lunak, data, dan fungsi yang harus dijalankan oleh sistem.
+
+Perangkat keras yang diperlukan dalam perancangan sistem terdiri atas:
+
+\begin{enumerate}
+    \item Kamera untuk memperoleh citra piring Nasi Padang dari posisi tetap di atas area pengambilan citra.
+    \item Perangkat komputasi untuk melakukan anotasi data, pelatihan model, pengujian, dan pelaksanaan inferensi menggunakan YOLO11-seg.
+    \item Media penyimpanan untuk menyimpan citra, anotasi, bobot model, dan hasil pengujian.
+    \item Area pengambilan citra dengan posisi kamera dan kondisi pencahayaan yang relatif konsisten.
+\end{enumerate}
+
+Perangkat lunak yang diperlukan dalam perancangan sistem terdiri atas:
+
+\begin{enumerate}
+    \item Python sebagai bahasa pemrograman utama dalam pengembangan sistem.
+    \item Ultralytics untuk melakukan pelatihan, validasi, pengujian, dan inferensi menggunakan YOLO11-seg.
+    \item CVAT untuk membuat anotasi kelas dan poligon pada setiap instans objek makanan.
+    \item Perangkat lunak dan pustaka pendukung untuk pengolahan citra, pengelolaan dataset, serta pengembangan program kalkulasi harga.
+\end{enumerate}
+
+Data yang diperlukan berupa citra piring Nasi Padang beserta anotasi poligon dan label kelas untuk setiap instans. Dataset mencakup sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Selain dataset, sistem memerlukan tabel harga tetap yang memuat pasangan antara kelas makanan dan harga setiap instans.
+
+Secara fungsional, sistem harus mampu menerima citra dari kamera, mengenali kelas dan menghasilkan \textit{segmentation mask} untuk setiap instans, menghitung jumlah instans berdasarkan kelas, serta menghitung total harga. Hasil pengenalan kemudian ditampilkan dalam bentuk jenis makanan, jumlah instans, harga setiap kelas, dan total harga keseluruhan.

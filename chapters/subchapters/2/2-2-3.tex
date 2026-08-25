@@ -1,0 +1,36 @@
+\subsection{Modul Kalkulasi Harga}
+
+\subsubsection*{Konsep dan Spesifikasi}
+
+Modul kalkulasi harga merupakan bagian akhir dari sistem yang berfungsi menentukan total pembayaran berdasarkan jenis dan jumlah lauk yang telah dikenali oleh modul YOLO11-seg. Pemanfaatan hasil pengenalan citra sebagai dasar proses perhitungan harga telah diterapkan pada beberapa penelitian mengenai \textit{automatic billing} dan \textit{visual checkout} makanan \cite{wu2021,guo2023}.
+
+Pada penelitian ini, setiap kelas lauk memiliki harga tetap yang telah ditentukan. Masukan dari modul kalkulasi harga berupa informasi kelas dan jumlah instans pada masing-masing kelas yang diperoleh dari hasil inferensi YOLO11-seg. Jumlah instans kemudian dikalikan dengan harga satuan dari kelas yang bersangkutan untuk memperoleh subtotal.
+
+Total pembayaran dapat dinyatakan dengan Persamaan~\ref{eq:total-harga}.
+
+\begin{equation}
+    T = \sum_{i=1}^{C} n_i p_i
+    \label{eq:total-harga}
+\end{equation}
+
+dengan:
+\begin{itemize}
+    \item $T$ adalah total harga yang harus dibayarkan;
+    \item $C$ adalah jumlah kelas lauk;
+    \item $n_i$ adalah jumlah instans yang dikenali pada kelas ke-$i$; dan
+    \item $p_i$ adalah harga tetap untuk satu instans pada kelas ke-$i$.
+\end{itemize}
+
+Sebagai contoh, apabila hasil pengenalan menunjukkan dua instans rendang dan satu instans perkedel, maka subtotal rendang diperoleh dari dua kali harga satu rendang, sedangkan subtotal perkedel diperoleh dari satu kali harga satu perkedel. Total pembayaran merupakan penjumlahan seluruh subtotal lauk yang dikenali.
+
+Penentuan harga pada sistem tidak menggunakan berat, volume, luas \textit{mask}, maupun ukuran porsi. \textit{Segmentation mask} yang dihasilkan oleh YOLO11-seg digunakan sebagai representasi wilayah setiap instans, sedangkan nilai harga ditentukan berdasarkan kelas dan jumlah instans yang dikenali.
+
+\subsubsection*{Prinsip Perancangan}
+
+Prinsip utama perancangan modul kalkulasi harga adalah memisahkan proses pengenalan visual dari proses penentuan harga. YOLO11-seg bertanggung jawab menghasilkan informasi kelas dan instans objek, sedangkan modul kalkulasi harga memproses informasi tersebut menggunakan data harga yang telah ditentukan.
+
+Proses kalkulasi dimulai dengan menerima hasil pengenalan dari modul YOLO11-seg. Setiap kelas yang dikenali dicocokkan dengan harga satuannya, kemudian jumlah instans dari kelas tersebut dikalikan dengan harga yang sesuai. Seluruh subtotal kemudian dijumlahkan untuk memperoleh total pembayaran.
+
+Pemisahan antara model pengenalan dan program kalkulasi memungkinkan perubahan harga dilakukan tanpa melakukan pelatihan ulang terhadap YOLO11-seg. Selama identitas kelas yang digunakan oleh model tetap sesuai dengan data harga pada program, perubahan harga hanya memerlukan perubahan pada data referensi harga.
+
+Keluaran dari modul ini berupa informasi jenis lauk yang dikenali, jumlah instans pada masing-masing kelas, subtotal setiap kelas, serta total harga \textit{checkout}. Bentuk penyimpanan data harga dan implementasi program kalkulasi dijelaskan lebih lanjut pada Bab III.

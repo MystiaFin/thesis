@@ -1,0 +1,9 @@
+\subsubsection{Augmentasi Data}
+
+Augmentasi diterapkan pada data pelatihan untuk menambah variasi citra yang digunakan selama proses pembelajaran model. Penerapan augmentasi bertujuan membantu model mempelajari variasi tampilan objek dan mengurangi kecenderungan model menghafal karakteristik citra tertentu \cite{yang2022augmentation}.
+
+Augmentasi dilakukan secara dinamis melalui pipeline pelatihan YOLO11-seg. Pada setiap proses pemuatan data, citra pelatihan dapat menerima transformasi yang berbeda tanpa menghasilkan salinan citra baru secara permanen. Transformasi yang diterapkan pada citra juga diterapkan pada anotasi poligon sehingga posisi \textit{segmentation mask} tetap sesuai dengan objek setelah augmentasi.
+
+Jenis augmentasi dipilih dengan mempertimbangkan karakteristik citra yang diperoleh dari posisi kamera di atas piring. Transformasi dapat mencakup rotasi, translasi, perubahan skala, pembalikan horizontal, serta perubahan kecerahan dan warna. Transformasi dibatasi agar tidak mengubah karakteristik utama objek atau menghasilkan kondisi citra yang tidak sesuai dengan lingkungan penggunaan sistem.
+
+Augmentasi hanya diterapkan pada data pelatihan. Data validasi dan pengujian tidak diberikan augmentasi acak agar evaluasi dilakukan menggunakan citra yang tetap mewakili data asli. Jumlah citra asli pada dataset tidak berubah karena variasi hasil augmentasi dihasilkan selama proses pelatihan dan tidak disimpan sebagai citra terpisah.

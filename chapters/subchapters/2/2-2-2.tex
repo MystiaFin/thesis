@@ -1,0 +1,41 @@
+\subsection{Modul Pengenalan Lauk dengan YOLO11-seg}
+
+\subsubsection*{Konsep dan Spesifikasi}
+
+Modul pengenalan lauk merupakan bagian utama dari sistem yang berfungsi mengenali jenis dan memisahkan setiap instans lauk yang terdapat pada citra. Modul ini menggunakan YOLO11-seg, yaitu varian YOLO11 yang mendukung tugas \textit{instance segmentation}. Pada \textit{instance segmentation}, model menghasilkan informasi kelas serta \textit{mask} untuk setiap instans objek yang dikenali. Dengan demikian, beberapa objek dari kelas yang sama tetap dapat direpresentasikan sebagai instans yang terpisah \cite{he2017maskrcnn}.
+
+Penggunaan \textit{instance segmentation} sesuai dengan kebutuhan sistem untuk membedakan setiap objek sebagai instans yang terpisah, termasuk ketika terdapat beberapa lauk dari kelas yang sama \cite{he2017maskrcnn,nguyen2022sibnet,nguyen2023foodmask}. Pada sistem yang dirancang, pemisahan pada tingkat instans diperlukan karena jumlah setiap lauk digunakan dalam proses kalkulasi harga.
+
+Kondisi oklusi dapat menjadi tantangan dalam proses \textit{instance segmentation} karena sebagian objek dapat tertutup oleh objek lainnya sehingga informasi visual yang tersedia menjadi lebih terbatas \cite{ke2021}. Oleh karena itu, kondisi oklusi tidak diasumsikan dapat diselesaikan sepenuhnya oleh YOLO11-seg, tetapi digunakan sebagai salah satu kondisi pengujian untuk mengetahui perubahan performa model dibandingkan dengan kondisi non-oklusi.
+
+Secara umum, arsitektur YOLO11 terdiri atas tiga bagian utama, yaitu \textit{backbone}, \textit{neck}, dan \textit{head}. \textit{Backbone} berfungsi mengekstraksi fitur dari citra masukan, \textit{neck} menggabungkan fitur dari beberapa tingkat resolusi, sedangkan \textit{head} menggunakan fitur tersebut untuk menghasilkan prediksi objek \cite{khanam2024}. Pada YOLO11-seg, bagian prediksi juga mencakup informasi yang diperlukan untuk menghasilkan segmentasi setiap instans \cite{qiu2025}.
+
+Pada bagian \textit{backbone}, citra diproses melalui lapisan konvolusi dan beberapa modul utama, antara lain C3k2, SPPF (\textit{Spatial Pyramid Pooling--Fast}), dan C2PSA. Lapisan konvolusi digunakan untuk mengekstraksi fitur sekaligus mengurangi resolusi spasial secara bertahap sehingga diperoleh representasi fitur pada beberapa tingkat.
+
+C3k2 merupakan modul ekstraksi fitur yang digunakan pada YOLO11 sebagai pengembangan dari struktur C2f pada generasi sebelumnya. Modul tersebut dirancang untuk mempertahankan aliran informasi fitur dengan kebutuhan komputasi yang lebih efisien \cite{khanam2024,qiu2025}.
+
+SPPF digunakan untuk memperoleh informasi dari beberapa skala melalui operasi \textit{pooling}. Setelah SPPF, YOLO11 menggunakan modul C2PSA yang menerapkan mekanisme perhatian spasial terhadap \textit{feature map}. Mekanisme tersebut membantu jaringan memberikan penekanan terhadap bagian fitur yang relevan sebelum fitur diteruskan ke bagian berikutnya \cite{khanam2024,qiu2025}.
+
+Fitur yang dihasilkan oleh \textit{backbone} selanjutnya diproses oleh \textit{neck}. Bagian ini melakukan penggabungan fitur dari beberapa tingkat resolusi melalui operasi seperti \textit{upsampling} dan \textit{concatenation}, kemudian hasil penggabungan diproses kembali menggunakan modul C3k2. Penggabungan fitur lintas skala memungkinkan informasi spasial dari fitur beresolusi lebih tinggi dipadukan dengan informasi semantik dari fitur yang lebih dalam \cite{khanam2024,qiu2025}.
+
+Hasil dari \textit{neck} kemudian diteruskan ke bagian \textit{head}. Pada YOLO11-seg, \textit{head} menghasilkan informasi yang diperlukan untuk proses deteksi dan \textit{instance segmentation}. Bagian deteksi menghasilkan prediksi kelas, posisi \textit{bounding box}, serta koefisien \textit{mask}, sedangkan bagian segmentasi menghasilkan sekumpulan \textit{prototype mask}. Koefisien \textit{mask} untuk setiap objek digunakan bersama dengan \textit{prototype mask} untuk membentuk \textit{mask} dari masing-masing instans \cite{qiu2025}.
+
+Prediksi objek yang dihasilkan selanjutnya melalui proses penyaringan untuk mengurangi prediksi yang saling berlebihan. Hasil akhirnya berupa sekumpulan instans objek yang masing-masing memiliki kelas, lokasi, dan \textit{segmentation mask}. Dengan mekanisme tersebut, klasifikasi lauk dan \textit{instance segmentation} tidak dilakukan menggunakan dua model yang terpisah, tetapi dihasilkan melalui satu model YOLO11-seg.
+
+Penerapan YOLO11-seg pada penelitian lain juga menunjukkan penggunaan C3k2, SPPF, C2PSA, penggabungan fitur lintas skala, serta \textit{head} yang menghasilkan prediksi kelas dan segmentasi \cite{syafira2025}. Struktur tersebut memungkinkan YOLO11-seg digunakan untuk melakukan pengenalan dan segmentasi objek dalam satu proses inferensi.
+
+Pada tahap pelatihan, hasil prediksi model dibandingkan dengan \textit{ground truth}. Perbandingan tersebut menghasilkan komponen \textit{loss} yang berkaitan dengan prediksi lokasi objek, klasifikasi, dan segmentasi. Nilai \textit{loss} kemudian digunakan dalam proses \textit{backpropagation} untuk memperbarui bobot jaringan. Proses tersebut dilakukan secara berulang sehingga model secara bertahap mempelajari pola visual yang berkaitan dengan masing-masing kelas dan bentuk objek.
+
+Model pada penelitian ini dirancang untuk mengenali sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Pada tahap inferensi, setiap objek yang dipertahankan sebagai hasil prediksi akhir dianggap sebagai satu instans. Instans tersebut kemudian dikelompokkan berdasarkan kelas sehingga diperoleh jumlah objek dari masing-masing kelas.
+
+\subsubsection*{Prinsip Perancangan}
+
+Prinsip utama perancangan modul pengenalan lauk adalah memperoleh informasi jenis dan jumlah lauk dari satu citra menggunakan satu model YOLO11-seg. Model digunakan untuk menghasilkan prediksi pada tingkat instans sehingga setiap objek yang dikenali memiliki kelas dan \textit{mask} masing-masing. Pendekatan tersebut memungkinkan beberapa objek dari kelas yang sama tetap dipisahkan dan dihitung sebagai instans yang berbeda.
+
+Alur pemrosesan dimulai ketika citra dari modul akuisisi citra diberikan kepada YOLO11-seg. Citra diproses oleh \textit{backbone} untuk memperoleh representasi fitur pada beberapa tingkat. Fitur tersebut kemudian digabungkan pada bagian \textit{neck} dan diteruskan ke \textit{head} untuk menghasilkan prediksi lokasi objek, kelas, serta informasi segmentasi.
+
+Hasil prediksi kemudian digunakan untuk menentukan jumlah lauk berdasarkan jumlah instans pada masing-masing kelas. Sebagai contoh, apabila hasil inferensi menghasilkan dua instans dengan kelas rendang dan satu instans dengan kelas perkedel, maka informasi yang diteruskan ke modul kalkulasi harga adalah dua rendang dan satu perkedel.
+
+\textit{Segmentation mask} tidak digunakan sebagai dasar untuk menentukan harga maupun jumlah lauk berdasarkan luas objek. \textit{Mask} digunakan untuk merepresentasikan wilayah setiap instans pada citra, sedangkan jumlah lauk ditentukan berdasarkan banyaknya instans yang berhasil dikenali.
+
+Parameter implementasi seperti varian YOLO11-seg, ukuran citra masukan, jumlah \textit{epoch}, \textit{batch size}, konfigurasi augmentasi, dan nilai ambang prediksi ditentukan pada tahap pembuatan dan pengujian sistem. Rincian konfigurasi tersebut dijelaskan pada Bab III berdasarkan konfigurasi yang benar-benar digunakan dalam implementasi.
