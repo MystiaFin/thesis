@@ -1,0 +1,13 @@
+\subsubsection{Rancangan Proses Checkout}
+
+Proses \textit{checkout} dimulai ketika piring yang berisi makanan ditempatkan pada area pengambilan citra. Kamera yang berada pada posisi tetap di atas area tersebut memperoleh citra piring dalam kondisi pencahayaan yang relatif terkontrol. Citra kemudian diberikan sebagai masukan kepada model YOLO11-seg yang telah melalui proses pelatihan.
+
+Pada tahap inferensi, YOLO11-seg memproses citra dan menghasilkan prediksi untuk setiap instans objek makanan. Setiap prediksi memuat lokasi objek, nilai kepercayaan, label kelas, dan \textit{segmentation mask}. Prediksi dengan nilai kepercayaan yang memenuhi batas yang ditentukan dipertahankan sebagai hasil pengenalan.
+
+Label kelas digunakan untuk menentukan jenis objek makanan, sedangkan \textit{segmentation mask} digunakan untuk memisahkan setiap instans yang terdapat pada piring. Setiap hasil prediksi yang dipertahankan diperlakukan sebagai satu instans. Apabila terdapat lebih dari satu instans dari kelas yang sama, seluruh instans tersebut dihitung dan dikelompokkan berdasarkan kelasnya.
+
+Hasil penghitungan kemudian diteruskan ke program kalkulasi harga. Program menggunakan tabel harga tetap yang memuat pasangan antara kelas makanan dan harga setiap instans. Subtotal setiap kelas dihitung dengan mengalikan jumlah instans yang dikenali dengan harga pada kelas tersebut. Seluruh subtotal selanjutnya dijumlahkan untuk memperoleh total harga.
+
+Informasi yang dihasilkan pada proses \textit{checkout} terdiri atas kelas makanan yang dikenali, jumlah instans pada setiap kelas, harga setiap instans, subtotal setiap kelas, dan total harga keseluruhan. \textit{Segmentation mask} tidak digunakan untuk memperkirakan berat, volume, luas porsi, maupun kandungan gizi makanan.
+
+Proses tersebut menghasilkan mekanisme \textit{checkout} otomatis yang menghubungkan hasil pengenalan YOLO11-seg dengan program kalkulasi harga. Sistem dirancang sebagai \textit{proof-of-concept} dan tidak mencakup proses pembayaran elektronik maupun pencetakan bukti pembayaran.

@@ -1,0 +1,15 @@
+\subsubsection{Rancangan Pelatihan Model}
+
+Pelatihan model dilakukan menggunakan YOLO11-seg yang telah memiliki bobot awal hasil pelatihan sebelumnya. Penggunaan bobot pralatih bertujuan memanfaatkan fitur visual yang telah dipelajari oleh model, kemudian menyesuaikannya dengan karakteristik sembilan kelas objek makanan yang digunakan dalam penelitian.
+
+Data pelatihan diberikan kepada model dalam bentuk citra beserta \textit{ground truth} yang memuat label kelas dan poligon segmentasi setiap instans. Pada saat data dimuat, citra disesuaikan dengan ukuran masukan model dan dapat menerima augmentasi secara acak. Transformasi yang diberikan pada citra juga diterapkan pada poligon anotasi agar posisi objek dan \textit{segmentation mask} tetap sesuai.
+
+Citra selanjutnya diproses oleh bagian \textit{backbone} untuk mengekstraksi fitur visual pada beberapa tingkat. Fitur tersebut diteruskan ke bagian \textit{neck} untuk menggabungkan informasi dari beberapa skala. Hasil penggabungan fitur kemudian digunakan oleh bagian \textit{head} untuk menghasilkan prediksi lokasi objek, kelas objek, dan \textit{segmentation mask} setiap instans.
+
+Prediksi kelas digunakan untuk menentukan jenis objek makanan yang terdapat pada citra. Prediksi lokasi digunakan untuk menentukan posisi setiap objek, sedangkan prediksi segmentasi digunakan untuk membentuk \textit{segmentation mask} yang memisahkan area setiap instans. Ketiga keluaran tersebut dihasilkan dalam satu proses inferensi oleh YOLO11-seg.
+
+Selama pelatihan, hasil prediksi dibandingkan dengan \textit{ground truth} untuk menghitung nilai \textit{loss}. Perhitungan tersebut mencakup kesalahan prediksi lokasi objek, distribusi posisi, klasifikasi, dan segmentasi. Nilai \textit{loss} kemudian digunakan dalam proses \textit{backpropagation} untuk menghitung gradien dan memperbarui bobot model.
+
+Proses pelatihan dilakukan secara berulang dalam sejumlah \textit{epoch}. Setelah setiap tahap pelatihan, performa model dipantau menggunakan data validasi tanpa melakukan pembaruan bobot. Hasil validasi digunakan untuk mengetahui perkembangan kemampuan model dan menentukan bobot model dengan performa terbaik.
+
+Model terbaik yang diperoleh dari proses pelatihan selanjutnya dievaluasi menggunakan data pengujian. Data pengujian tidak digunakan dalam pembaruan bobot maupun pemilihan model sehingga hasil pengujian dapat digunakan untuk menilai kemampuan model terhadap citra yang tidak digunakan selama proses pelatihan.

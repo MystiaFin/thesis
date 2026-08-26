@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex main"] 1787489322.43319 "main.aux" "main.bbl" "main" 1787489326.09046 0
+["bibtex main"] 1787646745.39212 "main.aux" "main.bbl" "main" 1787646749.27726 0
   "./references.bib" 1787477341.06026 8041 514a279790c413111f127620c9de6920 ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/bibtex/bst/ieeetran/IEEEtran.bst" 1 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1787489325.32041 5106 2068a033b808c7787d61580e149f2ad0 "xelatex"
+  "main.aux" 1787646748.81077 5648 b871a8c80becf6feb17309a57da20f50 "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1787489325.55096 "main.xdv" "main.pdf" "main" 1787489326.09185 0
-  "main.xdv" 1787489325.32241 481488 5ca4c20bdea2decc78320fc89fba5748 "xelatex"
+["xdvipdfmx"] 1787646749.03327 "main.xdv" "main.pdf" "main" 1787646749.27864 0
+  "main.xdv" 1787646748.81177 548788 8cd7a316f342d5e247895e90282a22fe "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1787489322.52044 "main.tex" "main.xdv" "main" 1787489326.09058 0
+["xelatex"] 1787646745.46582 "main.tex" "main.xdv" "main" 1787646749.27736 0
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/map/fontname/texfonts.map" 1 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/tfm/public/cm/cmmi12.tfm" 1 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -91,14 +91,16 @@
   "chapters/subchapters/3/3-1-1-4.tex" 1787489169.81663 1462 13b1568b6f14c7077b9f1c144ac27226 ""
   "chapters/subchapters/3/3-1-1.tex" 1787489187.02818 2635 275d31834ee33579e4381ee499d43980 ""
   "chapters/subchapters/3/3-1-2.tex" 1787489320.16211 2087 20fdbd43da80b078d7d0420ca971ddf1 ""
-  "chapters/subchapters/3/3-1-3.tex" 1787475330.58492 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "chapters/subchapters/3/3-1-3-1.tex" 1787646601.92684 2478 f8bd8b93d6a985a9c0d28f7a304c2d42 ""
+  "chapters/subchapters/3/3-1-3-2.tex" 1787646674.06776 2056 05cbad34cb830fa005944e505ff0bc9c ""
+  "chapters/subchapters/3/3-1-3.tex" 1787645481.58204 1312 0aeab685ca99cb567ce5427c5a02a56c ""
   "chapters/subchapters/3/3-1.tex" 1787480763.79101 2360 e11b8d99ca8f7308322ba88ddef3d43b ""
-  "chapters/subchapters/3/3-2.tex" 1787475330.58492 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "chapters/subchapters/3/3-2.tex" 1787646742.61222 1216 292ddcc45bbdbd4c0f2521d05bef903d ""
   "figures/alur_sistem.pdf" 1787397772.92643 93016 7cde0c7aaca23e695631b1736bef428e ""
-  "figures/contoh_dataset.pdf" 1787479404.01301 78469194 bc2686160a29c53d28d9a60334ddecc4 ""
-  "main.aux" 1787489325.32041 5106 2068a033b808c7787d61580e149f2ad0 "xelatex"
-  "main.bbl" 1787489322.51536 4037 5ec3d6c9f724f1254ec871440b6b1304 "bibtex main"
-  "main.out" 1787489325.32241 3401 408591d0b716e647b6da92ef86eae629 "xelatex"
+  "figures/contoh_dataset.pdf" 1787629001.69301 192346 8190a499d3c7a41c6705aea3f92df11a ""
+  "main.aux" 1787646748.81077 5648 b871a8c80becf6feb17309a57da20f50 "xelatex"
+  "main.bbl" 1787646745.46001 4037 5ec3d6c9f724f1254ec871440b6b1304 "bibtex main"
+  "main.out" 1787646748.81177 4100 d21af3cfd858c8ea719248e590182781 "xelatex"
   "main.tex" 1787488196.6609 1514 646d9b8475909aa9de57c4e28a2f1897 ""
   (generated)
   "main.aux"

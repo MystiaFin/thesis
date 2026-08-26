@@ -1,0 +1,12 @@
+\subsection{Perancangan Sistem}
+
+Tahap perancangan sistem bertujuan menggambarkan alur kerja sistem \textit{checkout} otomatis Nasi Padang mulai dari pelatihan model hingga penggunaan model pada proses \textit{checkout}. Perancangan dibagi menjadi dua bagian, yaitu rancangan pelatihan model YOLO11-seg dan rancangan proses \textit{checkout}.
+
+Rancangan pelatihan model menjelaskan alur penggunaan dataset yang telah dianotasi dan dibagi menjadi data pelatihan, validasi, dan pengujian. Data pelatihan digunakan untuk melatih YOLO11-seg melalui proses prediksi, perhitungan \textit{loss}, dan pembaruan bobot model. Performa model dipantau menggunakan data validasi hingga diperoleh model akhir yang digunakan dalam proses pengujian dan inferensi.
+
+Rancangan proses \textit{checkout} menjelaskan alur pengolahan citra piring yang diperoleh dari kamera. Model YOLO11-seg menghasilkan prediksi kelas dan \textit{segmentation mask} untuk setiap instans objek makanan. Setiap instans kemudian dihitung berdasarkan kelasnya dan dicocokkan dengan tabel harga tetap untuk memperoleh subtotal setiap kelas serta total harga keseluruhan.
+
+Rancangan pelatihan model dan proses \textit{checkout} dijelaskan lebih lanjut pada subbagian berikut.
+
+\input{chapters/subchapters/3/3-1-3-1}
+\input{chapters/subchapters/3/3-1-3-2}
