@@ -2,19 +2,13 @@
 
 Sistem yang dirancang dalam penelitian ini merupakan sistem \textit{checkout} otomatis untuk mengenali lauk Nasi Padang berdasarkan citra. Sistem ditujukan sebagai \textit{proof-of-concept} penerapan mekanisme \textit{self-service} bagi pelanggan \textit{dine-in}, sehingga jenis dan jumlah lauk yang terdapat pada piring dapat dikenali secara otomatis dan digunakan sebagai dasar untuk menentukan total pembayaran.
 
-Penerapan \textit{Computer Vision} pada proses \textit{checkout} makanan telah dikembangkan pada beberapa penelitian sebelumnya, antara lain melalui analisis makanan pada nampan untuk \textit{automatic billing}, sistem \textit{visual checkout}, dan sistem perhitungan harga makanan berbasis segmentasi \cite{aguilar2017,wu2021,guo2023}. Pada penelitian ini, sistem dirancang menggunakan YOLO11-seg untuk mengenali lauk melalui \textit{instance segmentation} dan menggunakan hasil pengenalan tersebut dalam proses perhitungan harga.
+Penerapan \textit{Computer Vision} pada proses \textit{checkout} makanan telah dikembangkan pada beberapa penelitian sebelumnya, antara lain melalui analisis makanan pada nampan untuk \textit{automatic billing}, sistem \textit{visual checkout}, dan sistem perhitungan harga makanan berbasis segmentasi \cite{aguilar2017,wu2021,guo2023}. Pada penelitian ini, pengenalan lauk dilakukan menggunakan YOLO11-seg yang menghasilkan prediksi pada tingkat instans sehingga objek dari kelas yang sama tetap dapat dibedakan dan dihitung secara individual.
 
-Secara umum, perancangan sistem terdiri atas dua tahap, yaitu tahap pelatihan model dan tahap inferensi. Tahap pelatihan dilakukan untuk menghasilkan model YOLO11-seg yang mampu mengenali kelas dan setiap instans lauk pada citra. Data berupa citra Nasi Padang beserta \textit{ground truth} digunakan sebagai data pelatihan dan diberikan augmentasi untuk menghasilkan variasi data. Citra kemudian diproses oleh YOLO11-seg untuk menghasilkan prediksi lokasi objek, kelas lauk, dan \textit{segmentation mask}.
+Pengembangan model dilakukan menggunakan dataset citra Nasi Padang yang telah dianotasi. Dataset digunakan dalam proses pelatihan, validasi, dan pengujian model. Data pelatihan digunakan untuk memperbarui bobot YOLO11-seg, data validasi digunakan untuk memantau performa model selama pelatihan, sedangkan data pengujian digunakan untuk menilai model akhir pada citra yang tidak digunakan dalam proses pembelajaran.
 
-Prediksi yang dihasilkan pada tahap pelatihan dibandingkan dengan \textit{ground truth} untuk memperoleh nilai \textit{loss}. Nilai tersebut digunakan dalam proses \textit{backpropagation} dan pembaruan bobot model. Proses pelatihan dilakukan secara berulang hingga diperoleh model akhir yang selanjutnya digunakan pada tahap inferensi.
+Pada tahap penggunaan, kamera memperoleh citra piring yang berisi lauk pilihan pelanggan. Citra tersebut diproses oleh YOLO11-seg untuk menghasilkan kelas dan \textit{segmentation mask} untuk setiap instans yang dikenali. Setiap instans kemudian dihitung berdasarkan kelasnya. Informasi jenis dan jumlah lauk selanjutnya diteruskan ke program kalkulasi harga yang menggunakan harga tetap pada setiap kelas untuk memperoleh total pembayaran. Penentuan harga tidak menggunakan berat, volume, luas \textit{mask}, maupun ukuran porsi.
 
-Pada tahap inferensi, kamera memperoleh citra baru dari piring yang berisi lauk pilihan pelanggan. Citra tersebut diberikan kepada model YOLO11-seg yang telah dilatih. Model menghasilkan informasi kelas dan \textit{mask} untuk setiap instans lauk yang dikenali. Hasil tersebut memungkinkan sistem membedakan beberapa objek sebagai instans yang terpisah, termasuk apabila terdapat lebih dari satu lauk dari kelas yang sama.
-
-Objek yang dapat dikenali pada sistem dibatasi pada sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Setiap instans hasil prediksi kemudian dihitung berdasarkan kelasnya sehingga diperoleh jenis dan jumlah lauk yang terdapat pada piring.
-
-Jenis dan jumlah lauk tersebut selanjutnya digunakan oleh program kalkulasi harga untuk menentukan total pembayaran. Setiap kelas lauk memiliki harga tetap yang telah ditentukan. Apabila terdapat lebih dari satu instans dari kelas yang sama, harga kelas tersebut dihitung berdasarkan jumlah instans yang dikenali. Penentuan harga tidak menggunakan berat, volume, luas \textit{pixel mask}, maupun ukuran porsi.
-
-Alur keseluruhan sistem yang dirancang, mulai dari proses pelatihan model hingga penggunaan model pada proses \textit{checkout}, ditunjukkan pada Gambar~\ref{fig:alur-sistem}.
+Objek yang dapat dikenali pada sistem dibatasi pada sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Alur keseluruhan sistem, mulai dari pengembangan model hingga proses \textit{checkout}, ditunjukkan pada Gambar~\ref{fig:alur-sistem}.
 
 \begin{figure}[H]
     \centering
@@ -23,4 +17,4 @@ Alur keseluruhan sistem yang dirancang, mulai dari proses pelatihan model hingga
     \label{fig:alur-sistem}
 \end{figure}
 
-Berdasarkan alur tersebut, sistem pada tahap penggunaan terdiri atas tiga modul utama, yaitu modul akuisisi citra, modul pengenalan lauk menggunakan YOLO11-seg, dan modul kalkulasi harga. Modul akuisisi citra digunakan untuk memperoleh citra piring sebagai masukan sistem. Modul pengenalan lauk digunakan untuk mengenali kelas dan setiap instans lauk pada citra, sedangkan modul kalkulasi harga menggunakan hasil pengenalan tersebut untuk menentukan total pembayaran. Konsep, spesifikasi, dan prinsip perancangan dari masing-masing modul dijelaskan pada bagian selanjutnya.
+Konsep teoritik yang mendukung proses pengenalan, penghitungan instans, kalkulasi harga, dan evaluasi sistem dijelaskan pada bagian selanjutnya.

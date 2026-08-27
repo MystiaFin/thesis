@@ -1,9 +1,9 @@
 \section{Pembuatan Sistem}
 
-Tahap pembuatan sistem merupakan proses penerapan rancangan yang telah disusun menjadi sistem \textit{checkout} otomatis Nasi Padang. Tahap ini mencakup pembuatan dataset, pelatihan model YOLO11-seg, dan pembuatan program kalkulasi harga.
+Tahap pembuatan sistem merupakan penerapan rancangan yang telah dijelaskan pada bagian sebelumnya menjadi sistem \textit{checkout} otomatis Nasi Padang. Pembuatan mencakup penyelesaian dataset, pelatihan dan evaluasi YOLO11-seg, serta implementasi program \textit{checkout} yang mengolah hasil inferensi menjadi jumlah instans dan total harga.
 
-Pembuatan dataset dilakukan melalui pengumpulan, seleksi, dan anotasi citra berdasarkan sembilan kelas penelitian. Dataset yang telah disiapkan kemudian dibagi menjadi data pelatihan, validasi, dan pengujian. Augmentasi diterapkan pada data pelatihan melalui pipeline pelatihan YOLO11-seg.
+Pada tahap penyelesaian dataset, citra yang telah lolos proses seleksi dianotasi berdasarkan sembilan kelas penelitian, kemudian dibagi menjadi data pelatihan, validasi, dan pengujian. Augmentasi diterapkan melalui \textit{pipeline} pelatihan pada data pelatihan.
 
-Model YOLO11-seg dilatih menggunakan citra dan \textit{ground truth} untuk menghasilkan model yang mampu mengenali kelas dan membentuk \textit{segmentation mask} setiap instans. Model dengan performa validasi terbaik selanjutnya digunakan pada proses pengujian dan diintegrasikan dengan program \textit{checkout}.
+Model YOLO11-seg dilatih menggunakan dataset yang telah disiapkan dengan bobot pralatih sebagai titik awal. Bobot model dipantau menggunakan data validasi, sedangkan model terpilih dievaluasi menggunakan data pengujian sebelum digunakan pada proses \textit{checkout}.
 
-Program \textit{checkout} menerima hasil inferensi model, menghitung jumlah instans berdasarkan kelas, mencocokkan setiap kelas dengan tabel harga tetap, serta menghitung subtotal dan total harga. Implementasi setiap bagian akan didokumentasikan berdasarkan perangkat, konfigurasi, dan hasil pembuatan sistem yang digunakan dalam penelitian.
+Program \textit{checkout} menerima hasil inferensi model, menghitung jumlah instans berdasarkan kelas, mencocokkan setiap kelas dengan tabel harga tetap, serta menghitung subtotal dan total harga. Spesifikasi perangkat keras, perangkat lunak, konfigurasi pelatihan, hasil pembuatan dataset, dan detail implementasi program akan dicatat berdasarkan pelaksanaan sistem yang sebenarnya sehingga tidak ditetapkan sebelum proses implementasi dilakukan.

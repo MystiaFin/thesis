@@ -56,8 +56,8 @@ L.~Ke, Y.-W. Tai, and C.-K. Tang, ``Deep occlusion-aware instance segmentation w
 \bibitem{syafira2025}
 N.~H. Syafira, S.~A. Khoerunisa, D.~N.~P. Cantika, and Junervin, ``A deep learning approach for real-time segmentation of graphene layers using the yolo11-seg architecture,'' \emph{Proceedings of the 1st International Conference on Business, Innovation, Technology \& Science}, 2025.
 
-\bibitem{yang2022augmentation}
-S.~Yang, W.~Xiao, M.~Zhang, S.~Guo, J.~Zhao, and F.~Shen, ``Image data augmentation for deep learning: A survey,'' \emph{arXiv preprint arXiv:2204.08610}, 2022.
+\bibitem{yue2023}
+X.~Yue, K.~Qi, X.~Na, Y.~Zhang, Y.~Liu, and C.~Liu, ``Improved yolov8-seg network for instance segmentation of healthy and diseased tomato plants in the growth stage,'' \emph{Agriculture}, vol.~13, no.~8, p. 1643, 2023.
 
 \bibitem{tampu2022}
 I.~E. Tampu, A.~Eklund, and N.~Haj-Hosseini, ``Inflation of test accuracy due to data leakage in deep learning-based classification of {OCT} images,'' \emph{Scientific Data}, vol.~9, no.~1, p. 580, 2022.

@@ -1,21 +1,7 @@
-\subsection{Modul Akuisisi Citra}
+\subsection{\textit{Computer Vision} dan Citra Digital}
 
-\subsubsection*{Konsep dan Spesifikasi}
+\textit{Computer Vision} digunakan untuk memperoleh informasi dari citra melalui proses komputasi. Pada analisis makanan, informasi visual dapat dimanfaatkan untuk melakukan pengenalan, deteksi, dan segmentasi objek sehingga jenis serta lokasi makanan pada citra dapat ditentukan \cite{aguilar2017}.
 
-Modul akuisisi citra merupakan bagian awal dari sistem yang berfungsi memperoleh citra piring Nasi Padang sebagai masukan bagi modul pengenalan lauk. Citra yang diperoleh harus menampilkan area piring beserta lauk yang akan dikenali agar informasi visual dari setiap objek dapat diproses oleh model YOLO11-seg.
+Citra digital berwarna tersusun atas nilai piksel pada beberapa kanal warna. Informasi tersebut menjadi masukan bagi model untuk membentuk representasi fitur yang berkaitan dengan karakteristik visual objek, seperti bentuk, warna, tekstur, dan susunan objek pada citra. Pada sistem yang dirancang, citra piring digunakan sebagai masukan bagi YOLO11-seg untuk mengenali lauk pada tingkat instans.
 
-Pada sistem yang dirancang, kamera ditempatkan pada posisi tetap dengan arah pengambilan citra dari atas menuju piring. Posisi tersebut digunakan agar area piring dapat terlihat secara menyeluruh serta untuk mengurangi perubahan perspektif antar pengambilan citra. Pendekatan pengambilan citra dari arah atas juga digunakan pada penelitian mengenai sistem \textit{visual checkout} makanan untuk memperoleh citra objek pada area pengamatan secara konsisten \cite{wu2021}.
-
-Citra yang diperoleh berupa citra digital berwarna yang selanjutnya diteruskan sebagai masukan bagi modul pengenalan lauk. Modul akuisisi citra tidak melakukan proses klasifikasi maupun segmentasi karena proses tersebut dilakukan oleh YOLO11-seg pada modul berikutnya.
-
-Lingkungan pengambilan citra dirancang dalam kondisi yang relatif terkontrol. Posisi kamera dipertahankan tetap dan pencahayaan diusahakan konsisten agar variasi kondisi pengambilan citra tidak terlalu besar. Konsistensi pencahayaan juga menjadi salah satu pertimbangan pada sistem \textit{visual checkout} sebelumnya karena perubahan pencahayaan dapat memengaruhi hasil pengenalan citra \cite{wu2021}.
-
-\subsubsection*{Prinsip Perancangan}
-
-Prinsip utama perancangan modul akuisisi citra adalah memperoleh citra yang jelas dan konsisten untuk digunakan sebagai masukan model. Kamera ditempatkan sedemikian rupa sehingga area piring berada dalam bidang pandang kamera dan lauk yang terdapat pada piring dapat terlihat.
-
-Karena sistem ditujukan sebagai \textit{proof-of-concept} pada lingkungan yang terkontrol, posisi kamera tidak dirancang untuk berubah selama penggunaan sistem. Posisi kamera yang tetap digunakan untuk membatasi variasi perspektif serta mempermudah penempatan piring pada area pengambilan citra.
-
-Keluaran dari modul ini berupa citra piring yang selanjutnya diberikan kepada modul pengenalan lauk menggunakan YOLO11-seg. Dengan demikian, fungsi modul akuisisi citra dibatasi pada proses memperoleh citra sebagai masukan sistem, sedangkan proses pengenalan objek dilakukan pada modul berikutnya.
-
-Spesifikasi implementasi seperti jenis kamera, resolusi citra, jarak kamera terhadap piring, dan konfigurasi perangkat yang digunakan ditentukan pada tahap pembuatan sistem dan dijelaskan lebih lanjut pada Bab III.
+Karena pengambilan citra pada sistem dilakukan dari posisi tetap di atas piring, area objek dapat diamati dengan perspektif yang relatif konsisten. Pendekatan pengambilan citra dari arah atas juga digunakan pada sistem \textit{visual checkout} makanan untuk memperoleh tampilan objek pada area pengamatan secara konsisten \cite{wu2021}.

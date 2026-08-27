@@ -1,11 +1,11 @@
 \subsubsection{Anotasi Data}
 
-Citra yang telah lolos tahap seleksi selanjutnya dianotasi untuk menghasilkan \textit{ground truth} yang diperlukan dalam pelatihan dan pengujian YOLO11-seg. Anotasi diberikan pada setiap instans objek makanan yang termasuk dalam kelas penelitian.
+Citra yang telah lolos tahap seleksi dianotasi untuk menghasilkan \textit{ground truth} yang diperlukan dalam pelatihan, validasi, dan pengujian YOLO11-seg. Anotasi dilakukan pada setiap instans objek makanan yang termasuk dalam kelas penelitian menggunakan CVAT.
 
-Anotasi dibuat dalam bentuk poligon yang mengikuti batas objek yang terlihat pada citra. Setiap poligon diberikan label kelas sehingga memuat informasi mengenai jenis dan area dari objek tersebut. Apabila satu citra mengandung lebih dari satu instans dari kelas yang sama, setiap instans dianotasi secara terpisah. Pemisahan tersebut diperlukan agar model dapat mempelajari dan menghasilkan \textit{segmentation mask} untuk setiap instans secara individual.
+Anotasi dibuat dalam bentuk poligon yang mengikuti batas objek yang terlihat pada citra. Setiap poligon diberikan label kelas sehingga memuat informasi mengenai jenis dan area objek. Apabila satu citra mengandung lebih dari satu instans dari kelas yang sama, setiap instans dianotasi secara terpisah agar model dapat mempelajari dan menghasilkan \textit{segmentation mask} untuk setiap instans secara individual.
 
-Kelas yang digunakan dalam proses anotasi terdiri atas nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Objek makanan yang tidak termasuk dalam sembilan kelas tersebut tidak diberikan anotasi dan diperlakukan sebagai bagian dari latar belakang.
+Kelas yang digunakan dalam proses anotasi terdiri atas nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Objek makanan di luar sembilan kelas tersebut tidak diberikan anotasi dan diperlakukan sebagai bagian dari latar belakang.
 
-Pada objek yang mengalami oklusi, poligon dibuat dengan mengikuti batas bagian objek yang masih terlihat tanpa memperkirakan area yang tertutup oleh objek lain. Ketentuan tersebut digunakan agar anotasi tetap didasarkan pada informasi visual yang tersedia dalam citra.
+Pada objek yang mengalami oklusi, poligon mengikuti batas bagian objek yang masih terlihat tanpa memperkirakan area yang tertutup oleh objek lain. Ketentuan ini digunakan agar anotasi tetap didasarkan pada informasi visual yang tersedia pada citra.
 
 Anotasi yang telah dibuat diperiksa kembali untuk memastikan kesesuaian label kelas, ketepatan poligon terhadap batas objek, dan pemisahan setiap instans. Hasil anotasi kemudian disimpan dalam format yang sesuai dengan kebutuhan YOLO11-seg dan digunakan pada tahap pembagian dataset.

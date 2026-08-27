@@ -1,36 +1,21 @@
-\subsection{Modul Kalkulasi Harga}
+\subsection{YOLO11-seg}
 
-\subsubsection*{Konsep dan Spesifikasi}
+YOLO11-seg merupakan varian YOLO11 yang mendukung tugas \textit{instance segmentation}. Model ini digunakan untuk menghasilkan prediksi lokasi objek, kelas, dan \textit{segmentation mask} dalam satu model sehingga proses klasifikasi lauk dan segmentasi tidak memerlukan dua model yang terpisah \cite{khanam2024,qiu2025}.
 
-Modul kalkulasi harga merupakan bagian akhir dari sistem yang berfungsi menentukan total pembayaran berdasarkan jenis dan jumlah lauk yang telah dikenali oleh modul YOLO11-seg. Pemanfaatan hasil pengenalan citra sebagai dasar proses perhitungan harga telah diterapkan pada beberapa penelitian mengenai \textit{automatic billing} dan \textit{visual checkout} makanan \cite{wu2021,guo2023}.
+\subsubsection*{a. Arsitektur YOLO11-seg}
 
-Pada penelitian ini, setiap kelas lauk memiliki harga tetap yang telah ditentukan. Masukan dari modul kalkulasi harga berupa informasi kelas dan jumlah instans pada masing-masing kelas yang diperoleh dari hasil inferensi YOLO11-seg. Jumlah instans kemudian dikalikan dengan harga satuan dari kelas yang bersangkutan untuk memperoleh subtotal.
+Secara umum, arsitektur YOLO11 terdiri atas tiga bagian utama, yaitu \textit{backbone}, \textit{neck}, dan \textit{head}. \textit{Backbone} mengekstraksi fitur dari citra masukan, \textit{neck} menggabungkan fitur dari beberapa tingkat resolusi, sedangkan \textit{head} menggunakan fitur tersebut untuk menghasilkan prediksi objek \cite{khanam2024}. Pada YOLO11-seg, bagian keluaran juga mencakup informasi yang diperlukan untuk membentuk segmentasi setiap instans \cite{qiu2025}.
 
-Total pembayaran dapat dinyatakan dengan Persamaan~\ref{eq:total-harga}.
+Pada bagian \textit{backbone}, citra diproses melalui lapisan konvolusi dan modul utama seperti C3k2, SPPF (\textit{Spatial Pyramid Pooling--Fast}), dan C2PSA. C3k2 digunakan dalam proses ekstraksi fitur, SPPF memperluas informasi konteks melalui operasi \textit{pooling}, sedangkan C2PSA memberikan mekanisme perhatian terhadap fitur yang diproses \cite{khanam2024,qiu2025}.
 
-\begin{equation}
-    T = \sum_{i=1}^{C} n_i p_i
-    \label{eq:total-harga}
-\end{equation}
+Fitur dari \textit{backbone} diteruskan ke bagian \textit{neck}. Bagian ini menggabungkan informasi dari beberapa tingkat resolusi melalui operasi seperti \textit{upsampling} dan \textit{concatenation}. Penggabungan fitur lintas skala memungkinkan informasi spasial dari fitur beresolusi lebih tinggi dipadukan dengan informasi semantik dari fitur yang lebih dalam \cite{khanam2024,qiu2025}.
 
-dengan:
-\begin{itemize}
-    \item $T$ adalah total harga yang harus dibayarkan;
-    \item $C$ adalah jumlah kelas lauk;
-    \item $n_i$ adalah jumlah instans yang dikenali pada kelas ke-$i$; dan
-    \item $p_i$ adalah harga satuan lauk pada kelas ke-$i$.
-\end{itemize}
+Hasil dari \textit{neck} kemudian diteruskan ke \textit{head}. Pada YOLO11-seg, bagian deteksi menghasilkan prediksi kelas dan posisi \textit{bounding box}, sedangkan bagian segmentasi menghasilkan informasi \textit{mask} untuk setiap kandidat objek. Salah satu mekanisme yang digunakan adalah pembentukan \textit{prototype mask} yang dikombinasikan dengan koefisien \textit{mask} setiap objek untuk menghasilkan \textit{mask} masing-masing instans \cite{qiu2025}. Penerapan YOLO11-seg pada penelitian lain juga menunjukkan penggunaan C3k2, SPPF, C2PSA, penggabungan fitur lintas skala, serta keluaran segmentasi dalam satu arsitektur \cite{syafira2025}.
 
-Sebagai contoh, apabila hasil pengenalan menunjukkan dua instans rendang dan satu instans perkedel, maka subtotal rendang diperoleh dari dua kali harga satu rendang, sedangkan subtotal perkedel diperoleh dari satu kali harga satu perkedel. Total pembayaran merupakan penjumlahan seluruh subtotal lauk yang dikenali.
+\subsubsection*{b. Pelatihan YOLO11-seg}
 
-Penentuan harga pada sistem tidak menggunakan berat, volume, luas \textit{mask}, maupun ukuran porsi. \textit{Segmentation mask} yang dihasilkan oleh YOLO11-seg digunakan sebagai representasi wilayah setiap instans, sedangkan nilai harga ditentukan berdasarkan kelas dan jumlah instans yang dikenali.
+Pelatihan model dapat dimulai dari bobot pralatih agar fitur visual yang telah dipelajari sebelumnya dapat digunakan sebagai titik awal dan kemudian disesuaikan dengan kelas pada dataset penelitian. Pada penelitian ini, bobot YOLO11-seg disesuaikan untuk mengenali sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal.
 
-\subsubsection*{Prinsip Perancangan}
+Pada proses pelatihan, citra dan \textit{ground truth} diberikan kepada model untuk menghasilkan prediksi lokasi objek, kelas, dan segmentasi. Prediksi tersebut dibandingkan dengan \textit{ground truth} untuk memperoleh nilai \textit{loss}. Nilai \textit{loss} kemudian digunakan dalam proses \textit{backpropagation} untuk memperbarui bobot model secara berulang. Data validasi digunakan untuk memantau performa model selama pelatihan, sedangkan data pengujian digunakan setelah model akhir diperoleh.
 
-Prinsip utama perancangan modul kalkulasi harga adalah memisahkan proses pengenalan visual dari proses penentuan harga. YOLO11-seg bertanggung jawab menghasilkan informasi kelas dan instans objek, sedangkan modul kalkulasi harga memproses informasi tersebut menggunakan data harga yang telah ditentukan.
-
-Proses kalkulasi dimulai dengan menerima hasil pengenalan dari modul YOLO11-seg. Setiap kelas yang dikenali dicocokkan dengan harga satuannya, kemudian jumlah instans dari kelas tersebut dikalikan dengan harga yang sesuai. Seluruh subtotal kemudian dijumlahkan untuk memperoleh total pembayaran.
-
-Pemisahan antara model pengenalan dan program kalkulasi memungkinkan perubahan harga dilakukan tanpa melakukan pelatihan ulang terhadap YOLO11-seg. Selama identitas kelas yang digunakan oleh model tetap sesuai dengan data harga pada program, perubahan harga hanya memerlukan perubahan pada data referensi harga.
-
-Keluaran dari modul ini berupa informasi jenis lauk yang dikenali, jumlah instans pada masing-masing kelas, subtotal setiap kelas, serta total harga \textit{checkout}. Bentuk penyimpanan data harga dan implementasi program kalkulasi dijelaskan lebih lanjut pada Bab III.
+Nilai parameter pelatihan, seperti varian YOLO11-seg, ukuran citra masukan, jumlah \textit{epoch}, \textit{batch size}, konfigurasi augmentasi, dan parameter lain yang digunakan pada implementasi dijelaskan pada Bab III.

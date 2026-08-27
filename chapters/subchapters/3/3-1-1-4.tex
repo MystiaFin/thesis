@@ -1,9 +1,9 @@
 \subsubsection{Augmentasi Data}
 
-Augmentasi diterapkan pada data pelatihan untuk menambah variasi citra yang digunakan selama proses pembelajaran model. Penerapan augmentasi bertujuan membantu model mempelajari variasi tampilan objek dan mengurangi kecenderungan model menghafal karakteristik citra tertentu \cite{yang2022augmentation}.
+Augmentasi diterapkan pada data pelatihan untuk menambah variasi data yang diterima model selama proses pembelajaran. Penerapan augmentasi bertujuan membantu model mempelajari variasi tampilan objek dan mengurangi kecenderungan model menghafal karakteristik citra tertentu \cite{yang2022}.
 
-Augmentasi dilakukan secara dinamis melalui pipeline pelatihan YOLO11-seg. Pada setiap proses pemuatan data, citra pelatihan dapat menerima transformasi yang berbeda tanpa menghasilkan salinan citra baru secara permanen. Transformasi yang diterapkan pada citra juga diterapkan pada anotasi poligon sehingga posisi \textit{segmentation mask} tetap sesuai dengan objek setelah augmentasi.
+Augmentasi dilakukan secara dinamis melalui \textit{pipeline} pelatihan YOLO11-seg. Dengan mekanisme ini, transformasi dapat diberikan ketika data pelatihan dimuat tanpa harus menghasilkan salinan citra baru secara permanen. Transformasi pada citra juga diterapkan pada anotasi sehingga posisi \textit{segmentation mask} tetap sesuai dengan objek setelah augmentasi.
 
-Jenis augmentasi dipilih dengan mempertimbangkan karakteristik citra yang diperoleh dari posisi kamera di atas piring. Transformasi dapat mencakup rotasi, translasi, perubahan skala, pembalikan horizontal, serta perubahan kecerahan dan warna. Transformasi dibatasi agar tidak mengubah karakteristik utama objek atau menghasilkan kondisi citra yang tidak sesuai dengan lingkungan penggunaan sistem.
+Jenis transformasi dipilih dengan mempertimbangkan karakteristik citra dan kondisi penggunaan sistem. Transformasi dapat mencakup perubahan posisi, skala, orientasi, serta karakteristik warna dan pencahayaan selama transformasi tersebut tidak mengubah identitas utama objek atau menghasilkan kondisi yang tidak relevan terhadap penggunaan sistem.
 
-Augmentasi hanya diterapkan pada data pelatihan. Data validasi dan pengujian tidak diberikan augmentasi acak agar evaluasi dilakukan menggunakan citra yang tetap mewakili data asli. Jumlah citra asli pada dataset tidak berubah karena variasi hasil augmentasi dihasilkan selama proses pelatihan dan tidak disimpan sebagai citra terpisah.
+Augmentasi acak tidak diterapkan pada data validasi dan pengujian agar kedua bagian tersebut tetap digunakan sebagai data evaluasi yang merepresentasikan citra aslinya. Konfigurasi augmentasi yang benar-benar digunakan pada proses pelatihan dicatat pada tahap pembuatan sistem.

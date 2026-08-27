@@ -1,0 +1,22 @@
+\subsection{Kalkulasi Harga Berbasis Harga Tetap}
+
+Kalkulasi harga dilakukan setelah jumlah instans setiap kelas diperoleh. Setiap kelas lauk memiliki harga satuan tetap yang disimpan sebagai data pada program. YOLO11-seg tidak menentukan nilai harga; model hanya menghasilkan informasi kelas dan instans yang digunakan sebagai masukan bagi proses kalkulasi. Pemanfaatan hasil pengenalan citra sebagai dasar perhitungan harga juga diterapkan pada penelitian mengenai \textit{automatic billing} dan \textit{visual checkout} makanan \cite{wu2021,guo2023}.
+
+Setiap instans hasil prediksi akhir dihitung sebagai satu unit. Jumlah unit pada suatu kelas kemudian dikalikan dengan harga satuan kelas tersebut untuk memperoleh subtotal. Aturan kalkulasi harga pada sistem ini kemudian diformulasikan secara matematis dalam penelitian ini seperti pada Persamaan~\ref{eq:total-harga}.
+
+\begin{equation}
+    T = \sum_{i=1}^{C} n_i p_i
+    \label{eq:total-harga}
+\end{equation}
+
+dengan:
+\begin{itemize}
+    \item $T$ adalah total harga yang harus dibayarkan;
+    \item $C$ adalah jumlah kelas lauk;
+    \item $n_i$ adalah jumlah instans yang dikenali pada kelas ke-$i$; dan
+    \item $p_i$ adalah harga satuan lauk pada kelas ke-$i$.
+\end{itemize}
+
+Sebagai contoh, apabila hasil pengenalan menunjukkan dua instans rendang dan satu instans perkedel, subtotal rendang diperoleh dari dua kali harga satu rendang, sedangkan subtotal perkedel diperoleh dari satu kali harga satu perkedel. Total pembayaran merupakan penjumlahan seluruh subtotal kelas yang dikenali.
+
+Penentuan harga tidak menggunakan berat, volume, luas \textit{mask}, maupun ukuran porsi. Karena harga disimpan terpisah dari model, perubahan nilai harga tidak memerlukan pelatihan ulang YOLO11-seg selama identitas kelas pada program tetap sesuai dengan keluaran model.

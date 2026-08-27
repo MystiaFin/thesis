@@ -1,0 +1,7 @@
+\subsection{Penghitungan Instans}
+
+Penghitungan lauk dilakukan berdasarkan hasil prediksi akhir YOLO11-seg. Setiap prediksi akhir merepresentasikan satu instans objek, sedangkan label kelas menentukan kelompok tempat instans tersebut dihitung. Dengan demikian, penghitungan dilakukan dari jumlah instans yang dikenali dan bukan dari jumlah piksel atau luas \textit{segmentation mask}.
+
+Program memeriksa hasil prediksi dan menambahkan jumlah pada kelas yang sesuai untuk setiap instans yang ditemukan. Apabila hasil inferensi menghasilkan dua instans rendang dan satu instans perkedel, maka jumlah rendang adalah dua dan jumlah perkedel adalah satu. Prinsip penghitungan pada tingkat instans juga digunakan pada penelitian penghitungan makanan seperti SibNet dan FoodMask \cite{nguyen2022sibnet,nguyen2023foodmask}.
+
+Informasi jumlah setiap kelas selanjutnya menjadi masukan bagi proses kalkulasi harga. Pemisahan antara proses pengenalan visual dan proses penghitungan memungkinkan model tetap bertugas mengenali objek, sedangkan program melakukan agregasi jumlah berdasarkan label kelas hasil prediksi.

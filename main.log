@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  26 AUG 2026 19:17
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  27 AUG 2026 22:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -594,33 +594,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 dikembangkan pada beberapa penelitian sebelumnya, antara lain melalui
+Underfull \hbox (badness 2326) in paragraph at lines 7--8
+\TU/Carlito(0)/m/n/12 data pengujian digunakan untuk menilai model akhir pada citra yang tidak
  []
 
 
-Underfull \hbox (badness 2744) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 melalui \TU/Carlito(0)/m/it/12 instance segmentation \TU/Carlito(0)/m/n/12 dan menggunakan hasil pengenalan tersebut
- []
-
-
-Underfull \hbox (badness 3088) in paragraph at lines 7--8
-[]\TU/Carlito(0)/m/n/12 Secara umum, perancangan sistem terdiri atas dua tahap, yaitu tahap
- []
-
-
-Underfull \hbox (badness 7869) in paragraph at lines 7--8
-\TU/Carlito(0)/m/n/12 pelatihan model dan tahap inferensi. Tahap pelatihan dilakukan untuk
- []
-
-
-Underfull \hbox (badness 1082) in paragraph at lines 7--8
-\TU/Carlito(0)/m/n/12 Citra kemudian diproses oleh YOLO11-seg untuk menghasilkan prediksi lokasi
- []
-
-
-Underfull \hbox (badness 1997) in paragraph at lines 9--10
-\TU/Carlito(0)/m/it/12 truth \TU/Carlito(0)/m/n/12 untuk memperoleh nilai \TU/Carlito(0)/m/it/12 loss\TU/Carlito(0)/m/n/12 . Nilai tersebut digunakan dalam proses
+Underfull \hbox (badness 2951) in paragraph at lines 9--10
+\TU/Carlito(0)/m/n/12 kemudian dihitung berdasarkan kelasnya. Informasi jenis dan jumlah lauk
  []
 
 [10
@@ -628,425 +608,301 @@ Underfull \hbox (badness 1997) in paragraph at lines 9--10
 ]
 File: figures/alur_sistem.pdf Graphic file (type pdf)
 <use figures/alur_sistem.pdf>
- [11]) (./chapters/subchapters/2/2-2.tex
-Underfull \hbox (badness 5924) in paragraph at lines 26--1
-\TU/Carlito(0)/m/n/12 YOLO11-seg, dan modul kalkulasi harga. Modul akuisisi citra digunakan
+) (./chapters/subchapters/2/2-2.tex
+Underfull \hbox (badness 5446) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 Landasan teori pada bagian ini membahas konsep yang digunakan untuk
  []
 
 
-Underfull \hbox (badness 1253) in paragraph at lines 26--1
-\TU/Carlito(0)/m/n/12 untuk memperoleh citra piring sebagai masukan sistem. Modul pengenalan
+Underfull \hbox (badness 1924) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 memahami rancangan sistem \TU/Carlito(0)/m/it/12 checkout \TU/Carlito(0)/m/n/12 otomatis Nasi Padang. Pembahasan
+ []
+
+[11] (./chapters/subchapters/2/2-2-1.tex) (./chapters/subchapters/2/2-2-2.tex
+Underfull \hbox (badness 2894) in paragraph at lines 7--1
+\TU/Carlito(0)/m/n/12 makanan untuk memperoleh tampilan objek pada area pengamatan secara
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 26--1
-\TU/Carlito(0)/m/n/12 lauk digunakan untuk mengenali kelas dan setiap instans lauk pada citra,
+Underfull \hbox (badness 1412) in paragraph at lines 3--4
+\TU/Carlito(0)/m/it/12 Instance segmentation \TU/Carlito(0)/m/n/12 merupakan tugas \TU/Carlito(0)/m/it/12 Computer Vision \TU/Carlito(0)/m/n/12 yang menghasilkan
  []
 
-[12]
-Underfull \hbox (badness 2393) in paragraph at lines 9--10
-[]\TU/Carlito(0)/m/n/12 Konsep, spesifikasi, dan prinsip perancangan dari masing-masing modul
+[12]) (./chapters/subchapters/2/2-2-3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 YOLO11-seg merupakan varian YOLO11 yang mendukung tugas \TU/Carlito(0)/m/it/12 instance
  []
 
-(./chapters/subchapters/2/2-2-1.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 Modul akuisisi citra merupakan bagian awal dari sistem yang berfungsi
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+\TU/Carlito(0)/m/n/12 Secara umum, arsitektur YOLO11 terdiri atas tiga bagian utama, yaitu
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 7--8
+\TU/Carlito(0)/m/it/12 neck \TU/Carlito(0)/m/n/12 menggabungkan fitur dari beberapa tingkat resolusi, sedangkan \TU/Carlito(0)/m/it/12 head
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 7--8
+\TU/Carlito(0)/m/n/12 menggunakan fitur tersebut untuk menghasilkan prediksi objek [[]]. Pada
  []
 
 [13]
-Underfull \hbox (badness 1859) in paragraph at lines 9--10
-\TU/Carlito(0)/m/n/12 proses klasifikasi maupun segmentasi karena proses tersebut dilakukan oleh
+Underfull \hbox (badness 2126) in paragraph at lines 9--10
+\TU/Carlito(0)/m/n/12 utama seperti C3k2, SPPF (\TU/Carlito(0)/m/it/12 Spatial Pyramid Pooling–Fast\TU/Carlito(0)/m/n/12 ), dan C2PSA. C3k2
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 17--18
-[]\TU/Carlito(0)/m/n/12 Karena sistem ditujukan sebagai \TU/Carlito(0)/m/it/12 proof-of-concept \TU/Carlito(0)/m/n/12 pada lingkungan yang
+Underfull \hbox (badness 2173) in paragraph at lines 9--10
+\TU/Carlito(0)/m/n/12 digunakan dalam proses ekstraksi fitur, SPPF memperluas informasi konteks
  []
 
 
-Underfull \hbox (badness 1107) in paragraph at lines 17--18
-\TU/Carlito(0)/m/n/12 terkontrol, posisi kamera tidak dirancang untuk berubah selama penggunaan
+Underfull \hbox (badness 5771) in paragraph at lines 17--18
+\TU/Carlito(0)/m/n/12 Pelatihan model dapat dimulai dari bobot pralatih agar fitur visual yang
+ []
+
+[14]
+Underfull \hbox (badness 1803) in paragraph at lines 19--20
+\TU/Carlito(0)/m/n/12 dibandingkan dengan \TU/Carlito(0)/m/it/12 ground truth \TU/Carlito(0)/m/n/12 untuk memperoleh nilai \TU/Carlito(0)/m/it/12 loss\TU/Carlito(0)/m/n/12 . Nilai \TU/Carlito(0)/m/it/12 loss
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 19--20
-\TU/Carlito(0)/m/n/12 modul akuisisi citra dibatasi pada proses memperoleh citra sebagai masukan
+Underfull \hbox (badness 1242) in paragraph at lines 19--20
+\TU/Carlito(0)/m/n/12 model secara berulang. Data validasi digunakan untuk memantau performa
  []
 
-[14]) (./chapters/subchapters/2/2-2-2.tex
-Underfull \hbox (badness 1005) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 Modul pengenalan lauk merupakan bagian utama dari sistem yang berfungsi
- []
-
-
-Underfull \hbox (badness 1769) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 Modul ini menggunakan YOLO11-seg, yaitu varian YOLO11 yang mendukung
+) (./chapters/subchapters/2/2-2-4.tex
+Underfull \hbox (badness 2245) in paragraph at lines 21--1
+\TU/Carlito(0)/m/n/12 jumlah \TU/Carlito(0)/m/it/12 epoch\TU/Carlito(0)/m/n/12 , \TU/Carlito(0)/m/it/12 batch size\TU/Carlito(0)/m/n/12 , konfigurasi augmentasi, dan parameter lain yang
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 7--8
-\TU/Carlito(0)/m/n/12 beberapa lauk dari kelas yang sama [[], [], []]. Pada sistem yang dirancang,
+Underfull \hbox (badness 3439) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 prediksi akhir merepresentasikan satu instans objek, sedangkan label kelas
  []
 
 
-Underfull \hbox (badness 1509) in paragraph at lines 9--10
-\TU/Carlito(0)/m/n/12 karena sebagian objek dapat tertutup oleh objek lainnya sehingga informasi
+Underfull \hbox (badness 1448) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 menentukan kelompok tempat instans tersebut dihitung. Dengan demikian,
+ []
+
+[15]) (./chapters/subchapters/2/2-2-5.tex
+Underfull \hbox (badness 2293) in paragraph at lines 7--1
+[]\TU/Carlito(0)/m/n/12 Informasi jumlah setiap kelas selanjutnya menjadi masukan bagi proses
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 9--10
-\TU/Carlito(0)/m/n/12 oleh YOLO11-seg. Kondisi oklusi yang muncul pada data pengujian akan
+Underfull \hbox (badness 5908) in paragraph at lines 7--1
+\TU/Carlito(0)/m/n/12 kalkulasi harga. Pemisahan antara proses pengenalan visual dan proses
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 11--12
-[]\TU/Carlito(0)/m/n/12 Secara umum, arsitektur YOLO11 terdiri atas tiga bagian utama, yaitu
+Underfull \hbox (badness 4913) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 kelas lauk memiliki harga satuan tetap yang disimpan sebagai data pada
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 11--12
-\TU/Carlito(0)/m/n/12 YOLO11-seg, bagian prediksi juga mencakup informasi yang diperlukan untuk
- []
-
-[15]
-Underfull \hbox (badness 2005) in paragraph at lines 13--14
-\TU/Carlito(0)/m/n/12 Lapisan konvolusi digunakan untuk mengekstraksi fitur sekaligus mengurangi
+Underfull \hbox (badness 5119) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 informasi kelas dan instans yang digunakan sebagai masukan bagi proses
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 13--14
-\TU/Carlito(0)/m/n/12 resolusi spasial secara bertahap sehingga diperoleh representasi fitur pada
+Underfull \hbox (badness 3281) in paragraph at lines 5--6
+[]\TU/Carlito(0)/m/n/12 Setiap instans hasil prediksi akhir dihitung sebagai satu unit. Jumlah
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 7.
+[16]) (./chapters/subchapters/2/2-2-6.tex
+Underfull \hbox (badness 1831) in paragraph at lines 22--1
+\TU/Carlito(0)/m/n/12 ukuran porsi. Karena harga disimpan terpisah dari model, perubahan nilai
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 15--16
-\TU/Carlito(0)/m/n/12 dirancang untuk mempertahankan aliran informasi fitur dengan kebutuhan
+Underfull \hbox (badness 3118) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 Evaluasi dilakukan untuk menilai kemampuan YOLO11-seg dalam mengenali
  []
 
 
-Underfull \hbox (badness 4108) in paragraph at lines 17--18
-\TU/Carlito(0)/m/n/12 operasi \TU/Carlito(0)/m/it/12 pooling\TU/Carlito(0)/m/n/12 . Setelah SPPF, YOLO11 menggunakan modul C2PSA yang
+Underfull \hbox (badness 6188) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 sedangkan evaluasi sistem mencakup ketepatan penghitungan instans dan
  []
 
 
-Underfull \hbox (badness 8038) in paragraph at lines 19--20
-\TU/Carlito(0)/m/n/12 ini melakukan penggabungan fitur dari beberapa tingkat resolusi melalui
+Underfull \hbox (badness 8189) in paragraph at lines 7--8
+\TU/Carlito(0)/m/n/12 Kesesuaian antara prediksi dan \TU/Carlito(0)/m/it/12 ground truth \TU/Carlito(0)/m/n/12 dapat diukur menggunakan
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 19--20
-\TU/Carlito(0)/m/n/12 memungkinkan informasi spasial dari fitur beresolusi lebih tinggi dipadukan
- []
-
-[16]
-Underfull \hbox (badness 1365) in paragraph at lines 27--28
-[]\TU/Carlito(0)/m/n/12 Pada tahap pelatihan, hasil prediksi model dibandingkan dengan \TU/Carlito(0)/m/it/12 ground
- []
-
-
-Underfull \hbox (badness 2293) in paragraph at lines 27--28
-\TU/Carlito(0)/m/n/12 dalam proses \TU/Carlito(0)/m/it/12 backpropagation \TU/Carlito(0)/m/n/12 untuk memperbarui bobot jaringan. Proses
- []
-
-
-Underfull \hbox (badness 1515) in paragraph at lines 29--30
-\TU/Carlito(0)/m/n/12 sebagai hasil prediksi akhir dianggap sebagai satu instans. Instans tersebut
- []
-
-
-Underfull \hbox (badness 1122) in paragraph at lines 33--34
-\TU/Carlito(0)/m/n/12 yang dikenali memiliki kelas dan \TU/Carlito(0)/m/it/12 mask \TU/Carlito(0)/m/n/12 masing-masing. Pendekatan tersebut
+Underfull \hbox (badness 1430) in paragraph at lines 14--15
+\TU/Carlito(0)/m/n/12 untuk mengevaluasi hasil deteksi dan \TU/Carlito(0)/m/it/12 instance segmentation\TU/Carlito(0)/m/n/12 . Rumus ketiga
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-[]\TU/Carlito(0)/m/n/12 Hasil prediksi kemudian digunakan untuk menentukan jumlah lauk
+Underfull \hbox (badness 3199) in paragraph at lines 37--38
+\TU/Carlito(0)/m/n/12 (mAP). mAP50 menunjukkan nilai mAP pada ambang IoU 0,50, sedangkan
  []
 
-) (./chapters/subchapters/2/2-2-3.tex
-Underfull \hbox (badness 4013) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 Modul kalkulasi harga merupakan bagian akhir dari sistem yang berfungsi
+
+Underfull \hbox (badness 2478) in paragraph at lines 41--42
+\TU/Carlito(0)/m/n/12 tepat jumlah objek yang dihasilkan sistem. Pada penelitian SibNet, \TU/Carlito(0)/m/it/12 Mean
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 41--42
+\TU/Carlito(0)/m/it/12 Absolute Error \TU/Carlito(0)/m/n/12 (MAE) digunakan untuk mengevaluasi kesalahan penghitungan
  []
 
 [18]
-Underfull \hbox (badness 3735) in paragraph at lines 7--8
-[]\TU/Carlito(0)/m/n/12 Pada penelitian ini, setiap kelas lauk memiliki harga tetap yang telah
+Underfull \hbox (badness 3088) in paragraph at lines 48--49
+[]\TU/Carlito(0)/m/n/12 Pada persamaan tersebut, $\OML/cmm/m/it/12 i$ \TU/Carlito(0)/m/n/12 menunjukkan kelas yang sedang dinilai, $\OML/cmm/m/it/12 j$
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 7--8
-\TU/Carlito(0)/m/n/12 jumlah instans pada masing-masing kelas yang diperoleh dari hasil inferensi
+Underfull \hbox (badness 1960) in paragraph at lines 48--49
+\TU/Carlito(0)/m/it/12 ground truth\TU/Carlito(0)/m/n/12 . Nilai MAE yang lebih kecil menunjukkan rata-rata kesalahan
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 11.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 11.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 11.
-
-Underfull \hbox (badness 1019) in paragraph at lines 26--27
-\TU/Carlito(0)/m/n/12 maupun ukuran porsi. \TU/Carlito(0)/m/it/12 Segmentation mask \TU/Carlito(0)/m/n/12 yang dihasilkan oleh YOLO11-seg
+))) (./chapters/3.tex
+Underfull \hbox (badness 5050) in paragraph at lines 52--1
+\TU/Carlito(0)/m/n/12 Kecepatan model dapat dinilai berdasarkan waktu inferensi rata-rata yang
  []
 
 
-Underfull \hbox (badness 1308) in paragraph at lines 26--27
-\TU/Carlito(0)/m/n/12 digunakan sebagai representasi wilayah setiap instans, sedangkan nilai harga
+Underfull \hbox (badness 1490) in paragraph at lines 52--1
+\TU/Carlito(0)/m/n/12 [[]]. Perangkat, data pengujian, dan prosedur pengukuran yang digunakan
  []
 
 [19]
-Underfull \hbox (badness 2165) in paragraph at lines 32--33
-[]\TU/Carlito(0)/m/n/12 Proses kalkulasi dimulai dengan menerima hasil pengenalan dari modul
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-\TU/Carlito(0)/m/n/12 perubahan harga dilakukan tanpa melakukan pelatihan ulang terhadap
- []
-
-))) (./chapters/3.tex [20]
 Bab 3.
-(./chapters/subchapters/3/3-1.tex
-Underfull \hbox (badness 5847) in paragraph at lines 5--6
-[]\TU/Carlito(0)/m/n/12 Pada sistem ini, kamera ditempatkan pada posisi tetap di atas area
+(./chapters/subchapters/3/3-1.tex (./chapters/subchapters/3/3-1-1.tex
+Underfull \hbox (badness 1552) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 Perencanaan sistem diawali dengan menyiapkan dataset yang sesuai dengan
  []
 
+[20
 
-Underfull \hbox (badness 5288) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 pengambilan citra untuk memperoleh citra piring yang berisi lauk pilihan
- []
-
-
-Underfull \hbox (badness 1642) in paragraph at lines 9--10
-\TU/Carlito(0)/m/n/12 lauk dengan harga tetap yang telah ditentukan dan menghitung total harga
- []
-
-[21
-
-]
-Underfull \hbox (badness 4608) in paragraph at lines 11--12
-[]\TU/Carlito(0)/m/n/12 Perancangan sistem dilakukan melalui beberapa tahap yang mencakup
- []
-
-
-Underfull \hbox (badness 1014) in paragraph at lines 11--12
-\TU/Carlito(0)/m/n/12 perencanaan sistem, analisis kebutuhan sistem, dan perancangan alur sistem
- []
-
-
-Underfull \hbox (badness 1072) in paragraph at lines 11--12
-\TU/Carlito(0)/m/n/12 dari persiapan dataset hingga model dapat digunakan pada proses \TU/Carlito(0)/m/it/12 checkout\TU/Carlito(0)/m/n/12 .
- []
-
-
-Underfull \hbox (badness 1708) in paragraph at lines 11--12
-\TU/Carlito(0)/m/n/12 Analisis sistem membahas kebutuhan yang diperlukan dalam pengembangan
- []
-
-
-Underfull \hbox (badness 3108) in paragraph at lines 11--12
-\TU/Carlito(0)/m/n/12 sistem, sedangkan perancangan sistem membahas alur pelatihan, inferensi,
- []
-
-(./chapters/subchapters/3/3-1-1.tex
-Underfull \hbox (badness 1648) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 kemudian diperiksa dan dipilih agar dapat digunakan sebagai dataset dalam
- []
-
-
-Underfull \hbox (badness 1565) in paragraph at lines 5--6
-[]\TU/Carlito(0)/m/n/12 Setiap citra yang digunakan pada proses pelatihan selanjutnya diberikan
- []
-
-[22]
-Underfull \hbox (badness 1173) in paragraph at lines 11--12
-\TU/Carlito(0)/m/n/12 model yang telah dilatih. Model menghasilkan sejumlah instans objek yang
- []
-
-
-Underfull \hbox (badness 1824) in paragraph at lines 13--14
-[]\TU/Carlito(0)/m/n/12 Hasil penghitungan tersebut selanjutnya diteruskan ke program kalkulasi
- []
-
-(./chapters/subchapters/3/3-1-1-1.tex
+] (./chapters/subchapters/3/3-1-1-1.tex
 Underfull \hbox (badness 4479) in paragraph at lines 5--6
 \TU/Carlito(0)/m/n/12 secara langsung dan pengumpulan citra dari internet. Pengambilan citra
  []
 
 
-Underfull \hbox (badness 3735) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 variasi tampilan lauk, seperti bentuk, penyajian, posisi objek, dan kondisi
+Underfull \hbox (badness 2653) in paragraph at lines 5--6
+\TU/Carlito(0)/m/n/12 variasi tampilan objek, seperti bentuk, penyajian, posisi, latar, dan kondisi
  []
 
-[23]
-File: figures/contoh_dataset.pdf Graphic file (type pdf)
-<use figures/contoh_dataset.pdf>
-) (./chapters/subchapters/3/3-1-1-2.tex [24]
+
+Underfull \hbox (badness 1609) in paragraph at lines 7--8
+\TU/Carlito(0)/m/n/12 dataset. Citra yang tidak menampilkan objek dengan cukup jelas, memiliki
+ []
+
+[21]) (./chapters/subchapters/3/3-1-1-2.tex
 Underfull \hbox (badness 1259) in paragraph at lines 5--6
 \TU/Carlito(0)/m/n/12 pada citra. Setiap poligon diberikan label kelas sehingga memuat informasi
  []
 
-[25]) (./chapters/subchapters/3/3-1-1-3.tex
-Underfull \hbox (badness 2582) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 validasi, dan 15% untuk data pengujian. Jumlah citra pada setiap bagian
+
+Underfull \hbox (badness 1478) in paragraph at lines 7--8
+\TU/Carlito(0)/m/n/12 goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan
+ []
+
+) (./chapters/subchapters/3/3-1-1-3.tex [22]) (./chapters/subchapters/3/3-1-1-4.tex
+
+LaTeX Warning: Citation `yang2022' on page 23 undefined on input line 3.
+
+
+Underfull \hbox (badness 4569) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 Augmentasi diterapkan pada data pelatihan untuk menambah variasi data
  []
 
 
-Underfull \hbox (badness 1043) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 ditentukan berdasarkan jumlah akhir citra yang telah lolos tahap seleksi dan
+Underfull \hbox (badness 2970) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 yang diterima model selama proses pembelajaran. Penerapan augmentasi
  []
 
-) (./chapters/subchapters/3/3-1-1-4.tex [26]
-Underfull \hbox (badness 4582) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 Augmentasi diterapkan pada data pelatihan untuk menambah variasi citra
- []
-
-
-Underfull \hbox (badness 1292) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 yang digunakan selama proses pembelajaran model. Penerapan augmentasi
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 yang berbeda tanpa menghasilkan salinan citra baru secara permanen.
- []
-
-)) (./chapters/subchapters/3/3-1-2.tex
+[23])) (./chapters/subchapters/3/3-1-2.tex
 Underfull \hbox (badness 3557) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 kebutuhan perangkat keras, perangkat lunak, data, dan fungsi yang harus
  []
 
-[27]
-Underfull \hbox (badness 2644) in paragraph at lines 9--10
-[]\TU/Carlito(0)/m/n/12 Perangkat komputasi untuk melakukan anotasi data, pelatihan model,
+
+Underfull \hbox (badness 2903) in paragraph at lines 7--8
+[]\TU/Carlito(0)/m/n/12 kamera untuk memperoleh citra piring dari posisi tetap di atas area
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-[]\TU/Carlito(0)/m/n/12 Perangkat lunak dan pustaka pendukung untuk pengolahan citra,
+[24]
+Underfull \hbox (badness 4132) in paragraph at lines 15--16
+[]\TU/Carlito(0)/m/n/12 Python sebagai bahasa pemrograman utama untuk pengolahan data,
  []
 
-[28]) (./chapters/subchapters/3/3-1-3.tex
-Underfull \hbox (badness 6001) in paragraph at lines 25--1
+) (./chapters/subchapters/3/3-1-3.tex
+Underfull \hbox (badness 6001) in paragraph at lines 23--1
 []\TU/Carlito(0)/m/n/12 Secara fungsional, sistem harus mampu menerima citra dari kamera,
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 25--1
-\TU/Carlito(0)/m/n/12 mengenali kelas dan menghasilkan \TU/Carlito(0)/m/it/12 segmentation mask \TU/Carlito(0)/m/n/12 untuk setiap instans,
- []
-
-
-Underfull \hbox (badness 1163) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 otomatis Nasi Padang mulai dari pelatihan model hingga penggunaan model
- []
-
-
-Underfull \hbox (badness 2717) in paragraph at lines 5--6
-[]\TU/Carlito(0)/m/n/12 Rancangan pelatihan model menjelaskan alur penggunaan dataset yang
- []
-
-
-Underfull \hbox (badness 2653) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 telah dianotasi dan dibagi menjadi data pelatihan, validasi, dan pengujian.
- []
-
-
-Underfull \hbox (badness 1281) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 Data pelatihan digunakan untuk melatih YOLO11-seg melalui proses prediksi,
- []
-
-
-Underfull \hbox (badness 1917) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 perhitungan \TU/Carlito(0)/m/it/12 loss\TU/Carlito(0)/m/n/12 , dan pembaruan bobot model. Performa model dipantau
- []
-
-
-Underfull \hbox (badness 1448) in paragraph at lines 7--8
-\TU/Carlito(0)/m/n/12 diperoleh dari kamera. Model YOLO11-seg menghasilkan prediksi kelas dan
- []
-
-(./chapters/subchapters/3/3-1-3-1.tex
-Underfull \hbox (badness 7540) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 Pelatihan model dilakukan menggunakan YOLO11-seg yang telah memiliki
+Underfull \hbox (badness 5460) in paragraph at lines 23--1
+\TU/Carlito(0)/m/n/12 menghasilkan prediksi kelas dan \TU/Carlito(0)/m/it/12 segmentation mask \TU/Carlito(0)/m/n/12 untuk setiap instans,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 memanfaatkan fitur visual yang telah dipelajari oleh model, kemudian
+\TU/Carlito(0)/m/n/12 Tahap perancangan sistem menjabarkan prosedur yang digunakan untuk
  []
 
 
-Underfull \hbox (badness 4582) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 menyesuaikannya dengan karakteristik sembilan kelas objek makanan yang
+Underfull \hbox (badness 1960) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 proses \TU/Carlito(0)/m/it/12 checkout\TU/Carlito(0)/m/n/12 . Perancangan dibagi menjadi dua bagian, yaitu rancangan
  []
 
-[29]
-Underfull \hbox (badness 4479) in paragraph at lines 7--8
-\TU/Carlito(0)/m/n/12 menggabungkan informasi dari beberapa skala. Hasil penggabungan fitur
+[25] (./chapters/subchapters/3/3-1-3-1.tex
+Underfull \hbox (badness 1546) in paragraph at lines 9--10
+\TU/Carlito(0)/m/n/12 performa model tanpa digunakan untuk memperbarui bobot. Hasil validasi
  []
 
-
-Underfull \hbox (badness 3514) in paragraph at lines 9--10
-[]\TU/Carlito(0)/m/n/12 Prediksi kelas digunakan untuk menentukan jenis objek makanan yang
- []
-
-
-Underfull \hbox (badness 1014) in paragraph at lines 13--14
-\TU/Carlito(0)/m/n/12 setiap tahap pelatihan, performa model dipantau menggunakan data validasi
+) (./chapters/subchapters/3/3-1-3-2.tex
+Underfull \hbox (badness 2707) in paragraph at lines 11--1
+\TU/Carlito(0)/m/n/12 digunakan untuk pembaruan maupun pemilihan bobot. Evaluasi dilakukan
  []
 
 
-Underfull \hbox (badness 6691) in paragraph at lines 13--14
-\TU/Carlito(0)/m/n/12 perkembangan kemampuan model dan menentukan bobot model dengan
+Underfull \hbox (badness 2435) in paragraph at lines 11--1
+\TU/Carlito(0)/m/it/12 segmentation mask\TU/Carlito(0)/m/n/12 , serta menghasilkan jumlah instans yang sesuai dengan
  []
 
-[30]) (./chapters/subchapters/3/3-1-3-2.tex
-Underfull \hbox (badness 1874) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 untuk setiap instans objek makanan. Setiap prediksi memuat lokasi objek,
- []
-
-
-Underfull \hbox (badness 1210) in paragraph at lines 9--10
-\TU/Carlito(0)/m/n/12 dan harga setiap instans. Subtotal setiap kelas dihitung dengan mengalikan
- []
-
-[31]))) (./chapters/subchapters/3/3-2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 13--1
-[]\TU/Carlito(0)/m/n/12 Proses tersebut menghasilkan mekanisme \TU/Carlito(0)/m/it/12 checkout \TU/Carlito(0)/m/n/12 otomatis yang
+[26]
+Underfull \hbox (badness 1117) in paragraph at lines 5--6
+\TU/Carlito(0)/m/n/12 objek makanan. Setiap prediksi akhir memuat informasi kelas, lokasi objek,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--1
-\TU/Carlito(0)/m/n/12 menghubungkan hasil pengenalan YOLO11-seg dengan program kalkulasi
+Underfull \hbox (badness 6559) in paragraph at lines 9--10
+[]\TU/Carlito(0)/m/n/12 Hasil penghitungan diteruskan ke program kalkulasi harga. Program
+ []
+
+))) (./chapters/subchapters/3/3-2.tex [27]
+Underfull \hbox (badness 6758) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 pada bagian sebelumnya menjadi sistem \TU/Carlito(0)/m/it/12 checkout \TU/Carlito(0)/m/n/12 otomatis Nasi Padang.
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 pembuatan dataset, pelatihan model YOLO11-seg, dan pembuatan program
+Underfull \hbox (badness 1337) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 serta implementasi program \TU/Carlito(0)/m/it/12 checkout \TU/Carlito(0)/m/n/12 yang mengolah hasil inferensi menjadi
  []
 
 
-Underfull \hbox (badness 4429) in paragraph at lines 7--8
-[]\TU/Carlito(0)/m/n/12 Model YOLO11-seg dilatih menggunakan citra dan \TU/Carlito(0)/m/it/12 ground truth \TU/Carlito(0)/m/n/12 untuk
+Underfull \hbox (badness 4739) in paragraph at lines 7--8
+\TU/Carlito(0)/m/n/12 validasi, sedangkan model terpilih dievaluasi menggunakan data pengujian
  []
 
-
-Underfull \hbox (badness 3354) in paragraph at lines 7--8
-\TU/Carlito(0)/m/it/12 mask \TU/Carlito(0)/m/n/12 setiap instans. Model dengan performa validasi terbaik selanjutnya
- []
-
-))
-Underfull \hbox (badness 3601) in paragraph at lines 9--71
-[]\TU/Carlito(0)/m/n/12 Program \TU/Carlito(0)/m/it/12 checkout \TU/Carlito(0)/m/n/12 menerima hasil inferensi model, menghitung jumlah
- []
-
-
-Underfull \hbox (badness 3148) in paragraph at lines 9--71
-\TU/Carlito(0)/m/n/12 didokumentasikan berdasarkan perangkat, konfigurasi, dan hasil pembuatan
- []
-
-[32] [33] (./main.bbl
+)) [28] (./main.bbl
 Underfull \hbox (badness 2318) in paragraph at lines 45--46
 []\TU/Carlito(0)/m/n/12 E. Aguilar, B. Remeseiro, M. Bolaños, and P. Radeva, “Grab, pay and
  []
@@ -1056,24 +912,28 @@ Underfull \hbox (badness 6173) in paragraph at lines 45--46
 \TU/Carlito(0)/m/n/12 eat: Semantic food detection for smart restaurants,” \TU/Carlito(0)/m/it/12 arXiv preprint
  []
 
-[34
+[29
 
 
-]) [35] (./main.aux)
+]) [30] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D21AF3CFD858C8EA719248E590182781;4100.
+(rerunfilecheck)             Checksum: BA75E9E9ABD23D627E79FF07B761CBC8;4541.
  ) 
 Here is how much of TeX's memory you used:
- 13046 strings out of 468176
- 266301 string characters out of 5407950
- 733552 words of memory out of 5000000
- 41565 multiletter control sequences out of 15000+600000
- 630969 words of font info for 69 fonts, out of 8000000 for 9000
+ 13069 strings out of 468176
+ 267027 string characters out of 5407950
+ 734110 words of memory out of 5000000
+ 41578 multiletter control sequences out of 15000+600000
+ 630985 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  73i,6n,93p,796b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (35 pages, 549512 bytes).
+Output written on main.xdv (30 pages, 472164 bytes).

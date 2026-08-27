@@ -1,13 +1,13 @@
-\subsubsection{Rancangan Proses Checkout}
+\subsubsection{Rancangan Proses \textit{Checkout}}
 
-Proses \textit{checkout} dimulai ketika piring yang berisi makanan ditempatkan pada area pengambilan citra. Kamera yang berada pada posisi tetap di atas area tersebut memperoleh citra piring dalam kondisi pencahayaan yang relatif terkontrol. Citra kemudian diberikan sebagai masukan kepada model YOLO11-seg yang telah melalui proses pelatihan.
+Proses \textit{checkout} dimulai ketika piring yang berisi makanan ditempatkan pada area pengambilan citra. Kamera pada posisi tetap di atas area tersebut memperoleh citra piring dalam kondisi pencahayaan yang relatif terkontrol. Citra kemudian diberikan kepada model YOLO11-seg yang telah melalui proses pelatihan.
 
-Pada tahap inferensi, YOLO11-seg memproses citra dan menghasilkan prediksi untuk setiap instans objek makanan. Setiap prediksi memuat lokasi objek, nilai kepercayaan, label kelas, dan \textit{segmentation mask}. Prediksi dengan nilai kepercayaan yang memenuhi batas yang ditentukan dipertahankan sebagai hasil pengenalan.
+Pada tahap inferensi, YOLO11-seg menghasilkan prediksi untuk setiap instans objek makanan. Setiap prediksi akhir memuat informasi kelas, lokasi objek, nilai kepercayaan, dan \textit{segmentation mask}. Prediksi yang memenuhi ketentuan penyaringan pada implementasi dipertahankan sebagai hasil pengenalan.
 
-Label kelas digunakan untuk menentukan jenis objek makanan, sedangkan \textit{segmentation mask} digunakan untuk memisahkan setiap instans yang terdapat pada piring. Setiap hasil prediksi yang dipertahankan diperlakukan sebagai satu instans. Apabila terdapat lebih dari satu instans dari kelas yang sama, seluruh instans tersebut dihitung dan dikelompokkan berdasarkan kelasnya.
+Label kelas digunakan untuk menentukan jenis makanan, sedangkan setiap prediksi akhir yang dipertahankan diperlakukan sebagai satu instans. Apabila terdapat lebih dari satu instans dari kelas yang sama, seluruh instans tersebut dihitung dan dikelompokkan berdasarkan kelasnya.
 
-Hasil penghitungan kemudian diteruskan ke program kalkulasi harga. Program menggunakan tabel harga tetap yang memuat pasangan antara kelas makanan dan harga setiap instans. Subtotal setiap kelas dihitung dengan mengalikan jumlah instans yang dikenali dengan harga pada kelas tersebut. Seluruh subtotal selanjutnya dijumlahkan untuk memperoleh total harga.
+Hasil penghitungan diteruskan ke program kalkulasi harga. Program menggunakan tabel harga tetap yang memuat pasangan antara kelas makanan dan harga satuan. Subtotal setiap kelas dihitung dengan mengalikan jumlah instans yang dikenali dengan harga kelas tersebut, kemudian seluruh subtotal dijumlahkan untuk memperoleh total harga.
 
-Informasi yang dihasilkan pada proses \textit{checkout} terdiri atas kelas makanan yang dikenali, jumlah instans pada setiap kelas, harga setiap instans, subtotal setiap kelas, dan total harga keseluruhan. \textit{Segmentation mask} tidak digunakan untuk memperkirakan berat, volume, luas porsi, maupun kandungan gizi makanan.
+Informasi yang dihasilkan pada proses \textit{checkout} terdiri atas kelas makanan yang dikenali, jumlah instans pada setiap kelas, harga satuan, subtotal setiap kelas, dan total harga keseluruhan. \textit{Segmentation mask} digunakan untuk merepresentasikan wilayah setiap instans dan tidak digunakan untuk memperkirakan berat, volume, ukuran porsi, luas porsi, maupun kandungan gizi.
 
-Proses tersebut menghasilkan mekanisme \textit{checkout} otomatis yang menghubungkan hasil pengenalan YOLO11-seg dengan program kalkulasi harga. Sistem dirancang sebagai \textit{proof-of-concept} dan tidak mencakup proses pembayaran elektronik maupun pencetakan bukti pembayaran.
+Sistem dirancang sebagai \textit{proof-of-concept} proses \textit{checkout} otomatis dan tidak mencakup pembayaran elektronik maupun pencetakan bukti pembayaran.
