@@ -1,9 +1,0 @@
-\section{Pembuatan Sistem}
-
-Tahap pembuatan sistem merupakan penerapan rancangan yang telah dijelaskan pada bagian sebelumnya menjadi sistem \textit{checkout} otomatis Nasi Padang. Pembuatan mencakup penyelesaian dataset, pelatihan dan evaluasi YOLO11-seg, serta implementasi program \textit{checkout} yang mengolah hasil inferensi menjadi jumlah instans dan total harga.
-
-Pada tahap penyelesaian dataset, citra yang telah lolos proses seleksi dianotasi berdasarkan sembilan kelas penelitian, kemudian dibagi menjadi data pelatihan, validasi, dan pengujian. Augmentasi diterapkan melalui \textit{pipeline} pelatihan pada data pelatihan.
-
-Model YOLO11-seg dilatih menggunakan dataset yang telah disiapkan dengan bobot pralatih sebagai titik awal. Bobot model dipantau menggunakan data validasi, sedangkan model terpilih dievaluasi menggunakan data pengujian sebelum digunakan pada proses \textit{checkout}.
-
-Program \textit{checkout} menerima hasil inferensi model, menghitung jumlah instans berdasarkan kelas, mencocokkan setiap kelas dengan tabel harga tetap, serta menghitung subtotal dan total harga. Spesifikasi perangkat keras, perangkat lunak, konfigurasi pelatihan, hasil pembuatan dataset, dan detail implementasi program akan dicatat berdasarkan pelaksanaan sistem yang sebenarnya sehingga tidak ditetapkan sebelum proses implementasi dilakukan.

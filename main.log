@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  28 AUG 2026 09:18
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  28 AUG 2026 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -381,7 +381,21 @@ Package hyperref Info: Link coloring OFF on input line 66.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
- (./chapters/1.tex
+ (./main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+ [1
+
+
+])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [2] (./chapters/1.tex
 Bab 1.
 
 Underfull \hbox (badness 3803) in paragraph at lines 5--6
@@ -713,12 +727,6 @@ Underfull \hbox (badness 3281) in paragraph at lines 5--6
 []\TU/Carlito(0)/m/n/12 Setiap instans hasil prediksi akhir dihitung sebagai satu unit. Jumlah
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 7.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 7.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 7.
 [16]) (./chapters/subchapters/2/2-2-6.tex
 Underfull \hbox (badness 1831) in paragraph at lines 22--1
 \TU/Carlito(0)/m/n/12 ukuran porsi. Karena harga disimpan terpisah dari model, perubahan nilai
@@ -883,22 +891,7 @@ Underfull \hbox (badness 6559) in paragraph at lines 9--10
 []\TU/Carlito(0)/m/n/12 Hasil penghitungan diteruskan ke program kalkulasi harga. Program
  []
 
-))) (./chapters/subchapters/3/3-2.tex [27]
-Underfull \hbox (badness 6758) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 pada bagian sebelumnya menjadi sistem \TU/Carlito(0)/m/it/12 checkout \TU/Carlito(0)/m/n/12 otomatis Nasi Padang.
- []
-
-
-Underfull \hbox (badness 1337) in paragraph at lines 3--4
-\TU/Carlito(0)/m/n/12 serta implementasi program \TU/Carlito(0)/m/it/12 checkout \TU/Carlito(0)/m/n/12 yang mengolah hasil inferensi menjadi
- []
-
-
-Underfull \hbox (badness 4739) in paragraph at lines 7--8
-\TU/Carlito(0)/m/n/12 validasi, sedangkan model terpilih dievaluasi menggunakan data pengujian
- []
-
-)) [28] (./main.bbl
+)))) [27] [28] (./main.bbl
 Underfull \hbox (badness 2318) in paragraph at lines 45--46
 []\TU/Carlito(0)/m/n/12 E. Aguilar, B. Remeseiro, M. Bolaños, and P. Radeva, “Grab, pay and
  []
@@ -916,16 +909,23 @@ Underfull \hbox (badness 6173) in paragraph at lines 45--46
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BA75E9E9ABD23D627E79FF07B761CBC8;4541.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: BA75E9E9ABD23D627E79FF07B761CBC8;4541
+(rerunfilecheck)             After:  396DA4752E9296F95F5737D34CEAD240;4403.
  ) 
 Here is how much of TeX's memory you used:
- 13070 strings out of 468176
- 267037 string characters out of 5407950
- 734141 words of memory out of 5000000
- 41579 multiletter control sequences out of 15000+600000
+ 13069 strings out of 468176
+ 266857 string characters out of 5407950
+ 738150 words of memory out of 5000000
+ 41578 multiletter control sequences out of 15000+600000
  630985 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  73i,6n,93p,784b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (30 pages, 472852 bytes).
+Output written on main.xdv (32 pages, 485820 bytes).
