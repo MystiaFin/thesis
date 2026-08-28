@@ -62,4 +62,7 @@ X.~Yue, K.~Qi, X.~Na, Y.~Zhang, Y.~Liu, and C.~Liu, ``Improved yolov8-seg networ
 \bibitem{tampu2022}
 I.~E. Tampu, A.~Eklund, and N.~Haj-Hosseini, ``Inflation of test accuracy due to data leakage in deep learning-based classification of {OCT} images,'' \emph{Scientific Data}, vol.~9, no.~1, p. 580, 2022.
 
+\bibitem{yang2022}
+S.~Yang, W.~Xiao, M.~Zhang, S.~Guo, J.~Zhao, and F.~Shen, ``Image data augmentation for deep learning: A survey,'' \emph{CoRR}, vol. abs/2204.08610, 2022.
+
 \end{thebibliography}

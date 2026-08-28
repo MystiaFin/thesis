@@ -1,4 +1,4 @@
-PWD /home/mystiafin/Documents/College/thesis/main
+PWD /home/mystiafin/Documents/College/thesis/thesis
 INPUT /nix/store/4lxl8gcf3chd83yhkbmb08386myra66f-texlive-2025-r78234-final-env/share/texmf-var/web2c/texmf.cnf
 INPUT /nix/store/4lxl8gcf3chd83yhkbmb08386myra66f-texlive-2025-r78234-final-env/share/texmf-var/web2c/xetex/xelatex.fmt
 INPUT main.tex
