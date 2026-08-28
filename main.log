@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  28 AUG 2026 09:06
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  28 AUG 2026 09:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -487,97 +487,97 @@ Underfull \hbox (badness 2726) in paragraph at lines 103--104
  []
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 103--104
-\TU/Carlito(0)/m/n/12 awal untuk penerapan \TU/Carlito(0)/m/it/12 Computer Vision \TU/Carlito(0)/m/n/12 berbasis \TU/Carlito(0)/m/it/12 instance segmentation \TU/Carlito(0)/m/n/12 pada
+Underfull \hbox (badness 1990) in paragraph at lines 103--104
+\TU/Carlito(0)/m/n/12 evaluasi YOLO11-seg pada \TU/Carlito(0)/m/it/12 use-case \TU/Carlito(0)/m/n/12 pengenalan dan penghitungan lauk Nasi
  []
 
 [6]
-Underfull \hbox (badness 3343) in paragraph at lines 113--114
+Underfull \hbox (badness 3343) in paragraph at lines 112--113
 []\TU/Carlito(0)/m/n/12 Perancangan yang berjudul “A Framework of Visual Checkout System
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 113--114
+Underfull \hbox (badness 1127) in paragraph at lines 112--113
 \TU/Carlito(0)/m/n/12 Using Convolutional Neural Networks for Bento Buffet” oleh Wu et al.
  []
 
 
-Underfull \hbox (badness 5008) in paragraph at lines 113--114
+Underfull \hbox (badness 5008) in paragraph at lines 112--113
 \TU/Carlito(0)/m/n/12 mengembangkan sistem \TU/Carlito(0)/m/it/12 visual checkout \TU/Carlito(0)/m/n/12 untuk restoran Bento Buffet
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 113--114
+Underfull \hbox (badness 2653) in paragraph at lines 112--113
 \TU/Carlito(0)/m/n/12 menggunakan kamera Kinect dan CNN. Sistem melakukan pengenalan
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 113--114
+Underfull \hbox (badness 1383) in paragraph at lines 112--113
 \TU/Carlito(0)/m/n/12 volume makanan dan harga. Pendekatan pengenalan dua tahap yang
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 115--116
+Underfull \hbox (badness 3168) in paragraph at lines 114--115
 \TU/Carlito(0)/m/n/12 Based on Instance Segmentation” oleh Guo et al. mengembangkan
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 []\TU/Carlito(0)/m/n/12 Perancangan yang berjudul “SibNet: Food Instance Counting and
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 117--118
+Underfull \hbox (badness 1603) in paragraph at lines 116--117
 \TU/Carlito(0)/m/n/12 bersamaan. SibNet dirancang untuk menangani karakteristik makanan
  []
 
 
-Underfull \hbox (badness 4024) in paragraph at lines 117--118
+Underfull \hbox (badness 4024) in paragraph at lines 116--117
 \TU/Carlito(0)/m/n/12 dengan bentuk yang tidak beraturan serta kondisi objek yang saling
  []
 
 [7]
-Underfull \hbox (badness 2435) in paragraph at lines 119--120
+Underfull \hbox (badness 2435) in paragraph at lines 118--119
 \TU/Carlito(0)/m/n/12 Segmentation and Recognition” oleh Nguyen et al. mengembangkan
  []
 
 
-Underfull \hbox (badness 6691) in paragraph at lines 119--120
+Underfull \hbox (badness 6691) in paragraph at lines 118--119
 \TU/Carlito(0)/m/n/12 jaringan multi-task untuk melakukan penghitungan, segmentasi, dan
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 121--122
+Underfull \hbox (badness 1215) in paragraph at lines 120--121
 \TU/Carlito(0)/m/n/12 Mask R-CNN and Multiple Linear Regression” oleh Aditama dan Munir
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 []\TU/Carlito(0)/m/n/12 Perancangan yang berjudul “GS-YOLO-Seg: A Lightweight Instance
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 123--124
+Underfull \hbox (badness 3657) in paragraph at lines 122--123
 \TU/Carlito(0)/m/n/12 Segmentation Method for Low-Grade Graphite Ore Sorting Based on
  []
 
 
-Underfull \hbox (badness 4391) in paragraph at lines 123--124
+Underfull \hbox (badness 4391) in paragraph at lines 122--123
 \TU/Carlito(0)/m/n/12 Improved YOLO11-Seg” oleh Qiu et al. mengembangkan modifikasi
  []
 
 
-Underfull \hbox (badness 3439) in paragraph at lines 123--124
+Underfull \hbox (badness 3439) in paragraph at lines 122--123
 \TU/Carlito(0)/m/n/12 tersebut memodifikasi beberapa bagian YOLO11-seg, termasuk proses
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 123--124
+Underfull \hbox (badness 3375) in paragraph at lines 122--123
 \TU/Carlito(0)/m/n/12 ekstraksi fitur dan \TU/Carlito(0)/m/it/12 segmentation head\TU/Carlito(0)/m/n/12 , sehingga menunjukkan bahwa
  []
 
 
-Underfull \hbox (badness 1320) in paragraph at lines 123--124
+Underfull \hbox (badness 1320) in paragraph at lines 122--123
 \TU/Carlito(0)/m/n/12 arsitektur YOLO11-seg dapat diterapkan dan dikembangkan lebih lanjut
  []
 
@@ -926,6 +926,6 @@ Here is how much of TeX's memory you used:
  41579 multiletter control sequences out of 15000+600000
  630985 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,6n,93p,796b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,6n,93p,784b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (30 pages, 473948 bytes).
+Output written on main.xdv (30 pages, 472852 bytes).
