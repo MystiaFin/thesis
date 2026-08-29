@@ -21,9 +21,9 @@
 \contentsline {subsection}{\numberline {3.1.1}Perencanaan Sistem}{24}{subsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.1.1}Pengumpulan Data}{25}{subsubsection.3.1.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.1.2}Anotasi Data}{26}{subsubsection.3.1.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.1.3}Pembagian Dataset}{27}{subsubsection.3.1.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.1.4}Augmentasi Data}{27}{subsubsection.3.1.1.4}%
-\contentsline {subsection}{\numberline {3.1.2}Analisis Sistem}{28}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Perancangan Sistem}{29}{subsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.3.1}Rancangan Pelatihan Model}{30}{subsubsection.3.1.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.3.2}Rancangan Proses \textit {Checkout}}{31}{subsubsection.3.1.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.1.3}Pembagian Dataset}{28}{subsubsection.3.1.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.1.4}Augmentasi Data}{29}{subsubsection.3.1.1.4}%
+\contentsline {subsection}{\numberline {3.1.2}Analisis Sistem}{30}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Perancangan Sistem}{31}{subsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}Rancangan Pelatihan Model}{31}{subsubsection.3.1.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}Rancangan Proses \textit {Checkout}}{32}{subsubsection.3.1.3.2}%

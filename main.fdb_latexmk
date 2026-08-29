@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex main"] 1787994657.12544 "main.aux" "main.bbl" "main" 1787994834.57184 0
+["bibtex main"] 1787996255.21185 "main.aux" "main.bbl" "main" 1787996393.84129 0
   "./references.bib" 1787992805.07101 9121 8918ee144cebcf01fdf6593d391db2c5 ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/bibtex/bst/ieeetran/IEEEtran.bst" 1 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1787994834.09758 7825 ad126ce55ea10d68d61459461fdf8669 "xelatex"
+  "main.aux" 1787996391.75916 8537 dde3aec99c5338f7643c23512a28955c "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1787994834.32078 "main.xdv" "main.pdf" "main" 1787994834.57338 0
-  "main.xdv" 1787994834.09958 564716 3c83dd90674088f4fdf678c77523c057 "xelatex"
+["xdvipdfmx"] 1787996392.00448 "main.xdv" "main.pdf" "main" 1787996393.84279 0
+  "main.xdv" 1787996391.76116 579204 2056fae6eaec12a4348046efa0704b48 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1787994830.7514 "main.tex" "main.xdv" "main" 1787994834.57196 0
+["xelatex"] 1787996388.30902 "main.tex" "main.xdv" "main" 1787996393.8414 0
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/map/fontname/texfonts.map" 1 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/tfm/public/cm/cmmi12.tfm" 1 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -80,17 +80,17 @@
   "chapters/1.tex" 1787992951.02223 14202 2b2df4883ec14509457a958d0ccc6be0 ""
   "chapters/2.tex" 1787983922.85744 134 bbe908432341cd7d291cfecd1e4fe204 ""
   "chapters/3.tex" 1787982369.77298 70 42e5bc7d45a93fc71764f7ea73138066 ""
-  "chapters/subchapters/2/2-1.tex" 1787985755.96376 3436 23461dd9a64a54b1b273c56c51e69bc5 ""
+  "chapters/subchapters/2/2-1.tex" 1787996330.23272 3482 30a6e3d448780c16db0468f57b990754 ""
   "chapters/subchapters/2/2-2.tex" 1787983864.08835 2627 f3920299332eba9c08df733dc362f88e ""
   "chapters/subchapters/2/2-3-1.tex" 1787819152 1092 a73caf11b7703a7509042f7e99dec62e ""
   "chapters/subchapters/2/2-3-2.tex" 1787992829.31353 2389 079559bd8c4e5546e92045052e53908a ""
   "chapters/subchapters/2/2-3-3.tex" 1787991193.98754 6133 fb38a5c7ae61c276c48a41fb261b3a32 ""
   "chapters/subchapters/2/2-3-4.tex" 1787819152 1105 a07c3c0604f700745258ba9ffd2cc5db ""
   "chapters/subchapters/2/2-3-5.tex" 1787820134 1821 7eddea22c0b39d9f4d6bf9adc4629fa0 ""
-  "chapters/subchapters/2/2-3-6.tex" 1787994828.9066 6370 0064cde639dea00f929df46a1077f892 ""
+  "chapters/subchapters/2/2-3-6.tex" 1787994881.48872 6370 0064cde639dea00f929df46a1077f892 ""
   "chapters/subchapters/2/2-3.tex" 1787983914.19338 696 38db6944eeaa163caf12bad942bd43cc ""
-  "chapters/subchapters/3/3-1-1-1.tex" 1787819688 2047 c2ef942d20f7df2c2a56849ea92bc7a0 ""
-  "chapters/subchapters/3/3-1-1-2.tex" 1787819688 1526 02865508f33bec9279b93376df5bb8f6 ""
+  "chapters/subchapters/3/3-1-1-1.tex" 1787996386.90893 1878 511b05bb890298aa7a41d542e84dc517 ""
+  "chapters/subchapters/3/3-1-1-2.tex" 1787996250.62016 3380 1b668c13e2f5c918088e4990deb4f2f4 ""
   "chapters/subchapters/3/3-1-1-3.tex" 1787819688 1303 5d7822e26211b92402432a6f8b3e0fdc ""
   "chapters/subchapters/3/3-1-1-4.tex" 1787819688 1318 41e70b3f4d56887471b981fd31709349 ""
   "chapters/subchapters/3/3-1-1.tex" 1787819688 679 9eff8720bd49e1502d3b7f8c5ba35dc6 ""
@@ -100,15 +100,17 @@
   "chapters/subchapters/3/3-1-3.tex" 1787819688 721 453100afc93b23fc168e59fe95e253a3 ""
   "chapters/subchapters/3/3-1.tex" 1787819688 1408 b99e5187a7b7923021564c94e8183075 ""
   "figures/alur_sistem.pdf" 1787397772.92643 93016 7cde0c7aaca23e695631b1736bef428e ""
+  "figures/annotasi_intelligent_scissors.png" 1787995740.03006 1091751 b917ce55db0ef56511679c18165291f7 ""
+  "figures/annotasi_segment_anything.png" 1787995528.91416 1086172 4c2e6398b2571d366f89bc39580ba13b ""
   "figures/nasi_padang_dine_in.jpg" 1787985686.27592 1410731 94177324e6ce2a7429ef9c3dc271de13 ""
   "figures/nasi_padang_take_away.jpeg" 1787985247.59541 59757 21ba55294f3a483f9ecde68e41171a6f ""
   "figures/perbandingan_instance_segmentation.pdf" 1787992770.12844 372388 cbc79fed4428b43c3aae57d5321b7b26 ""
   "figures/yolo11-seg-architecture.pdf" 1787988315.13557 82052 2e03d8e5a13b3d0b0f4da238dc392ddc ""
-  "main.aux" 1787994834.09758 7825 ad126ce55ea10d68d61459461fdf8669 "xelatex"
-  "main.bbl" 1787994657.20612 5084 080bddc9a3d037b85f164967fe7790da "bibtex main"
-  "main.out" 1787994834.09858 4516 b5cafd0d937f904ed89a9ebd054edc25 "xelatex"
+  "main.aux" 1787996391.75916 8537 dde3aec99c5338f7643c23512a28955c "xelatex"
+  "main.bbl" 1787996255.2801 5084 080bddc9a3d037b85f164967fe7790da "bibtex main"
+  "main.out" 1787996391.76016 4516 b5cafd0d937f904ed89a9ebd054edc25 "xelatex"
   "main.tex" 1787983500.16242 1588 ba3f6dfc5172652fc6065b57ac6315c7 ""
-  "main.toc" 1787994834.09958 2506 0addbf30fd22e7ad9d59e5e3cef0a3ca "xelatex"
+  "main.toc" 1787996391.76116 2506 7e7943031b58ef2975f2e5c8060e53a1 "xelatex"
   (generated)
   "main.aux"
   "main.log"

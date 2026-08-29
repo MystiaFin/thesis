@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  29 AUG 2026 16:13
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  29 AUG 2026 16:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -590,7 +590,7 @@ File: figures/nasi_padang_dine_in.jpg Graphic file (type bmp)
 File: figures/nasi_padang_take_away.jpeg Graphic file (type bmp)
 <figures/nasi_padang_take_away.jpeg>
 ) (./chapters/subchapters/2/2-2.tex
-Underfull \hbox (badness 3209) in paragraph at lines 28--1
+Underfull \hbox (badness 3209) in paragraph at lines 29--1
 \TU/Carlito(0)/m/it/12 take-away\TU/Carlito(0)/m/n/12 , seluruh makanan telah digabungkan dan ditempatkan di dalam
  []
 
@@ -792,18 +792,27 @@ Underfull \hbox (badness 1609) in paragraph at lines 7--8
  []
 
 [25]) (./chapters/subchapters/3/3-1-1-2.tex
-Underfull \hbox (badness 1259) in paragraph at lines 5--6
-\TU/Carlito(0)/m/n/12 pada citra. Setiap poligon diberikan label kelas sehingga memuat informasi
+Underfull \hbox (badness 1629) in paragraph at lines 7--8
+\TU/Carlito(0)/m/n/12 pada satu piring dianotasi menggunakan dua poligon dengan label perkedel
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 7--8
-\TU/Carlito(0)/m/n/12 goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan
+Underfull \hbox (badness 2521) in paragraph at lines 9--10
+\TU/Carlito(0)/m/n/12 secara otomatis berdasarkan objek yang dipilih oleh anotator. Batas yang
  []
 
-) (./chapters/subchapters/3/3-1-1-3.tex [26]) (./chapters/subchapters/3/3-1-1-4.tex
+File: figures/annotasi_segment_anything.png Graphic file (type bmp)
+<figures/annotasi_segment_anything.png>
+[26]
+Underfull \hbox (badness 6608) in paragraph at lines 20--21
+[]\TU/Carlito(0)/m/n/12 Pada tahap berikutnya, proses anotasi dilanjutkan menggunakan fitur
+ []
 
-LaTeX Warning: Citation `yang2022' on page 27 undefined on input line 3.
+File: figures/annotasi_intelligent_scissors.png Graphic file (type bmp)
+<figures/annotasi_intelligent_scissors.png>
+[27]) (./chapters/subchapters/3/3-1-1-3.tex) (./chapters/subchapters/3/3-1-1-4.tex [28]
+
+LaTeX Warning: Citation `yang2022' on page 29 undefined on input line 3.
 
 
 Underfull \hbox (badness 4569) in paragraph at lines 3--4
@@ -815,17 +824,17 @@ Underfull \hbox (badness 2970) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 yang diterima model selama proses pembelajaran. Penerapan augmentasi
  []
 
-[27])) (./chapters/subchapters/3/3-1-2.tex
+)) (./chapters/subchapters/3/3-1-2.tex
 Underfull \hbox (badness 3557) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 kebutuhan perangkat keras, perangkat lunak, data, dan fungsi yang harus
  []
 
-
+[29]
 Underfull \hbox (badness 2903) in paragraph at lines 7--8
 []\TU/Carlito(0)/m/n/12 kamera untuk memperoleh citra piring dari posisi tetap di atas area
  []
 
-[28]
+
 Underfull \hbox (badness 4132) in paragraph at lines 15--16
 []\TU/Carlito(0)/m/n/12 Python sebagai bahasa pemrograman utama untuk pengolahan data,
  []
@@ -840,7 +849,7 @@ Underfull \hbox (badness 5460) in paragraph at lines 23--1
 \TU/Carlito(0)/m/n/12 menghasilkan prediksi kelas dan \TU/Carlito(0)/m/it/12 segmentation mask \TU/Carlito(0)/m/n/12 untuk setiap instans,
  []
 
-
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 Tahap perancangan sistem menjabarkan prosedur yang digunakan untuk
  []
@@ -850,7 +859,7 @@ Underfull \hbox (badness 1960) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 proses \TU/Carlito(0)/m/it/12 checkout\TU/Carlito(0)/m/n/12 . Perancangan dibagi menjadi dua bagian, yaitu rancangan
  []
 
-[29] (./chapters/subchapters/3/3-1-3-1.tex
+(./chapters/subchapters/3/3-1-3-1.tex [31]
 Underfull \hbox (badness 1546) in paragraph at lines 9--10
 \TU/Carlito(0)/m/n/12 performa model tanpa digunakan untuk memperbarui bobot. Hasil validasi
  []
@@ -865,7 +874,7 @@ Underfull \hbox (badness 2435) in paragraph at lines 11--1
 \TU/Carlito(0)/m/it/12 segmentation mask\TU/Carlito(0)/m/n/12 , serta menghasilkan jumlah instans yang sesuai dengan
  []
 
-[30]
+
 Underfull \hbox (badness 1117) in paragraph at lines 5--6
 \TU/Carlito(0)/m/n/12 objek makanan. Setiap prediksi akhir memuat informasi kelas, lokasi objek,
  []
@@ -875,7 +884,7 @@ Underfull \hbox (badness 6559) in paragraph at lines 9--10
 []\TU/Carlito(0)/m/n/12 Hasil penghitungan diteruskan ke program kalkulasi harga. Program
  []
 
-)))) [31] [32] (./main.bbl
+[32])))) [33] (./main.bbl
 Underfull \hbox (badness 2318) in paragraph at lines 45--46
 []\TU/Carlito(0)/m/n/12 E. Aguilar, B. Remeseiro, M. Bolaños, and P. Radeva, “Grab, pay and
  []
@@ -885,7 +894,7 @@ Underfull \hbox (badness 6173) in paragraph at lines 45--46
 \TU/Carlito(0)/m/n/12 eat: Semantic food detection for smart restaurants,” \TU/Carlito(0)/m/it/12 arXiv preprint
  []
 
-[33
+[34
 
 
 ]
@@ -913,7 +922,7 @@ Underfull \hbox (badness 2318) in paragraph at lines 66--67
 []\TU/Carlito(0)/m/n/12 D. Bolya, C. Zhou, F. Xiao, and Y. J. Lee, “Yolact: Real-time instance
  []
 
-[34]) [35] (./main.aux)
+[35]) [36] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -926,12 +935,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B5CAFD0D937F904ED89A9EBD054EDC25;4516.
  ) 
 Here is how much of TeX's memory you used:
- 13127 strings out of 468176
- 268995 string characters out of 5407950
- 738613 words of memory out of 5000000
- 41626 multiletter control sequences out of 15000+600000
+ 13148 strings out of 468176
+ 269847 string characters out of 5407950
+ 738822 words of memory out of 5000000
+ 41644 multiletter control sequences out of 15000+600000
  630993 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,6n,93p,878b,473s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,6n,93p,883b,473s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (37 pages, 564716 bytes).
+Output written on main.xdv (38 pages, 579204 bytes).

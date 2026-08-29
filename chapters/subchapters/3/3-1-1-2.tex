@@ -1,11 +1,33 @@
 \subsubsection{Anotasi Data}
 
-Citra yang telah lolos tahap seleksi dianotasi untuk menghasilkan \textit{ground truth} yang diperlukan dalam pelatihan, validasi, dan pengujian YOLO11-seg. Anotasi dilakukan pada setiap instans objek makanan yang termasuk dalam kelas penelitian menggunakan CVAT.
+Citra yang telah lolos tahap seleksi dianotasi untuk menghasilkan \textit{ground truth} yang digunakan dalam pelatihan, validasi, dan pengujian YOLO11-seg. Proses anotasi dilakukan menggunakan CVAT terhadap setiap instans objek makanan yang termasuk dalam kelas penelitian.
 
-Anotasi dibuat dalam bentuk poligon yang mengikuti batas objek yang terlihat pada citra. Setiap poligon diberikan label kelas sehingga memuat informasi mengenai jenis dan area objek. Apabila satu citra mengandung lebih dari satu instans dari kelas yang sama, setiap instans dianotasi secara terpisah agar model dapat mempelajari dan menghasilkan \textit{segmentation mask} untuk setiap instans secara individual.
+Kelas anotasi terdiri atas nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Objek makanan di luar sembilan kelas tersebut tidak diberikan anotasi dan diperlakukan sebagai bagian dari latar belakang.
 
-Kelas yang digunakan dalam proses anotasi terdiri atas nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Objek makanan di luar sembilan kelas tersebut tidak diberikan anotasi dan diperlakukan sebagai bagian dari latar belakang.
+Setiap objek dianotasi menggunakan poligon yang mengikuti batas objek yang terlihat pada citra. Poligon tersebut kemudian diberikan label sesuai dengan kelas lauk. Apabila satu citra mengandung lebih dari satu objek dari kelas yang sama, setiap objek dibuat sebagai anotasi yang terpisah. Sebagai contoh, dua perkedel pada satu piring dianotasi menggunakan dua poligon dengan label perkedel sehingga keduanya tetap tercatat sebagai dua instans.
 
-Pada objek yang mengalami oklusi, poligon mengikuti batas bagian objek yang masih terlihat tanpa memperkirakan area yang tertutup oleh objek lain. Ketentuan ini digunakan agar anotasi tetap didasarkan pada informasi visual yang tersedia pada citra.
+Pada tahap awal, pembuatan anotasi dibantu menggunakan fitur AI \textit{Segment Anything} pada CVAT. Fitur ini digunakan untuk menghasilkan batas awal objek secara otomatis berdasarkan objek yang dipilih oleh anotator. Batas yang dihasilkan kemudian diperiksa dan disesuaikan apabila belum mengikuti bentuk objek dengan tepat.
 
-Anotasi yang telah dibuat diperiksa kembali untuk memastikan kesesuaian label kelas, ketepatan poligon terhadap batas objek, dan pemisahan setiap instans. Hasil anotasi kemudian disimpan dalam format yang sesuai dengan kebutuhan YOLO11-seg dan digunakan pada tahap pembagian dataset.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{figures/annotasi_segment_anything.png}
+    \caption{Proses pembuatan anotasi menggunakan fitur \textit{Segment Anything} pada CVAT}
+    \label{fig:annotasi-segment-anything}
+    \par\smallskip
+    {\footnotesize Sumber: Dokumentasi pribadi}
+\end{figure}
+
+Pada tahap berikutnya, proses anotasi dilanjutkan menggunakan fitur OpenCV \textit{Intelligent Scissors} pada CVAT. Penggunaan fitur ini dilakukan dengan menempatkan beberapa titik kendali pada batas objek. Garis di antara titik-titik tersebut dibentuk secara semi-otomatis dengan mengikuti tepian visual objek. Apabila garis yang dihasilkan belum sesuai, titik kendali ditambahkan, dipindahkan, atau dihapus hingga poligon mengikuti batas objek yang terlihat.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/annotasi_intelligent_scissors.png}
+    \caption{Proses pembuatan anotasi menggunakan fitur OpenCV \textit{Intelligent Scissors} pada CVAT}
+    \label{fig:annotasi-intelligent-scissors}
+    \par\smallskip
+    {\footnotesize Sumber: Dokumentasi pribadi}
+\end{figure}
+
+\textit{Segment Anything} dan \textit{Intelligent Scissors} menggunakan mekanisme yang berbeda sehingga batas awal yang dihasilkan dapat memiliki tingkat kerincian dan ketepatan yang berbeda. Oleh karena itu, hasil dari kedua fitur tidak langsung digunakan tanpa pemeriksaan. Setiap poligon diperiksa dan, apabila diperlukan, disesuaikan secara manual dengan ketentuan yang sama. Pemeriksaan mencakup kesesuaian label kelas, ketepatan poligon terhadap batas objek yang terlihat, dan pemisahan setiap objek sebagai instans tersendiri. Dengan demikian, kedua fitur hanya berperan sebagai alat bantu pembuatan poligon, sedangkan keputusan mengenai kelas dan batas anotasi tetap ditentukan melalui pemeriksaan oleh anotator.
+
+Hasil anotasi akhir disimpan dalam format segmentasi Ultralytics YOLO agar dapat digunakan oleh YOLO11-seg. Data anotasi tersebut selanjutnya digunakan pada tahap pembagian dataset.
