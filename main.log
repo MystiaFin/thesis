@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  29 AUG 2026 20:26
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025/nixos.org) (preloaded format=xelatex 1980.1.1)  29 AUG 2026 20:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -707,6 +707,11 @@ Underfull \hbox (badness 1924) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 memahami rancangan sistem \TU/Carlito(0)/m/it/12 checkout \TU/Carlito(0)/m/n/12 otomatis Nasi Padang. Pembahasan
  []
 
+
+Underfull \hbox (badness 1540) in paragraph at lines 3--4
+\TU/Carlito(0)/m/n/12 penyajian yang menjadi ruang lingkup penelitian. Selanjutnya, pembahasan
+ []
+
 [10] (./chapters/subchapters/2/2-2-1.tex
 Underfull \hbox (badness 1158) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 berasal dari Sumatera Barat. Istilah Nasi Padang tidak hanya merujuk pada
@@ -717,22 +722,22 @@ Underfull \hbox (badness 1194) in paragraph at lines 7--8
 \TU/Carlito(0)/m/n/12 Pelanggan kemudian membayar lauk yang dikonsumsi. Sementara itu, pada
  []
 
+[11]
 File: figures/nasi_padang_dine_in.jpg Graphic file (type bmp)
 <figures/nasi_padang_dine_in.jpg>
-[11]
 File: figures/nasi_padang_take_away.jpeg Graphic file (type bmp)
 <figures/nasi_padang_take_away.jpeg>
-) (./chapters/subchapters/2/2-2-2.tex
+ [12]) (./chapters/subchapters/2/2-2-2.tex
 Underfull \hbox (badness 3209) in paragraph at lines 29--1
 \TU/Carlito(0)/m/it/12 take-away\TU/Carlito(0)/m/n/12 , seluruh makanan telah digabungkan dan ditempatkan di dalam
  []
 
-[12]) (./chapters/subchapters/2/2-2-3.tex
+) (./chapters/subchapters/2/2-2-3.tex
 Underfull \hbox (badness 2894) in paragraph at lines 7--1
 \TU/Carlito(0)/m/n/12 makanan untuk memperoleh tampilan objek pada area pengamatan secara
  []
 
-
+[13]
 Underfull \hbox (badness 1412) in paragraph at lines 3--4
 \TU/Carlito(0)/m/it/12 Instance segmentation \TU/Carlito(0)/m/n/12 merupakan tugas \TU/Carlito(0)/m/it/12 Computer Vision \TU/Carlito(0)/m/n/12 yang menghasilkan
  []
@@ -742,10 +747,9 @@ Underfull \hbox (badness 1735) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 wilayah piksel dengan tetap mempertahankan identitas setiap objek sebagai
  []
 
-[13]
 File: figures/perbandingan_instance_segmentation.pdf Graphic file (type pdf)
 <use figures/perbandingan_instance_segmentation.pdf>
- [14]) (./chapters/subchapters/2/2-2-4.tex
+[14]) (./chapters/subchapters/2/2-2-4.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 \TU/Carlito(0)/m/n/12 YOLO11-seg merupakan varian YOLO11 yang mendukung tugas \TU/Carlito(0)/m/it/12 instance
  []
@@ -760,9 +764,10 @@ Underfull \hbox (badness 1603) in paragraph at lines 7--8
 \TU/Carlito(0)/m/n/12 fitur, kemudian berakhir pada tiga blok \TU/Carlito(0)/m/it/12 Segment\TU/Carlito(0)/m/n/12 . Secara umum, \TU/Carlito(0)/m/it/12 backbone
  []
 
+[15]
 File: figures/yolo11-seg-architecture.pdf Graphic file (type pdf)
 <use figures/yolo11-seg-architecture.pdf>
-[15]
+
 Underfull \hbox (badness 1371) in paragraph at lines 18--20
 \TU/Carlito(0)/m/n/12 proses ekstraksi fitur dari keluaran CBS. Rangkaian CBS dan C3k2 digunakan
  []
@@ -777,7 +782,7 @@ Underfull \hbox (badness 1635) in paragraph at lines 24--25
 \TU/Carlito(0)/m/n/12 dengan ukuran spasial yang sama. Pada konsep \TU/Carlito(0)/m/it/12 Feature Pyramid Network\TU/Carlito(0)/m/n/12 ,
  []
 
-
+[17]
 Underfull \hbox (badness 1484) in paragraph at lines 39--40
 \TU/Carlito(0)/m/n/12 dengan kelas yang sama tetap dapat menghasilkan \TU/Carlito(0)/m/it/12 mask \TU/Carlito(0)/m/n/12 yang berbeda dan
  []
@@ -787,7 +792,7 @@ Underfull \hbox (badness 3407) in paragraph at lines 39--40
 \TU/Carlito(0)/m/n/12 untuk menentukan jenis lauk, sedangkan jumlah instans pada setiap kelas
  []
 
-[17]
+
 Underfull \hbox (badness 5771) in paragraph at lines 43--44
 \TU/Carlito(0)/m/n/12 Pelatihan model dapat dimulai dari bobot pralatih agar fitur visual yang
  []
@@ -832,12 +837,12 @@ Underfull \hbox (badness 2020) in paragraph at lines 9--10
 \TU/Carlito(0)/m/n/12 tersebut dengan harga satuannya. Total harga kemudian diperoleh dengan
  []
 
-
+[19]
 Underfull \hbox (badness 1158) in paragraph at lines 24--25
 []\TU/Carlito(0)/m/n/12 Sebagai contoh, apabila sistem mengenali dua instans rendang dan satu
  []
 
-[19]) (./chapters/subchapters/2/2-2-6.tex
+) (./chapters/subchapters/2/2-2-6.tex
 Underfull \hbox (badness 2326) in paragraph at lines 26--1
 \TU/Carlito(0)/m/n/12 ukuran porsi. Harga satuan disimpan secara terpisah dari model sehingga
  []
@@ -847,12 +852,12 @@ Underfull \hbox (badness 3078) in paragraph at lines 27--28
 \TU/Carlito(0)/m/n/12 pada citra, berapa banyak yang berhasil ditemukan oleh model. Nilainya
  []
 
-
+[21]
 Underfull \hbox (badness 4084) in paragraph at lines 43--44
 []\TU/Carlito(0)/m/n/12 Kinerja deteksi secara keseluruhan dirangkum menggunakan \TU/Carlito(0)/m/it/12 box mean
  []
 
-[21]
+
 Underfull \hbox (badness 8132) in paragraph at lines 49--50
 []\TU/Carlito(0)/m/n/12 IoU pada Persamaan []2.2[] juga digunakan dalam evaluasi segmentasi.
  []
@@ -1041,4 +1046,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  73i,17n,93p,883b,481s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (44 pages, 624332 bytes).
+Output written on main.xdv (44 pages, 625740 bytes).

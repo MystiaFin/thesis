@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex main"] 1788009696.02115 "main.aux" "main.bbl" "main" 1788010014.72667 0
+["bibtex main"] 1788011257.43285 "main.aux" "main.bbl" "main" 1788011264.07102 0
   "./references.bib" 1788008040.32394 9485 219ee4c6ec38e71ce628faa33b6c06bc ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/bibtex/bst/ieeetran/IEEEtran.bst" 1 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1788010011.7516 9425 6d5190ba317b4679cded44b4b30da404 "xelatex"
+  "main.aux" 1788011261.12499 9425 7455424d77d4ec4a29d75b23d61b7dd1 "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1788010012.00368 "main.xdv" "main.pdf" "main" 1788010014.72838 0
-  "main.xdv" 1788010011.7536 624332 b1ed37a2d55fb49a8dd7b228bb2786cc "xelatex"
+["xdvipdfmx"] 1788011261.37246 "main.xdv" "main.pdf" "main" 1788011264.07269 0
+  "main.xdv" 1788011261.127 625740 49c8cc13793b7f3ff25257f6a63f3d2e "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1788010008.06608 "main.tex" "main.xdv" "main" 1788010014.72678 0
+["xelatex"] 1788011257.51499 "main.tex" "main.xdv" "main" 1788011264.07113 0
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/map/fontname/texfonts.map" 1 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/nix/store/3b1j5jipjpakdak6par146z865lwq8rp-texlive-2025-r78234-final-env-texmfdist/fonts/tfm/public/cm/cmmi12.tfm" 1 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -96,11 +96,11 @@
   "chapters/subchapters/2/2-1.tex" 1787983864.08835 2627 f3920299332eba9c08df733dc362f88e ""
   "chapters/subchapters/2/2-2-1.tex" 1788008932.35117 3485 3010e3b356bbefdf184c89500ff9d0eb ""
   "chapters/subchapters/2/2-2-2.tex" 1788008907.82057 1092 a73caf11b7703a7509042f7e99dec62e ""
-  "chapters/subchapters/2/2-2-3.tex" 1788008907.82057 2389 079559bd8c4e5546e92045052e53908a ""
+  "chapters/subchapters/2/2-2-3.tex" 1788011251.72206 2388 6b609cf1e579f7cf680aa0d2334309e1 ""
   "chapters/subchapters/2/2-2-4.tex" 1788008907.82057 6133 fb38a5c7ae61c276c48a41fb261b3a32 ""
   "chapters/subchapters/2/2-2-5.tex" 1788009649.64094 2635 842996701eb708418206a2fd8cb7ee8f ""
   "chapters/subchapters/2/2-2-6.tex" 1788008897.12631 6370 0064cde639dea00f929df46a1077f892 ""
-  "chapters/subchapters/2/2-2.tex" 1788009692.21277 696 15330a0e080ccde88306f621282c64ba ""
+  "chapters/subchapters/2/2-2.tex" 1788011157.64682 837 0f6277e69c4fd5115db518b8dc1cf6db ""
   "chapters/subchapters/3/3-1-1-1.tex" 1788007680.67949 4617 59548fdf154835fcb128a0481fe7c6b0 ""
   "chapters/subchapters/3/3-1-1-2.tex" 1787996250.62016 3380 1b668c13e2f5c918088e4990deb4f2f4 ""
   "chapters/subchapters/3/3-1-1-3.tex" 1787819688 1303 5d7822e26211b92402432a6f8b3e0fdc ""
@@ -121,12 +121,12 @@
   "figures/perbandingan_instance_segmentation.pdf" 1787992770.12844 372388 cbc79fed4428b43c3aae57d5321b7b26 ""
   "figures/ringkasan_hasil_crawler.png" 1788006254.24723 93632 24d018eaaf7dd8248b7288500bb773dc ""
   "figures/yolo11-seg-architecture.pdf" 1787988315.13557 82052 2e03d8e5a13b3d0b0f4da238dc392ddc ""
-  "main.aux" 1788010011.7516 9425 6d5190ba317b4679cded44b4b30da404 "xelatex"
-  "main.bbl" 1788009696.09171 5383 36203f1c86faf5de764e1fdfc88b1b85 "bibtex main"
-  "main.lof" 1788010011.7536 1524 094163225bf4e236963098edb400cd47 "xelatex"
-  "main.out" 1788010011.7536 4421 e3c5a8280090d9ca73f85b7607f8f665 "xelatex"
+  "main.aux" 1788011261.12499 9425 7455424d77d4ec4a29d75b23d61b7dd1 "xelatex"
+  "main.bbl" 1788011257.50892 5383 36203f1c86faf5de764e1fdfc88b1b85 "bibtex main"
+  "main.lof" 1788011261.127 1524 c04c96b66d6e44a2b8b826feafe98692 "xelatex"
+  "main.out" 1788011261.127 4421 e3c5a8280090d9ca73f85b7607f8f665 "xelatex"
   "main.tex" 1788009049.55507 1941 b03ac763e654a5f1a4c9488381497e59 ""
-  "main.toc" 1788010011.7536 2437 cc1dc1a0e1a97ae508fd6082b88d9974 "xelatex"
+  "main.toc" 1788011261.127 2437 aa684cf0aa59b1cbd8edec78ca37e366 "xelatex"
   (generated)
   "main.aux"
   "main.lof"

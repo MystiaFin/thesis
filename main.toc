@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {2.2.2}\textit {Computer Vision} dan Citra Digital}{13}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}\textit {Instance Segmentation}}{14}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}YOLO11-seg}{15}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Penghitungan Instans dan Perhitungan Total Harga}{18}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.5}Penghitungan Instans dan Perhitungan Total Harga}{19}{subsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.2.6}Evaluasi Kinerja Model dan Sistem}{20}{subsection.2.2.6}%
 \contentsline {chapter}{\numberline {3}RANCANGAN DAN PEMBUATAN}{24}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Rancangan Sistem}{24}{section.3.1}%
