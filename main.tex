@@ -23,6 +23,7 @@
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{pdfpages}
 
 \titleformat{\chapter}[display]
   {\normalfont\bfseries\fontsize{12pt}{14.4pt}\selectfont\centering}
@@ -64,9 +65,12 @@
 % DOCUMENT
 % =========================================================
 \begin{document}
-
+\includepdf[pages=-]{chapters/cover_proposal.pdf}
+\includepdf[pages=-]{chapters/persetujuan_proposal.pdf}
 \pagenumbering{roman}
 \tableofcontents
+\clearpage
+\listoffigures
 \clearpage
 \pagenumbering{arabic}
 

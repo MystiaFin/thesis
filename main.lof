@@ -1,0 +1,11 @@
+\babel@toc {indonesian}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Contoh penyajian Nasi Padang untuk pelanggan \textit {dine-in}}}{10}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Contoh penyajian Nasi Padang untuk \textit {take-away}}}{10}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram alur pelatihan dan inferensi sistem \textit {checkout} otomatis}}{12}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Perbandingan klasifikasi citra, lokalisasi objek, segmentasi semantik, dan \textit {instance segmentation}}}{14}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Arsitektur YOLO11-seg}}{16}{figure.2.5}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Proses pembuatan anotasi menggunakan fitur \textit {Segment Anything} pada CVAT}}{27}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proses pembuatan anotasi menggunakan fitur OpenCV \textit {Intelligent Scissors} pada CVAT}}{27}{figure.3.2}%
