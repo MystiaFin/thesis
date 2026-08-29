@@ -7,15 +7,15 @@
 \contentsline {section}{\numberline {1.5}Kegunaan Rancangan}{6}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Rancangan yang Sudah Dibuat}{7}{section.1.6}%
 \contentsline {chapter}{\numberline {2}LANDASAN TEORETIK}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Nasi Padang}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Sistem yang Dirancang}{11}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Landasan Teori}{13}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}\textit {Computer Vision} dan Citra Digital}{13}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}\textit {Instance Segmentation}}{14}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}YOLO11-seg}{15}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Penghitungan Instans}{18}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Kalkulasi Harga Berbasis Harga Tetap}{19}{subsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.3.6}Evaluasi Kinerja Model dan Sistem}{20}{subsection.2.3.6}%
+\contentsline {section}{\numberline {2.1}Sistem yang Dirancang}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Landasan Teori}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Nasi Padang}{11}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}\textit {Computer Vision} dan Citra Digital}{13}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}\textit {Instance Segmentation}}{14}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}YOLO11-seg}{15}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Penghitungan Instans}{18}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Kalkulasi Harga Berbasis Harga Tetap}{19}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Evaluasi Kinerja Model dan Sistem}{20}{subsection.2.2.7}%
 \contentsline {chapter}{\numberline {3}RANCANGAN DAN PEMBUATAN}{24}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Rancangan Sistem}{24}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Perencanaan Sistem}{24}{subsection.3.1.1}%
