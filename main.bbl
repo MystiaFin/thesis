@@ -56,8 +56,14 @@ P.~Yeoh, ``Iconic dishes: Your ultimate guide to nasi padang,'' \url{https://gui
 \bibitem{wahyudi2016nasipadang}
 I.~Wahyudi, ``Kenikmatan nasi padang yang membuat lidah bergoyang,'' \url{https://sumbar.antaranews.com/berita/188480/kenikmatan-nasi-padang-yang-membuat-lidah-bergoyang}, Oct. 2016, aNTARA Sumatera Barat, diakses 29 Agustus 2026.
 
-\bibitem{ke2021}
-L.~Ke, Y.-W. Tai, and C.-K. Tang, ``Deep occlusion-aware instance segmentation with overlapping {BiLayers},'' in \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2021, pp. 4019--4028.
+\bibitem{hafiz2020instancesegmentation}
+A.~M. Hafiz and G.~M. Bhat, ``A survey on instance segmentation: State of the art,'' \emph{International Journal of Multimedia Information Retrieval}, vol.~9, no.~3, pp. 171--189, 2020.
+
+\bibitem{lin2017fpn}
+T.-Y. Lin, P.~Doll{\'a}r, R.~Girshick, K.~He, B.~Hariharan, and S.~Belongie, ``Feature pyramid networks for object detection,'' in \emph{2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2017, pp. 936--944.
+
+\bibitem{bolya2019yolact}
+D.~Bolya, C.~Zhou, F.~Xiao, and Y.~J. Lee, ``Yolact: Real-time instance segmentation,'' in \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019, pp. 9157--9166.
 
 \bibitem{yue2023}
 X.~Yue, K.~Qi, X.~Na, Y.~Zhang, Y.~Liu, and C.~Liu, ``Improved yolov8-seg network for instance segmentation of healthy and diseased tomato plants in the growth stage,'' \emph{Agriculture}, vol.~13, no.~8, p. 1643, 2023.

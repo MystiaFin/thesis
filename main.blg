@@ -14,45 +14,45 @@ Warning--I didn't find a database entry for "yang2022"
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 16 entries,
+You've used 18 entries,
             4087 wiz_defined-function locations,
-            913 strings with 10499 characters,
-and the built_in function-call counts, 10600 in all, are:
-= -- 862
-> -- 267
-< -- 54
-+ -- 133
-- -- 55
-* -- 499
-:= -- 1651
-add.period$ -- 36
-call.type$ -- 16
-change.case$ -- 18
-chr.to.int$ -- 99
-cite$ -- 16
-duplicate$ -- 836
-empty$ -- 878
-format.name$ -- 69
-if$ -- 2456
+            924 strings with 10924 characters,
+and the built_in function-call counts, 12574 in all, are:
+= -- 1017
+> -- 321
+< -- 74
++ -- 163
+- -- 64
+* -- 594
+:= -- 1921
+add.period$ -- 41
+call.type$ -- 18
+change.case$ -- 20
+chr.to.int$ -- 147
+cite$ -- 18
+duplicate$ -- 972
+empty$ -- 1033
+format.name$ -- 80
+if$ -- 2924
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 158
-newline$ -- 71
-num.names$ -- 16
-pop$ -- 381
+int.to.str$ -- 18
+missing$ -- 182
+newline$ -- 77
+num.names$ -- 18
+pop$ -- 437
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 825
+skip$ -- 976
 stack$ -- 0
-substring$ -- 292
-swap$ -- 619
-text.length$ -- 21
+substring$ -- 406
+swap$ -- 738
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 16
+type$ -- 18
 warning$ -- 0
-while$ -- 41
-width$ -- 18
-write$ -- 173
+while$ -- 51
+width$ -- 20
+write$ -- 193
 (There was 1 warning)

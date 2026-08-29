@@ -1,55 +1,70 @@
 \subsection{Evaluasi Kinerja Model dan Sistem}
 
-Evaluasi dilakukan untuk menilai kemampuan YOLO11-seg dalam mengenali objek serta kemampuan sistem dalam mengolah hasil prediksi menjadi jumlah lauk dan total harga. Evaluasi model mencakup hasil deteksi dan segmentasi, sedangkan evaluasi sistem mencakup ketepatan penghitungan instans dan kecepatan pemrosesan.
+Evaluasi dilakukan untuk menjawab empat pertanyaan. Pertama, apakah model dapat menemukan dan mengenali kelas lauk dengan benar. Kedua, apakah bentuk \textit{mask} yang dihasilkan sesuai dengan bentuk lauk sebenarnya. Ketiga, apakah jumlah lauk pada setiap kelas telah dihitung dengan benar. Keempat, berapa lama waktu yang diperlukan model untuk memproses satu citra.
 
-\subsubsection*{a. Evaluasi Deteksi dan Segmentasi}
+Metrik evaluasi pada bagian ini berbeda dari \textit{loss}. Nilai \textit{loss} digunakan selama pelatihan untuk membantu model memperbaiki bobotnya. Setelah pelatihan selesai, metrik evaluasi digunakan untuk mengukur kemampuan model pada data pengujian.
 
-Kesesuaian antara prediksi dan \textit{ground truth} dapat diukur menggunakan \textit{Intersection over Union} (IoU). IoU merupakan perbandingan antara luas irisan dan luas gabungan wilayah prediksi dengan \textit{ground truth}, dan digunakan dalam evaluasi model segmentasi berbasis YOLO \cite{qiu2025}. Jika $A$ merupakan wilayah prediksi dan $B$ merupakan wilayah \textit{ground truth}, IoU dinyatakan sebagai:
+\subsubsection*{a. Evaluasi Deteksi dan Pengenalan Kelas}
+
+Bagian ini menilai apakah model berhasil menemukan lauk, memberikan kelas yang benar, dan menentukan lokasi lauk menggunakan \textit{bounding box}. Sebagai contoh, apabila terdapat rendang pada citra, model diharapkan dapat menemukan objek tersebut, memberikan kelas rendang, dan menempatkan \textit{bounding box} pada lokasi yang sesuai.
+
+Kesesuaian lokasi diukur menggunakan \textit{Intersection over Union} (IoU). IoU membandingkan luas bagian yang saling bertumpang tindih dengan luas gabungan antara wilayah prediksi dan \textit{ground truth}. Jika $A$ merupakan wilayah prediksi dan $B$ merupakan wilayah \textit{ground truth}, IoU dinyatakan pada Persamaan~\ref{eq:iou} \cite{qiu2025}.
 
 \begin{equation}
     IoU(A,B) = \frac{|A \cap B|}{|A \cup B|}
     \label{eq:iou}
 \end{equation}
 
-Berdasarkan pencocokan antara prediksi dan \textit{ground truth}, hasil prediksi dapat dikelompokkan menjadi \textit{true positive} (TP), \textit{false positive} (FP), dan \textit{false negative} (FN). \textit{Precision}, \textit{recall}, dan \textit{F1-score} merupakan metrik yang umum digunakan untuk mengevaluasi hasil deteksi dan \textit{instance segmentation}. Rumus ketiga metrik tersebut juga digunakan dalam penelitian \textit{instance segmentation} berbasis YOLOv8-Seg \cite{yue2023}.
+Nilai IoU mendekati satu menunjukkan bahwa kedua wilayah semakin sesuai. Pada evaluasi deteksi, wilayah yang dibandingkan adalah \textit{bounding box}. Prediksi yang kelas dan \textit{bounding box}-nya sesuai dengan \textit{ground truth} dinyatakan sebagai \textit{true positive} (TP). Prediksi yang tidak sesuai dinyatakan sebagai \textit{false positive} (FP), sedangkan objek yang terdapat pada \textit{ground truth} tetapi tidak ditemukan oleh model dinyatakan sebagai \textit{false negative} (FN).
 
-\textit{Precision} menunjukkan proporsi prediksi positif yang benar dan dinyatakan sebagai:
+\textit{Precision} menjawab pertanyaan: dari seluruh objek yang ditemukan oleh model, berapa banyak yang benar. Nilainya dinyatakan pada Persamaan~\ref{eq:precision}.
 
 \begin{equation}
     \textit{Precision} = \frac{TP}{TP + FP}\times 100\%
     \label{eq:precision}
 \end{equation}
 
-\textit{Recall} menunjukkan proporsi objek sebenarnya yang berhasil dikenali dan dinyatakan sebagai:
+\textit{Recall} menjawab pertanyaan: dari seluruh objek yang sebenarnya terdapat pada citra, berapa banyak yang berhasil ditemukan oleh model. Nilainya dinyatakan pada Persamaan~\ref{eq:recall}.
 
 \begin{equation}
     \textit{Recall} = \frac{TP}{TP + FN}\times 100\%
     \label{eq:recall}
 \end{equation}
 
-Nilai \textit{F1-score} merupakan rata-rata harmonik dari \textit{precision} dan \textit{recall}, yang dinyatakan sebagai:
+\textit{F1-score} menggabungkan \textit{precision} dan \textit{recall} menjadi satu nilai. Metrik ini digunakan untuk melihat keseimbangan antara ketepatan prediksi dan kemampuan model menemukan objek. \textit{F1-score} dinyatakan pada Persamaan~\ref{eq:f1} \cite{yue2023}.
 
 \begin{equation}
-    F1 = 2 \times
-		{\textit{Precision}} \times
+    F1 = 2 \times {\textit{Precision}} \times
     \frac{\textit{Recall}}
          {\textit{Precision} + \textit{Recall}}
     \label{eq:f1}
 \end{equation}
 
-Selain itu, performa YOLO11-seg dinilai menggunakan \textit{mean Average Precision} (mAP). mAP50 menunjukkan nilai mAP pada ambang IoU 0,50, sedangkan mAP50--95 merangkum performa pada rentang ambang IoU 0,50 hingga 0,95. Pada model segmentasi, metrik mAP dapat dilaporkan untuk hasil \textit{bounding box} dan \textit{segmentation mask} \cite{qiu2025,syafira2025}.
+Kinerja deteksi secara keseluruhan dirangkum menggunakan \textit{box mean Average Precision} (\textit{box mAP}). \textit{Box mAP50} menggunakan ambang IoU sebesar 0,50. \textit{Box mAP50--95} menggunakan beberapa ambang IoU dari 0,50 hingga 0,95 sehingga penilaiannya lebih ketat. Nilai yang lebih tinggi menunjukkan performa deteksi dan pengenalan kelas yang lebih baik \cite{qiu2025,syafira2025}.
 
-\subsubsection*{b. Evaluasi Penghitungan Instans}
+\subsubsection*{b. Evaluasi Segmentasi}
 
-Metrik deteksi dan segmentasi belum secara langsung menunjukkan seberapa tepat jumlah objek yang dihasilkan sistem. Pada penelitian SibNet, \textit{Mean Absolute Error} (MAE) digunakan untuk mengevaluasi kesalahan penghitungan instans makanan berdasarkan selisih absolut antara jumlah prediksi dan jumlah acuan \cite{nguyen2022sibnet}. Pada penelitian ini, bentuk MAE tersebut disesuaikan untuk menghitung kesalahan penghitungan pada masing-masing kelas lauk. Untuk kelas ke-$i$ pada $N$ citra pengujian, MAE dinyatakan dengan Persamaan~\ref{eq:mae-count}.
+Bagian ini menilai apakah \textit{mask} hasil prediksi mengikuti bentuk lauk dengan benar. Sebagai contoh, \textit{mask} rendang seharusnya menutupi piksel yang termasuk rendang dan tidak menutupi bagian piring atau lauk lainnya.
+
+IoU pada Persamaan~\ref{eq:iou} juga digunakan dalam evaluasi segmentasi. Perbedaannya, wilayah $A$ dan $B$ yang dibandingkan pada bagian ini adalah \textit{mask} prediksi dan \textit{mask ground truth}, bukan \textit{bounding box}. Semakin besar tumpang tindih kedua \textit{mask}, semakin tinggi nilai IoU.
+
+Kinerja segmentasi dirangkum menggunakan \textit{mask precision}, \textit{mask recall}, \textit{mask mAP50}, dan \textit{mask mAP50--95}. Pengertian \textit{precision} dan \textit{recall} tetap sama, tetapi kecocokan prediksi ditentukan berdasarkan tumpang tindih \textit{mask}. \textit{Mask mAP50} menggunakan ambang mask IoU sebesar 0,50, sedangkan \textit{mask mAP50--95} menggunakan beberapa ambang dari 0,50 hingga 0,95 \cite{qiu2025,syafira2025}. Dalam penelitian ini, IoU dijelaskan sebagai dasar pencocokan \textit{mask}, sedangkan hasil segmentasi dilaporkan menggunakan metrik \textit{mask mAP}.
+
+\subsubsection*{c. Evaluasi Penghitungan Instans}
+
+Bagian ini menilai apakah sistem menghasilkan jumlah lauk yang benar pada setiap kelas. Penghitungan dilakukan berdasarkan banyaknya instans hasil prediksi akhir, bukan berdasarkan luas \textit{mask}, berat, volume, atau ukuran porsi.
+
+Sebagai contoh, apabila pada suatu citra terdapat dua rendang tetapi sistem hanya menghitung satu rendang, selisih jumlahnya adalah satu. Jika jumlah pada \textit{ground truth} dan hasil prediksi sama-sama dua, selisih jumlahnya adalah nol.
+
+\textit{Mean Absolute Error} (MAE) digunakan untuk menghitung rata-rata selisih jumlah tersebut pada seluruh citra pengujian \cite{nguyen2022sibnet}. Untuk kelas ke-$i$ pada $N$ citra pengujian, MAE dinyatakan pada Persamaan~\ref{eq:mae-count}.
 
 \begin{equation}
     MAE_i = \frac{1}{N} \sum_{j=1}^{N} \left|\hat{n}_{ji} - n_{ji}\right|
     \label{eq:mae-count}
 \end{equation}
 
-Pada persamaan tersebut, $i$ menunjukkan kelas yang sedang dinilai, $j$ menunjukkan citra pengujian, $\hat{n}_{ji}$ merupakan jumlah instans hasil prediksi pada citra ke-$j$ untuk kelas ke-$i$, sedangkan $n_{ji}$ merupakan jumlah instans berdasarkan \textit{ground truth}. Nilai MAE yang lebih kecil menunjukkan rata-rata kesalahan penghitungan yang lebih rendah, sedangkan nilai nol menunjukkan tidak terdapat selisih jumlah pada data yang dievaluasi.
+Pada persamaan tersebut, $i$ menunjukkan kelas lauk yang sedang dinilai dan $j$ menunjukkan citra pengujian. Nilai $\hat{n}_{ji}$ adalah jumlah hasil prediksi, sedangkan $n_{ji}$ adalah jumlah berdasarkan \textit{ground truth}. Nilai MAE yang semakin kecil menunjukkan hasil penghitungan yang semakin baik. MAE bernilai nol berarti tidak terdapat perbedaan antara jumlah prediksi dan jumlah sebenarnya pada data yang dievaluasi.
 
-\subsubsection*{c. Kecepatan Inferensi}
+\subsubsection*{d. Evaluasi Kecepatan Inferensi}
 
-Kecepatan model dapat dinilai berdasarkan waktu inferensi rata-rata yang diperlukan untuk memproses satu citra. Penggunaan waktu inferensi sebagai salah satu indikator performa juga ditemukan pada penelitian segmentasi berbasis YOLO untuk menilai kesesuaian model terhadap kebutuhan pemrosesan secara \textit{real-time} \cite{syafira2025}. Perangkat, data pengujian, dan prosedur pengukuran yang digunakan dijelaskan pada Bab III.
+Bagian ini menilai waktu yang diperlukan model untuk memproses satu citra. Kecepatan dilaporkan sebagai waktu inferensi rata-rata per citra. Waktu yang lebih kecil menunjukkan bahwa model dapat menghasilkan prediksi dengan lebih cepat \cite{syafira2025}. Perangkat, data pengujian, dan prosedur pengukurannya dijelaskan pada Bab III.

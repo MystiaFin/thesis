@@ -183,6 +183,9 @@ INPUT ./chapters/subchapters/2/2-3-2.tex
 INPUT ./chapters/subchapters/2/2-3-2.tex
 INPUT ./chapters/subchapters/2/2-3-2.tex
 INPUT chapters/subchapters/2/2-3-2.tex
+INPUT ./figures/perbandingan_instance_segmentation.pdf
+INPUT ./figures/perbandingan_instance_segmentation.pdf
+INPUT ./figures/perbandingan_instance_segmentation.pdf
 INPUT ./chapters/subchapters/2/2-3-3.tex
 INPUT ./chapters/subchapters/2/2-3-3.tex
 INPUT ./chapters/subchapters/2/2-3-3.tex

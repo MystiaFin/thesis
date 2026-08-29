@@ -4,7 +4,7 @@ YOLO11-seg merupakan varian YOLO11 yang mendukung tugas \textit{instance segment
 
 \subsubsection*{a. Arsitektur YOLO11-seg}
 
-Diagram arsitektur YOLO11-seg memperlihatkan tiga bagian utama, yaitu \textit{backbone}, \textit{neck}, dan \textit{segmentation head}. Aliran pemrosesan dimulai dari citra masukan pada sisi kiri diagram, dilanjutkan dengan ekstraksi dan penggabungan fitur, kemudian berakhir pada tiga blok \textit{Segment}. Secara ringkas, \textit{backbone} bertugas mengekstraksi fitur dari citra, \textit{neck} menggabungkan fitur pada beberapa skala, dan \textit{segmentation head} menghasilkan informasi kelas, lokasi objek, serta segmentasi untuk setiap instans \cite{khanam2024,qiu2025}.
+Diagram arsitektur YOLO11-seg memperlihatkan tiga bagian utama, yaitu \textit{backbone}, \textit{neck}, dan \textit{segmentation head}. Aliran pemrosesan dimulai dari citra masukan pada sisi kiri diagram, dilanjutkan dengan ekstraksi dan penggabungan fitur, kemudian berakhir pada tiga blok \textit{Segment}. Secara umum, \textit{backbone} bertugas mengekstraksi fitur dari citra, \textit{neck} menggabungkan fitur pada beberapa skala, sedangkan \textit{segmentation head} menghasilkan informasi kelas, lokasi objek, dan segmentasi untuk setiap instans \cite{khanam2024,qiu2025}.
 
 \begin{figure}[H]
     \centering
@@ -16,60 +16,27 @@ Diagram arsitektur YOLO11-seg memperlihatkan tiga bagian utama, yaitu \textit{ba
 \end{figure}
 
 \noindent\textbf{\textit{Backbone}.}
-Pada bagian paling kiri diagram, citra masukan diproses secara bertahap melalui rangkaian modul CBS dan C3k2. CBS terdiri atas operasi konvolusi, \textit{batch normalization}, dan fungsi aktivasi SiLU, sedangkan C3k2 digunakan untuk melanjutkan proses ekstraksi fitur secara efisien. Setelah melewati beberapa tahapan tersebut, fitur diproses oleh SPPF (\textit{Spatial Pyramid Pooling--Fast}) untuk mengumpulkan informasi konteks melalui operasi \textit{pooling} pada beberapa cakupan. Bagian akhir \textit{backbone} memuat modul C2PSA yang menggunakan mekanisme perhatian untuk menekankan informasi fitur yang relevan. Susunan pada diagram juga menunjukkan bahwa ukuran spasial fitur semakin mengecil pada tahapan yang lebih dalam, sementara informasi yang dibawa fitur menjadi semakin kaya \cite{khanam2024,qiu2025}.
-
-% Aktifkan blok berikut setelah gambar close-up backbone tersedia.
-% Jika gambar dipotong dari diagram asli, gunakan keterangan ``Diadaptasi dari''.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{figures/yolo11-seg-backbone}
-%     \caption{Bagian \textit{backbone} pada arsitektur YOLO11-seg}
-%     \label{fig:backbone-yolo11-seg}
-%     \par\smallskip
-%     {\footnotesize Sumber: Diadaptasi dari \cite{qiu2025}}
-% \end{figure}
+Pada bagian atas diagram, citra masukan diproses secara bertahap melalui rangkaian modul CBS dan C3k2. CBS terdiri atas operasi konvolusi, \textit{batch normalization}, dan fungsi aktivasi SiLU. Setelah itu, modul C3k2 melanjutkan proses ekstraksi fitur dari keluaran CBS. Rangkaian CBS dan C3k2 digunakan beberapa kali sehingga ukuran spasial peta fitur semakin kecil pada tahapan yang lebih dalam, sementara informasi yang direpresentasikan menjadi semakin kuat. Pada bagian akhir \textit{backbone}, SPPF (\textit{Spatial Pyramid Pooling--Fast}) mengumpulkan informasi konteks melalui operasi \textit{pooling} pada beberapa cakupan, kemudian C2PSA menggunakan mekanisme perhatian untuk menekankan informasi fitur yang relevan \cite{khanam2024,qiu2025}.
 
 \noindent\textbf{\textit{Neck}.}
-Bagian tengah diagram memperlihatkan bahwa fitur dari beberapa tingkat \textit{backbone} tidak langsung diteruskan ke keluaran. Fitur tersebut terlebih dahulu diproses melalui operasi \textit{upsample}, \textit{concat}, CBS, dan C3k2. Operasi \textit{upsample} memperbesar resolusi peta fitur, sedangkan \textit{concat} menggabungkan fitur tersebut dengan fitur dari tahapan lain. Jalur penggabungan berlangsung dari fitur yang lebih dalam menuju fitur beresolusi lebih tinggi dan kemudian kembali menuju fitur beresolusi lebih rendah. Dengan susunan tersebut, \textit{neck} memadukan detail spasial dari fitur beresolusi tinggi dengan informasi semantik dari fitur yang lebih dalam. Hasilnya adalah tiga tingkat fitur, yaitu P3, P4, dan P5, yang diteruskan ke bagian keluaran \cite{khanam2024,qiu2025}.
+Bagian tengah diagram memperlihatkan bahwa fitur dari \textit{backbone} tidak langsung diteruskan ke bagian keluaran. Fitur terdalam terlebih dahulu diperbesar resolusinya melalui operasi \textit{upsample}, kemudian digabungkan dengan fitur dari tahapan sebelumnya melalui operasi \textit{concat}. Jalur ini membawa informasi semantik dari fitur yang lebih dalam menuju fitur beresolusi lebih tinggi. Setelah itu, terdapat jalur kembali menuju resolusi yang lebih rendah melalui modul CBS dan operasi \textit{concat}. Susunan tersebut memungkinkan detail spasial dari fitur beresolusi tinggi dipadukan dengan informasi semantik dari fitur yang lebih dalam \cite{khanam2024,qiu2025}.
 
-% Aktifkan blok berikut setelah gambar close-up neck tersedia.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{figures/yolo11-seg-neck}
-%     \caption{Penggabungan fitur pada bagian \textit{neck} YOLO11-seg}
-%     \label{fig:neck-yolo11-seg}
-%     \par\smallskip
-%     {\footnotesize Sumber: Diadaptasi dari \cite{qiu2025}}
-% \end{figure}
+Dalam satu tingkat resolusi, beberapa lapisan dapat menghasilkan peta fitur dengan ukuran spasial yang sama. Pada konsep \textit{Feature Pyramid Network}, keluaran dari lapisan terakhir pada setiap tingkat dipilih karena telah melalui pemrosesan yang lebih dalam sehingga diharapkan memiliki representasi fitur yang lebih kuat \cite{lin2017fpn}. Prinsip tersebut terlihat pada diagram YOLO11-seg melalui penggunaan keluaran setelah modul C3k2 pada tingkat P3, P4, dan P5 dalam proses penggabungan fitur. Ketiga tingkat tersebut menghasilkan peta fitur dengan resolusi berbeda dan selanjutnya diteruskan ke bagian \textit{segmentation head}.
 
 \noindent\textbf{\textit{Segmentation head}.}
-Pada bagian kanan diagram, fitur P3, P4, dan P5 masing-masing terhubung dengan satu blok \textit{Segment}. Ketiga tingkat fitur tersebut memungkinkan model melakukan prediksi terhadap objek dengan ukuran yang berbeda. Setiap blok \textit{Segment} menghasilkan informasi yang diperlukan untuk memprediksi kelas objek, posisi \textit{bounding box}, dan segmentasi instans. Dengan demikian, klasifikasi lauk, penentuan lokasi objek, dan segmentasi tidak dilakukan oleh tiga model yang terpisah, tetapi dihasilkan dari fitur bersama dalam satu arsitektur YOLO11-seg \cite{qiu2025}.
+Pada bagian \textit{head} yang terletak di bawah \textit{neck}, fitur P3, P4, dan P5 masing-masing diteruskan ke blok \textit{Segment}. Penggunaan tiga tingkat fitur memungkinkan model melakukan prediksi terhadap objek pada skala yang berbeda. Bagian ini menghasilkan prediksi kelas objek dan posisi \textit{bounding box}, serta informasi yang diperlukan untuk membentuk \textit{mask} setiap instans. Oleh karena itu, klasifikasi lauk, penentuan lokasi objek, dan segmentasi dihasilkan dalam satu arsitektur YOLO11-seg, bukan melalui model yang terpisah \cite{qiu2025}.
 
-% Aktifkan blok berikut setelah gambar close-up segmentation head tersedia.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{figures/yolo11-seg-head}
-%     \caption{Bagian \textit{segmentation head} pada arsitektur YOLO11-seg}
-%     \label{fig:head-yolo11-seg}
-%     \par\smallskip
-%     {\footnotesize Sumber: Diadaptasi dari \cite{qiu2025}}
-% \end{figure}
+Diagram arsitektur utama hanya menampilkan bagian ini sebagai blok
+\textit{Segment} dan tidak memperlihatkan proses pembentukan \textit{mask}
+secara terperinci. Di dalam \textit{segmentation head}, fitur yang diterima
+digunakan untuk menghasilkan prediksi kelas, posisi \textit{bounding box},
+dan koefisien \textit{mask}. Selain itu, dibentuk sekumpulan
+\textit{prototype mask} yang digunakan bersama oleh seluruh kandidat objek.
+Koefisien \textit{mask} dari setiap objek kemudian dikombinasikan dengan
+\textit{prototype mask} untuk menghasilkan \textit{mask} khusus bagi objek
+tersebut \cite{bolya2019yolact,qiu2025}.
 
-Mekanisme pembentukan \textit{mask} pada bagian keluaran mengikuti konsep dua cabang. Cabang pertama menghasilkan prediksi kelas, koordinat \textit{bounding box}, dan koefisien \textit{mask} untuk setiap kandidat objek. Cabang kedua menghasilkan sekumpulan \textit{prototype mask} yang digunakan bersama. Koefisien \textit{mask} dari suatu objek kemudian dikombinasikan dengan \textit{prototype mask} untuk membentuk \textit{mask} khusus bagi instans tersebut. Oleh karena itu, dua objek dengan kelas yang sama tetap dapat memperoleh \textit{mask} yang berbeda dan dihitung sebagai dua instans terpisah \cite{qiu2025}.
-
-% Diagram utama tidak memperlihatkan proses pembentukan mask secara terperinci.
-% Gambar berikut sebaiknya dibuat ulang sebagai diagram sederhana yang menunjukkan
-% alur prototype mask + koefisien mask -> mask setiap instans.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{figures/yolo11-seg-mask-formation}
-%     \caption{Mekanisme pembentukan \textit{mask} setiap instans pada YOLO11-seg}
-%     \label{fig:pembentukan-mask-yolo11-seg}
-%     \par\smallskip
-%     {\footnotesize Sumber: Diadaptasi dari \cite{qiu2025}}
-% \end{figure}
-
-Melalui alur tersebut, satu citra dapat menghasilkan sejumlah prediksi instans yang masing-masing memiliki kelas, lokasi, dan \textit{mask}. Dalam penelitian ini, kelas hasil prediksi digunakan untuk menentukan jenis lauk, sedangkan jumlah instans pada setiap kelas digunakan dalam proses kalkulasi harga.
+Karena setiap kandidat objek memiliki koefisien \textit{mask} tersendiri, dua objek dengan kelas yang sama tetap dapat menghasilkan \textit{mask} yang berbeda dan dihitung sebagai dua instans. Dalam penelitian ini, kelas hasil prediksi digunakan untuk menentukan jenis lauk, sedangkan jumlah instans pada setiap kelas digunakan dalam proses kalkulasi harga.
 
 \subsubsection*{b. Pelatihan YOLO11-seg}
 

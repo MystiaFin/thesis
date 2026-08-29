@@ -1,9 +1,18 @@
 \subsection{\textit{Instance Segmentation}}
 
-\textit{Instance segmentation} merupakan tugas \textit{Computer Vision} yang menghasilkan informasi kelas dan wilayah piksel untuk setiap instans objek. Berbeda dengan segmentasi semantik yang memberikan label kelas pada piksel tanpa membedakan objek dari kelas yang sama, \textit{instance segmentation} mempertahankan identitas setiap objek sebagai instans yang terpisah \cite{he2017maskrcnn}.
+\textit{Instance segmentation} merupakan tugas \textit{Computer Vision} yang menghasilkan kelas dan \textit{mask} pada tingkat piksel untuk setiap instans objek. Berbeda dengan deteksi objek yang menunjukkan lokasi objek menggunakan \textit{bounding box}, \textit{instance segmentation} juga menunjukkan wilayah piksel yang membentuk objek tersebut. Sementara itu, segmentasi semantik memberikan label kelas pada setiap piksel tanpa membedakan objek berbeda yang termasuk dalam kelas yang sama. Dengan demikian, \textit{instance segmentation} menggabungkan informasi kelas, lokasi, dan wilayah piksel dengan tetap mempertahankan identitas setiap objek sebagai instans yang terpisah \cite{he2017maskrcnn,hafiz2020instancesegmentation}.
 
-Pemisahan pada tingkat instans sesuai dengan kebutuhan sistem karena satu piring dapat mengandung lebih dari satu lauk dari kelas yang sama. Setiap objek perlu dipertahankan sebagai instans yang berbeda agar jumlahnya dapat dihitung secara individual. Pemanfaatan segmentasi dan penghitungan pada tingkat instans juga digunakan pada penelitian SibNet dan FoodMask untuk mengenali serta menghitung objek makanan \cite{nguyen2022sibnet,nguyen2023foodmask}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/perbandingan_instance_segmentation.pdf}
+    \caption{Perbandingan klasifikasi citra, lokalisasi objek, segmentasi semantik, dan \textit{instance segmentation}}
+    \label{fig:perbandingan-instance-segmentation}
+    \par\smallskip
+    {\footnotesize Sumber: \cite{hafiz2020instancesegmentation}}
+\end{figure}
 
-Kondisi oklusi dapat menjadi tantangan dalam \textit{instance segmentation} karena sebagian area objek dapat tertutup oleh objek lain sehingga informasi visual yang tersedia berkurang \cite{ke2021}. Oleh karena itu, kondisi oklusi dipandang sebagai salah satu faktor yang dapat memengaruhi hasil prediksi model dan bukan sebagai kondisi yang diasumsikan selalu dapat ditangani secara sempurna.
+Perbedaan antara segmentasi semantik dan \textit{instance segmentation} menjadi penting ketika terdapat lebih dari satu objek dari kelas yang sama. Sebagai contoh, apabila terdapat dua perkedel pada satu piring, segmentasi semantik memberikan label kelas perkedel pada piksel kedua objek tersebut tanpa mempertahankan identitas masing-masing objek. Sebaliknya, \textit{instance segmentation} menghasilkan \textit{mask} yang terpisah untuk perkedel pertama dan perkedel kedua. Pemisahan tersebut memungkinkan keduanya dihitung sebagai dua instans meskipun memiliki kelas yang sama.
 
-Pada sistem yang dirancang, keluaran \textit{instance segmentation} digunakan untuk memperoleh kelas dan identitas setiap instans lauk. Luas \textit{segmentation mask} tidak digunakan untuk menentukan harga maupun jumlah lauk; jumlah ditentukan berdasarkan banyaknya instans yang dipertahankan sebagai hasil prediksi akhir.
+Pemisahan pada tingkat instans sesuai dengan kebutuhan sistem karena satu piring dapat mengandung lebih dari satu lauk dari kelas yang sama. Pendekatan segmentasi dan penghitungan pada tingkat instans juga telah digunakan untuk mengenali dan menghitung objek makanan \cite{nguyen2022sibnet,nguyen2023foodmask}.
+
+Pada sistem yang dirancang, keluaran \textit{instance segmentation} digunakan untuk memperoleh kelas dan identitas setiap instans lauk. Jumlah lauk ditentukan berdasarkan banyaknya instans yang terdapat pada hasil prediksi akhir. Luas \textit{segmentation mask} tidak digunakan untuk menentukan jumlah maupun harga lauk.
