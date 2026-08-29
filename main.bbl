@@ -50,19 +50,22 @@ M.-Y. Wu, J.-H. Lee, and C.-Y. Hsueh, ``A framework of visual checkout system us
 \bibitem{aditama2022}
 N.~Aditama and R.~Munir, ``Indonesian street food calorie estimation using mask r-cnn and multiple linear regression,'' in \emph{2022 Second International Conference on Power, Control and Computing Technologies (ICPC2T)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2022, pp. 1--6.
 
+\bibitem{yeoh2024nasipadang}
+P.~Yeoh, ``Iconic dishes: Your ultimate guide to nasi padang,'' \url{https://guide.michelin.com/ae-az/en/article/features/ultimate-guide-to-nasi-padang}, Oct. 2024, mICHELIN Guide, diakses 29 Agustus 2026.
+
+\bibitem{wahyudi2016nasipadang}
+I.~Wahyudi, ``Kenikmatan nasi padang yang membuat lidah bergoyang,'' \url{https://sumbar.antaranews.com/berita/188480/kenikmatan-nasi-padang-yang-membuat-lidah-bergoyang}, Oct. 2016, aNTARA Sumatera Barat, diakses 29 Agustus 2026.
+
 \bibitem{ke2021}
 L.~Ke, Y.-W. Tai, and C.-K. Tang, ``Deep occlusion-aware instance segmentation with overlapping {BiLayers},'' in \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2021, pp. 4019--4028.
-
-\bibitem{syafira2025}
-N.~H. Syafira, S.~A. Khoerunisa, D.~N.~P. Cantika, and Junervin, ``A deep learning approach for real-time segmentation of graphene layers using the yolo11-seg architecture,'' \emph{Proceedings of the 1st International Conference on Business, Innovation, Technology \& Science}, 2025.
 
 \bibitem{yue2023}
 X.~Yue, K.~Qi, X.~Na, Y.~Zhang, Y.~Liu, and C.~Liu, ``Improved yolov8-seg network for instance segmentation of healthy and diseased tomato plants in the growth stage,'' \emph{Agriculture}, vol.~13, no.~8, p. 1643, 2023.
 
+\bibitem{syafira2025}
+N.~H. Syafira, S.~A. Khoerunisa, D.~N.~P. Cantika, and Junervin, ``A deep learning approach for real-time segmentation of graphene layers using the yolo11-seg architecture,'' \emph{Proceedings of the 1st International Conference on Business, Innovation, Technology \& Science}, 2025.
+
 \bibitem{tampu2022}
 I.~E. Tampu, A.~Eklund, and N.~Haj-Hosseini, ``Inflation of test accuracy due to data leakage in deep learning-based classification of {OCT} images,'' \emph{Scientific Data}, vol.~9, no.~1, p. 580, 2022.
-
-\bibitem{yang2022}
-S.~Yang, W.~Xiao, M.~Zhang, S.~Guo, J.~Zhao, and F.~Shen, ``Image data augmentation for deep learning: A survey,'' \emph{CoRR}, vol. abs/2204.08610, 2022.
 
 \end{thebibliography}

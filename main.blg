@@ -8,54 +8,51 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
-Repeated entry---line 217 of file references.bib
- : @article{yue2023
- :                 ,
-I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "yang2022"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 15 entries,
+You've used 16 entries,
             4087 wiz_defined-function locations,
-            906 strings with 10224 characters,
-and the built_in function-call counts, 10364 in all, are:
-= -- 832
-> -- 284
-< -- 55
-+ -- 141
-- -- 59
-* -- 500
-:= -- 1594
-add.period$ -- 34
-call.type$ -- 15
-change.case$ -- 15
+            913 strings with 10499 characters,
+and the built_in function-call counts, 10600 in all, are:
+= -- 862
+> -- 267
+< -- 54
++ -- 133
+- -- 55
+* -- 499
+:= -- 1651
+add.period$ -- 36
+call.type$ -- 16
+change.case$ -- 18
 chr.to.int$ -- 99
-cite$ -- 15
-duplicate$ -- 813
-empty$ -- 846
-format.name$ -- 74
-if$ -- 2404
+cite$ -- 16
+duplicate$ -- 836
+empty$ -- 878
+format.name$ -- 69
+if$ -- 2456
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 153
-newline$ -- 68
-num.names$ -- 15
-pop$ -- 371
+int.to.str$ -- 16
+missing$ -- 158
+newline$ -- 71
+num.names$ -- 16
+pop$ -- 381
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 804
+skip$ -- 825
 stack$ -- 0
-substring$ -- 287
-swap$ -- 605
-text.length$ -- 22
+substring$ -- 292
+swap$ -- 619
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 15
+type$ -- 16
 warning$ -- 0
-while$ -- 40
-width$ -- 17
-write$ -- 164
-(There was 1 error message)
+while$ -- 41
+width$ -- 18
+write$ -- 173
+(There was 1 warning)
