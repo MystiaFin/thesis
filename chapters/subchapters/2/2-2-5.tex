@@ -1,0 +1,26 @@
+\subsection{Penghitungan Instans dan Perhitungan Total Harga}
+
+Penghitungan objek makanan dilakukan berdasarkan hasil prediksi akhir YOLO11-seg. Setiap prediksi akhir merepresentasikan satu instans objek, sedangkan label kelas menentukan kelompok tempat instans tersebut dihitung. Dengan demikian, penghitungan dilakukan berdasarkan jumlah instans yang dikenali, bukan berdasarkan jumlah piksel atau luas \textit{segmentation mask}.
+
+Program memeriksa setiap hasil prediksi dan menambahkan jumlah pada kelas yang sesuai. Apabila hasil inferensi menghasilkan dua instans rendang dan satu instans perkedel, jumlah rendang yang tercatat adalah dua dan jumlah perkedel adalah satu. Prinsip penghitungan pada tingkat instans juga digunakan dalam penelitian penghitungan makanan seperti SibNet dan FoodMask \cite{nguyen2022sibnet,nguyen2023foodmask}.
+
+Jumlah instans pada setiap kelas selanjutnya digunakan untuk menghitung total harga. Setiap kelas memiliki harga satuan tetap yang disimpan sebagai data pada program. YOLO11-seg tidak menentukan harga makanan; model hanya menghasilkan kelas dan instans objek, sedangkan proses penghitungan harga dilakukan oleh program. Pemanfaatan hasil pengenalan citra sebagai dasar perhitungan harga juga diterapkan pada penelitian mengenai \textit{automatic billing} dan \textit{visual checkout} makanan \cite{wu2021,guo2023}.
+
+Subtotal suatu kelas diperoleh dengan mengalikan jumlah instans pada kelas tersebut dengan harga satuannya. Total harga kemudian diperoleh dengan menjumlahkan subtotal dari seluruh kelas yang dikenali. Perhitungan tersebut dinyatakan pada Persamaan~\ref{eq:total-harga}.
+
+\begin{equation}
+    T = \sum_{i=1}^{C} n_i p_i
+    \label{eq:total-harga}
+\end{equation}
+
+dengan:
+\begin{itemize}
+    \item $T$ adalah total harga yang harus dibayarkan;
+    \item $C$ adalah jumlah kelas makanan;
+    \item $n_i$ adalah jumlah instans yang dikenali pada kelas ke-$i$; dan
+    \item $p_i$ adalah harga satuan makanan pada kelas ke-$i$.
+\end{itemize}
+
+Sebagai contoh, apabila sistem mengenali dua instans rendang dan satu instans perkedel, subtotal rendang diperoleh dengan mengalikan dua dengan harga satuan rendang. Subtotal perkedel diperoleh dengan mengalikan satu dengan harga satuan perkedel. Total pembayaran merupakan penjumlahan kedua subtotal tersebut beserta subtotal kelas lain yang dikenali.
+
+Penentuan harga tidak menggunakan berat, volume, luas \textit{mask}, maupun ukuran porsi. Harga satuan disimpan secara terpisah dari model sehingga perubahan harga tidak memerlukan pelatihan ulang YOLO11-seg selama identitas kelas pada program tetap sesuai dengan keluaran model.

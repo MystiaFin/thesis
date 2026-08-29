@@ -7,5 +7,8 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Perbandingan klasifikasi citra, lokalisasi objek, segmentasi semantik, dan \textit {instance segmentation}}}{14}{figure.2.4}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Arsitektur YOLO11-seg}}{16}{figure.2.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Proses pembuatan anotasi menggunakan fitur \textit {Segment Anything} pada CVAT}}{27}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Proses pembuatan anotasi menggunakan fitur OpenCV \textit {Intelligent Scissors} pada CVAT}}{27}{figure.3.2}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Contoh citra acuan yang digunakan dalam proses pengumpulan data}}{25}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Contoh proses penyaringan citra oleh program \textit {crawler}}}{27}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Ringkasan hasil awal program \textit {crawler} sebelum pembersihan manual}}{27}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Proses pembuatan anotasi menggunakan fitur \textit {Segment Anything} pada CVAT}}{29}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Proses pembuatan anotasi menggunakan fitur OpenCV \textit {Intelligent Scissors} pada CVAT}}{30}{figure.3.5}%

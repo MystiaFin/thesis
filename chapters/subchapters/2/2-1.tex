@@ -1,29 +1,20 @@
-\subsection{Nasi Padang}
+\section{Sistem yang Dirancang}
 
-Nasi Padang merupakan salah satu bentuk penyajian masakan Minangkabau yang berasal dari Sumatera Barat. Istilah Nasi Padang tidak hanya merujuk pada nasi sebagai makanan utama, tetapi pada penyajian nasi putih bersama beragam masakan pendamping. Masakan tersebut dapat berupa olahan daging, ayam, ikan, sayuran, gulai, dan sambal. Beberapa lauk yang umum dikenal dalam penyajian Nasi Padang antara lain rendang, ayam berbumbu, dan perkedel \cite{yeoh2024nasipadang}. Keragaman tersebut membuat pelanggan dapat memilih jenis dan jumlah lauk sesuai dengan keinginan.
+Sistem yang dirancang dalam penelitian ini merupakan sistem \textit{checkout} otomatis untuk mengenali lauk Nasi Padang berdasarkan citra. Sistem ditujukan sebagai \textit{proof-of-concept} penerapan mekanisme \textit{self-service} bagi pelanggan \textit{dine-in}, sehingga jenis dan jumlah lauk yang terdapat pada piring dapat dikenali secara otomatis dan digunakan sebagai dasar untuk menentukan total pembayaran.
 
-Seporsi Nasi Padang dapat memadukan nasi dengan lauk, kuah gulai, sambal, dan sayuran. Pilihan lauknya dapat berasal dari olahan daging maupun ikan, sedangkan sayur yang disajikan antara lain sayur nangka dan daun singkong \cite{wahyudi2016nasipadang}. Dengan demikian, satu piring Nasi Padang dapat berisi beberapa jenis makanan dengan bentuk, warna, dan tekstur visual yang berbeda.
+Penerapan \textit{Computer Vision} pada proses \textit{checkout} makanan telah dikembangkan pada beberapa penelitian sebelumnya, antara lain melalui analisis makanan pada nampan untuk \textit{automatic billing}, sistem \textit{visual checkout}, dan sistem perhitungan harga makanan berbasis segmentasi \cite{aguilar2017,wu2021,guo2023}. Pada penelitian ini, pengenalan lauk dilakukan menggunakan YOLO11-seg yang menghasilkan prediksi pada tingkat instans sehingga objek dari kelas yang sama tetap dapat dibedakan dan dihitung secara individual.
 
-Pada pelayanan makan di tempat atau \textit{dine-in}, terdapat dua metode penyajian yang dikenal sebagai \textit{hidang} dan \textit{pesan}. Pada metode \textit{hidang}, sejumlah piring kecil yang berisi lauk berbeda dibawa oleh pelayan dan diletakkan di meja pelanggan. Pelanggan kemudian membayar lauk yang dikonsumsi. Sementara itu, pada metode \textit{pesan}, pelanggan memilih lauk dari makanan yang ditampilkan pada etalase, kemudian nasi dan lauk yang dipilih disajikan kepada pelanggan \cite{yeoh2024nasipadang}.
+Pengembangan model dilakukan menggunakan dataset citra Nasi Padang yang telah dianotasi. Dataset digunakan dalam proses pelatihan, validasi, dan pengujian model. Data pelatihan digunakan untuk memperbarui bobot YOLO11-seg, data validasi digunakan untuk memantau performa model selama pelatihan, sedangkan data pengujian digunakan untuk menilai model akhir pada citra yang tidak digunakan dalam proses pembelajaran.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/nasi_padang_dine_in.jpg}
-    \caption{Contoh penyajian Nasi Padang untuk pelanggan \textit{dine-in}}
-    \label{fig:nasi-padang-dine-in}
-		{\footnotesize Sumber: Dokumentasi Pribadi}
-\end{figure}
+Pada tahap penggunaan, kamera memperoleh citra piring yang berisi lauk pilihan pelanggan. Citra tersebut diproses oleh YOLO11-seg untuk menghasilkan kelas dan \textit{segmentation mask} untuk setiap instans yang dikenali. Setiap instans kemudian dihitung berdasarkan kelasnya. Informasi jenis dan jumlah lauk selanjutnya diteruskan ke program kalkulasi harga yang menggunakan harga tetap pada setiap kelas untuk memperoleh total pembayaran. Penentuan harga tidak menggunakan berat, volume, luas \textit{mask}, maupun ukuran porsi.
 
-Selain disajikan untuk makan di tempat, Nasi Padang juga dapat disiapkan untuk dibawa pulang atau \textit{take-away}. Pada bentuk penyajian ini, nasi, lauk, sayur, sambal, dan kuah yang dipilih ditempatkan dalam satu bungkus. Penggunaan daun pisang sebagai bagian dari pembungkus juga menjadi salah satu bentuk penyajian Nasi Padang untuk dibawa pulang. Pada sejumlah rumah makan, porsi nasi dalam penyajian bungkus dapat lebih banyak dibandingkan dengan penyajian makan di tempat. Salah satu alasan yang dikemukakan adalah bahwa nasi bungkus pada awalnya dapat dikonsumsi bersama oleh lebih dari satu orang \cite{wahyudi2016nasipadang}.
+Objek yang dapat dikenali pada sistem dibatasi pada sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Alur keseluruhan sistem, mulai dari pengembangan model hingga proses \textit{checkout}, ditunjukkan pada Gambar~\ref{fig:alur-sistem}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{figures/nasi_padang_take_away.jpeg}
-    \caption{Contoh penyajian Nasi Padang untuk \textit{take-away}}
-    \label{fig:nasi-padang-take-away}
-		{\footnotesize Sumber:
-    \href{https://food.detik.com/info-kuliner/d-4876612/ini-arti-kode-yang-tertulis-pada-bungkus-nasi-padang}
-    {Fitria, DetikFood (2020)}, diakses 29 Agustus 2026}
+    \includegraphics[width=\textwidth]{figures/alur_sistem.pdf}
+    \caption{Diagram alur pelatihan dan inferensi sistem \textit{checkout} otomatis}
+    \label{fig:alur-sistem}
 \end{figure}
 
-Perbedaan cara penyajian tersebut menghasilkan kondisi visual yang berbeda. Pada penyajian \textit{dine-in}, nasi dan lauk berada dalam kondisi terbuka pada piring sehingga dapat diamati secara langsung dari arah atas. Sebaliknya, pada penyajian \textit{take-away}, seluruh makanan telah digabungkan dan ditempatkan di dalam bungkus. Oleh karena itu, sistem yang dirancang dalam penelitian ini difokuskan pada penyajian \textit{dine-in}. Pembahasan mengenai penyajian \textit{take-away} digunakan untuk memberikan konteks mengenai perbedaan bentuk penyajian Nasi Padang, tetapi tidak termasuk dalam ruang lingkup pengenalan lauk oleh sistem.
+Konsep teoritik yang mendukung proses pengenalan, penghitungan instans, kalkulasi harga, dan evaluasi sistem dijelaskan pada bagian selanjutnya.

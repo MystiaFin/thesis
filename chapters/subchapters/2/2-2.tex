@@ -1,20 +1,10 @@
-\section{Sistem yang Dirancang}
+\section{Landasan Teori}
 
-Sistem yang dirancang dalam penelitian ini merupakan sistem \textit{checkout} otomatis untuk mengenali lauk Nasi Padang berdasarkan citra. Sistem ditujukan sebagai \textit{proof-of-concept} penerapan mekanisme \textit{self-service} bagi pelanggan \textit{dine-in}, sehingga jenis dan jumlah lauk yang terdapat pada piring dapat dikenali secara otomatis dan digunakan sebagai dasar untuk menentukan total pembayaran.
+Landasan teori pada bagian ini membahas konsep yang digunakan untuk memahami rancangan sistem \textit{checkout} otomatis Nasi Padang. Pembahasan mencakup \textit{Computer Vision} dan citra digital, \textit{instance segmentation}, YOLO11-seg, penghitungan instans, kalkulasi harga berbasis harga tetap, serta evaluasi kinerja model dan sistem. Detail mengenai dataset, konfigurasi pelatihan, perangkat, dan prosedur pengujian dibahas pada Bab III.
 
-Penerapan \textit{Computer Vision} pada proses \textit{checkout} makanan telah dikembangkan pada beberapa penelitian sebelumnya, antara lain melalui analisis makanan pada nampan untuk \textit{automatic billing}, sistem \textit{visual checkout}, dan sistem perhitungan harga makanan berbasis segmentasi \cite{aguilar2017,wu2021,guo2023}. Pada penelitian ini, pengenalan lauk dilakukan menggunakan YOLO11-seg yang menghasilkan prediksi pada tingkat instans sehingga objek dari kelas yang sama tetap dapat dibedakan dan dihitung secara individual.
-
-Pengembangan model dilakukan menggunakan dataset citra Nasi Padang yang telah dianotasi. Dataset digunakan dalam proses pelatihan, validasi, dan pengujian model. Data pelatihan digunakan untuk memperbarui bobot YOLO11-seg, data validasi digunakan untuk memantau performa model selama pelatihan, sedangkan data pengujian digunakan untuk menilai model akhir pada citra yang tidak digunakan dalam proses pembelajaran.
-
-Pada tahap penggunaan, kamera memperoleh citra piring yang berisi lauk pilihan pelanggan. Citra tersebut diproses oleh YOLO11-seg untuk menghasilkan kelas dan \textit{segmentation mask} untuk setiap instans yang dikenali. Setiap instans kemudian dihitung berdasarkan kelasnya. Informasi jenis dan jumlah lauk selanjutnya diteruskan ke program kalkulasi harga yang menggunakan harga tetap pada setiap kelas untuk memperoleh total pembayaran. Penentuan harga tidak menggunakan berat, volume, luas \textit{mask}, maupun ukuran porsi.
-
-Objek yang dapat dikenali pada sistem dibatasi pada sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Alur keseluruhan sistem, mulai dari pengembangan model hingga proses \textit{checkout}, ditunjukkan pada Gambar~\ref{fig:alur-sistem}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/alur_sistem.pdf}
-    \caption{Diagram alur pelatihan dan inferensi sistem \textit{checkout} otomatis}
-    \label{fig:alur-sistem}
-\end{figure}
-
-Konsep teoritik yang mendukung proses pengenalan, penghitungan instans, kalkulasi harga, dan evaluasi sistem dijelaskan pada bagian selanjutnya.
+\input{chapters/subchapters/2/2-2-1}
+\input{chapters/subchapters/2/2-2-2}
+\input{chapters/subchapters/2/2-2-3}
+\input{chapters/subchapters/2/2-2-4}
+\input{chapters/subchapters/2/2-2-5}
+\input{chapters/subchapters/2/2-2-6}

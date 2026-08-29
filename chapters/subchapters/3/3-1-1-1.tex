@@ -1,13 +1,44 @@
 \subsubsection{Pengumpulan Data}
 
-Tahap pengumpulan data dilakukan untuk memperoleh citra Nasi Padang yang digunakan dalam proses pelatihan, validasi, dan pengujian YOLO11-seg. Data yang dikumpulkan berupa citra yang memuat satu atau lebih objek dari kelas yang digunakan dalam penelitian.
+Pengumpulan data dilakukan untuk memperoleh citra yang digunakan dalam proses pelatihan, validasi, dan pengujian YOLO11-seg. Proses ini terdiri atas dua tahap, yaitu menyiapkan citra acuan secara manual dan mengumpulkan citra tambahan dari internet menggunakan program \textit{crawler}.
 
-Pengumpulan citra dilakukan melalui dua sumber, yaitu pengambilan citra secara langsung dan pengumpulan citra dari internet. Pengambilan citra secara langsung digunakan untuk memperoleh contoh yang mendekati kondisi penggunaan sistem, sedangkan citra dari internet digunakan untuk menambah variasi tampilan objek, seperti bentuk, penyajian, posisi, latar, dan kondisi pencahayaan.
+Pada tahap pertama, sebanyak 21 citra Nasi Padang dikumpulkan dan dipilih secara manual sebagai citra acuan. Citra-citra tersebut memuat nasi dan berbagai lauk yang termasuk dalam kelas penelitian. Citra acuan digunakan sebagai masukan pencarian agar citra tambahan yang ditemukan memiliki kemiripan visual dengan makanan yang akan dikenali oleh sistem.
 
-Citra yang dikumpulkan melalui proses seleksi sebelum digunakan sebagai dataset. Citra yang tidak menampilkan objek dengan cukup jelas, memiliki kualitas terlalu rendah, merupakan duplikat, atau memiliki elemen visual yang menutupi sebagian besar objek tidak digunakan. Seleksi dilakukan agar citra yang dipertahankan memiliki informasi visual yang memadai untuk proses anotasi dan pembelajaran model.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/citra_acuan_crawler.png}
+    \caption{Contoh citra acuan yang digunakan dalam proses pengumpulan data}
+    \label{fig:citra-acuan-crawler}
+    \par\smallskip
+    {\footnotesize Sumber: Dokumentasi pribadi}
+\end{figure}
 
-Dataset difokuskan pada sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Satu citra dapat memuat lebih dari satu kelas maupun lebih dari satu instans dari kelas yang sama karena satu piring pada penggunaan sistem dapat berisi beberapa jenis lauk secara bersamaan.
+Pada tahap kedua, citra tambahan dikumpulkan menggunakan program \textit{crawler} berbasis Python yang dijalankan melalui Google Colab. Setiap citra acuan digunakan untuk melakukan pencarian visual melalui Google Lens dengan bantuan SerpApi. Program kemudian memeriksa hasil pencarian dan mengunduh citra yang memenuhi ketentuan. Batas maksimum pengumpulan ditetapkan sebanyak 50 hasil untuk setiap citra acuan. Jumlah tersebut merupakan batas pengumpulan, bukan jumlah yang harus selalu diperoleh, karena banyaknya hasil yang sesuai berbeda untuk setiap citra acuan.
 
-Dataset juga dapat memuat objek yang saling bersentuhan atau mengalami oklusi. Kondisi tersebut dipertahankan sebagai bagian dari variasi penyajian yang dapat muncul pada citra dan tidak diperlakukan sebagai kelompok pengujian tersendiri.
+Penyaringan dilakukan secara otomatis selama proses pengumpulan. Domain GoFood dan Gojek, yang mencakup \texttt{gofood.co.id}, \texttt{gojek.com}, \texttt{go-jek.com}, dan \texttt{gojekapi.com}, dimasukkan ke dalam daftar blokir karena citra dari domain tersebut umumnya memiliki tanda air berukuran besar yang dapat mengganggu informasi visual makanan. Program juga menolak citra dengan lebar atau tinggi kurang dari 256 piksel.
 
-Citra yang telah lolos proses seleksi selanjutnya digunakan pada tahap anotasi. Setiap objek yang termasuk dalam sembilan kelas penelitian diberikan label kelas dan anotasi area segmentasi sebagai \textit{ground truth}.
+Selain penyaringan domain dan ukuran, program melakukan pemeriksaan duplikasi. Citra yang sama diperiksa menggunakan nilai \textit{hash} dari data piksel, sedangkan citra yang memiliki tampilan sangat mirip diperiksa menggunakan \textit{perceptual hash}. Dengan pemeriksaan tersebut, citra yang sama maupun citra yang hanya berbeda karena perubahan ukuran atau kompresi tidak disimpan kembali. Alamat citra dan halaman sumber dari setiap hasil yang berhasil disimpan dicatat dalam berkas \texttt{manifest.csv}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/log_penyaringan_crawler.png}
+    \caption{Contoh proses penyaringan citra oleh program \textit{crawler}}
+    \label{fig:log-penyaringan-crawler}
+    \par\smallskip
+    {\footnotesize Sumber: Dokumentasi pribadi}
+\end{figure}
+
+Proses \textit{crawling} menggunakan 21 citra acuan menghasilkan 392 citra kandidat sebelum pembersihan manual. Jumlah tersebut merupakan keluaran awal program dan bukan jumlah akhir citra yang digunakan sebagai data penelitian. Hasil ini lebih rendah daripada batas maksimum yang ditetapkan karena tidak setiap citra acuan menghasilkan 50 citra yang unik, dapat diunduh, dan memenuhi ketentuan penyaringan.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/ringkasan_hasil_crawler.png}
+    \caption{Ringkasan hasil awal program \textit{crawler} sebelum pembersihan manual}
+    \label{fig:ringkasan-hasil-crawler}
+    \par\smallskip
+    {\footnotesize Sumber: Dokumentasi pribadi}
+\end{figure}
+
+Seluruh citra kandidat selanjutnya dibersihkan secara manual. Pada tahap ini, citra yang tidak relevan, menampilkan objek makanan dengan tidak jelas, memiliki kualitas visual yang tidak memadai, atau menampilkan makanan dalam keadaan terbungkus untuk \textit{take-away} dihapus. Setelah pembersihan manual, lebih dari 300 citra yang sesuai dipertahankan sebagai data penelitian. Dengan demikian, jumlah akhir data bukan 392 citra, melainkan lebih dari 300 citra yang telah lolos pembersihan manual. Pembatasan terhadap penyajian \textit{dine-in} dilakukan karena sistem dirancang untuk mengenali nasi dan lauk yang disajikan secara terbuka dan diamati menggunakan kamera dari arah atas.
+
+Dataset difokuskan pada sembilan kelas, yaitu nasi, rendang, ayam goreng, perkedel, sayur nangka, daun singkong, telur dadar, telur kari, dan sambal. Satu citra dapat memuat beberapa kelas sekaligus maupun lebih dari satu objek dari kelas yang sama. Citra yang telah lolos pemeriksaan selanjutnya digunakan pada tahap anotasi data untuk memberikan label kelas dan area segmentasi pada setiap objek.

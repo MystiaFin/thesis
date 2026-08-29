@@ -7,8 +7,7 @@
 \providecommand{\BIBentrySTDinterwordspacing}{\spaceskip=0pt\relax}
 \providecommand{\BIBentryALTinterwordstretchfactor}{4}
 \providecommand{\BIBentryALTinterwordspacing}{\spaceskip=\fontdimen2\font plus
-\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
-  \fontdimen4\font\relax}
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus \fontdimen4\font\relax}
 \providecommand{\BIBforeignlanguage}[2]{{%
 \expandafter\ifx\csname l@#1\endcsname\relax
 \typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
@@ -22,95 +21,62 @@
 \BIBdecl
 
 \bibitem{min2019}
-W.~Min, S.~Jiang, L.~Liu, Y.~Rui, and R.~Jain, ``A survey on food computing,''
-  \emph{ACM Computing Surveys}, vol.~52, no.~5, pp. 1--36, 2019.
+W.~Min, S.~Jiang, L.~Liu, Y.~Rui, and R.~Jain, ``A survey on food computing,'' \emph{ACM Computing Surveys}, vol.~52, no.~5, pp. 1--36, 2019.
 
 \bibitem{he2017maskrcnn}
-K.~He, G.~Gkioxari, P.~Doll{\'a}r, and R.~Girshick, ``Mask {R-CNN},'' in
-  \emph{Proceedings of the IEEE International Conference on Computer Vision
-  (ICCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2017, pp. 2961--2969.
+K.~He, G.~Gkioxari, P.~Doll{\'a}r, and R.~Girshick, ``Mask {R-CNN},'' in \emph{Proceedings of the IEEE International Conference on Computer Vision (ICCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2017, pp. 2961--2969.
 
 \bibitem{guo2023}
-Q.~Guo, Y.~Chen, Y.~Yao, J.~Ma, and T.~Zhang, ``A real-time chinese food auto
-  billing system based on instance segmentation,'' in \emph{2023 IEEE Region 10
-  Symposium (TENSYMP)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2023, pp.
-  1--5.
+Q.~Guo, Y.~Chen, Y.~Yao, J.~Ma, and T.~Zhang, ``A real-time chinese food auto billing system based on instance segmentation,'' in \emph{2023 IEEE Region 10 Symposium (TENSYMP)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2023, pp. 1--5.
 
 \bibitem{nguyen2022sibnet}
-H.-T. Nguyen, C.-W. Ngo, and W.-K. Chan, ``Sibnet: Food instance counting and
-  segmentation,'' \emph{Pattern Recognition}, vol. 124, p. 108470, 2022.
+H.-T. Nguyen, C.-W. Ngo, and W.-K. Chan, ``Sibnet: Food instance counting and segmentation,'' \emph{Pattern Recognition}, vol. 124, p. 108470, 2022.
 
 \bibitem{nguyen2023foodmask}
-H.-T. Nguyen, Y.~Cao, C.-W. Ngo, and W.-K. Chan, ``Foodmask: Real-time food
-  instance counting, segmentation and recognition,'' \emph{Pattern
-  Recognition}, 2023.
+H.-T. Nguyen, Y.~Cao, C.-W. Ngo, and W.-K. Chan, ``Foodmask: Real-time food instance counting, segmentation and recognition,'' \emph{Pattern Recognition}, 2023.
 
 \bibitem{khanam2024}
-R.~Khanam and M.~Hussain, ``Yolov11: An overview of the key architectural
-  enhancements,'' \emph{arXiv preprint arXiv:2410.17725}, 2024.
+R.~Khanam and M.~Hussain, ``Yolov11: An overview of the key architectural enhancements,'' \emph{arXiv preprint arXiv:2410.17725}, 2024.
 
 \bibitem{qiu2025}
-Z.~Qiu, X.~Huang, Z.~Sun, S.~Li, and J.~Wang, ``Gs-yolo-seg: A lightweight
-  instance segmentation method for low-grade graphite ore sorting based on
-  improved yolo11-seg,'' \emph{Sustainability}, vol.~17, no.~12, p. 5663, 2025.
+Z.~Qiu, X.~Huang, Z.~Sun, S.~Li, and J.~Wang, ``Gs-yolo-seg: A lightweight instance segmentation method for low-grade graphite ore sorting based on improved yolo11-seg,'' \emph{Sustainability}, vol.~17, no.~12, p. 5663, 2025.
 
 \bibitem{aguilar2017}
-E.~Aguilar, B.~Remeseiro, M.~Bola{\~n}os, and P.~Radeva, ``Grab, pay and eat:
-  Semantic food detection for smart restaurants,'' \emph{arXiv preprint
-  arXiv:1711.05128}, 2017.
+E.~Aguilar, B.~Remeseiro, M.~Bola{\~n}os, and P.~Radeva, ``Grab, pay and eat: Semantic food detection for smart restaurants,'' \emph{arXiv preprint arXiv:1711.05128}, 2017.
 
 \bibitem{wu2021}
-M.-Y. Wu, J.-H. Lee, and C.-Y. Hsueh, ``A framework of visual checkout system
-  using convolutional neural networks for bento buffet,'' \emph{Sensors},
-  vol.~21, no.~8, p. 2627, 2021.
+M.-Y. Wu, J.-H. Lee, and C.-Y. Hsueh, ``A framework of visual checkout system using convolutional neural networks for bento buffet,'' \emph{Sensors}, vol.~21, no.~8, p. 2627, 2021.
 
 \bibitem{aditama2022}
-N.~Aditama and R.~Munir, ``Indonesian street food calorie estimation using mask
-  r-cnn and multiple linear regression,'' in \emph{2022 Second International
-  Conference on Power, Control and Computing Technologies (ICPC2T)}.\hskip 1em
-  plus 0.5em minus 0.4em\relax IEEE, 2022, pp. 1--6.
+N.~Aditama and R.~Munir, ``Indonesian street food calorie estimation using mask r-cnn and multiple linear regression,'' in \emph{2022 Second International Conference on Power, Control and Computing Technologies (ICPC2T)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2022, pp. 1--6.
 
 \bibitem{yeoh2024nasipadang}
-P.~Yeoh, ``Iconic dishes: Your ultimate guide to nasi padang,''
-  \url{https://guide.michelin.com/ae-az/en/article/features/ultimate-guide-to-nasi-padang},
-  Oct. 2024, mICHELIN Guide, diakses 29 Agustus 2026.
+P.~Yeoh, ``Iconic dishes: Your ultimate guide to nasi padang,'' \url{https://guide.michelin.com/ae-az/en/article/features/ultimate-guide-to-nasi-padang}, Oct. 2024, mICHELIN Guide, diakses 29 Agustus 2026.
 
 \bibitem{wahyudi2016nasipadang}
-I.~Wahyudi, ``Kenikmatan nasi padang yang membuat lidah bergoyang,''
-  \url{https://sumbar.antaranews.com/berita/188480/kenikmatan-nasi-padang-yang-membuat-lidah-bergoyang},
-  Oct. 2016, aNTARA Sumatera Barat, diakses 29 Agustus 2026.
+I.~Wahyudi, ``Kenikmatan nasi padang yang membuat lidah bergoyang,'' \url{https://sumbar.antaranews.com/berita/188480/kenikmatan-nasi-padang-yang-membuat-lidah-bergoyang}, Oct. 2016, aNTARA Sumatera Barat, diakses 29 Agustus 2026.
 
 \bibitem{hafiz2020instancesegmentation}
-A.~M. Hafiz and G.~M. Bhat, ``A survey on instance segmentation: State of the
-  art,'' \emph{International Journal of Multimedia Information Retrieval},
-  vol.~9, no.~3, pp. 171--189, 2020.
+A.~M. Hafiz and G.~M. Bhat, ``A survey on instance segmentation: State of the art,'' \emph{International Journal of Multimedia Information Retrieval}, vol.~9, no.~3, pp. 171--189, 2020.
 
 \bibitem{lin2017fpn}
-T.-Y. Lin, P.~Doll{\'a}r, R.~Girshick, K.~He, B.~Hariharan, and S.~Belongie,
-  ``Feature pyramid networks for object detection,'' in \emph{2017 IEEE
-  Conference on Computer Vision and Pattern Recognition (CVPR)}.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2017, pp. 936--944.
+T.-Y. Lin, P.~Doll{\'a}r, R.~Girshick, K.~He, B.~Hariharan, and S.~Belongie, ``Feature pyramid networks for object detection,'' in \emph{2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2017, pp. 936--944.
 
 \bibitem{bolya2019yolact}
-D.~Bolya, C.~Zhou, F.~Xiao, and Y.~J. Lee, ``Yolact: Real-time instance
-  segmentation,'' in \emph{Proceedings of the IEEE/CVF International Conference
-  on Computer Vision (ICCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2019, pp. 9157--9166.
+D.~Bolya, C.~Zhou, F.~Xiao, and Y.~J. Lee, ``Yolact: Real-time instance segmentation,'' in \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019, pp. 9157--9166.
 
 \bibitem{yue2023}
-X.~Yue, K.~Qi, X.~Na, Y.~Zhang, Y.~Liu, and C.~Liu, ``Improved yolov8-seg
-  network for instance segmentation of healthy and diseased tomato plants in
-  the growth stage,'' \emph{Agriculture}, vol.~13, no.~8, p. 1643, 2023.
+X.~Yue, K.~Qi, X.~Na, Y.~Zhang, Y.~Liu, and C.~Liu, ``Improved yolov8-seg network for instance segmentation of healthy and diseased tomato plants in the growth stage,'' \emph{Agriculture}, vol.~13, no.~8, p. 1643, 2023.
 
 \bibitem{syafira2025}
-N.~H. Syafira, S.~A. Khoerunisa, D.~N.~P. Cantika, and Junervin, ``A deep
-  learning approach for real-time segmentation of graphene layers using the
-  yolo11-seg architecture,'' \emph{Proceedings of the 1st International
-  Conference on Business, Innovation, Technology \& Science}, 2025.
+N.~H. Syafira, S.~A. Khoerunisa, D.~N.~P. Cantika, and Junervin, ``A deep learning approach for real-time segmentation of graphene layers using the yolo11-seg architecture,'' \emph{Proceedings of the 1st International Conference on Business, Innovation, Technology \& Science}, 2025.
 
 \bibitem{tampu2022}
-I.~E. Tampu, A.~Eklund, and N.~Haj-Hosseini, ``Inflation of test accuracy due
-  to data leakage in deep learning-based classification of {OCT} images,''
-  \emph{Scientific Data}, vol.~9, no.~1, p. 580, 2022.
+I.~E. Tampu, A.~Eklund, and N.~Haj-Hosseini, ``Inflation of test accuracy due to data leakage in deep learning-based classification of {OCT} images,'' \emph{Scientific Data}, vol.~9, no.~1, p. 580, 2022.
+
+\bibitem{yang2022}
+\BIBentryALTinterwordspacing
+S.~Yang, W.~Xiao, M.~Zhang, S.~Guo, J.~Zhao, and F.~Shen, ``Image data augmentation for deep learning: A survey,'' \emph{arXiv preprint arXiv:2204.08610}, 2022. [Online]. Available: \url{https://arxiv.org/abs/2204.08610}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}
