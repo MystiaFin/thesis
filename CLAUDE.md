@@ -18,7 +18,7 @@ Result: passed, with revisions. Page numbers below are the printed page numbers 
 - [x] Add assumption sentence: "Sistem dirancang dengan asumsi pelanggan tidak sengaja menyembunyikan atau menumpuk lauk untuk menghindari penghitungan; tumpang tindih alami antar lauk tetap menjadi keterbatasan yang dievaluasi."
 - [x] Figure 2.1 (p.10): the price database is drawn inside the flow; show it as a side lookup only (examiner was confused)
 - [x] 3.1.3.2 (p.35-36): add one sentence that the price table is only looked up, not part of image processing
-- [ ] Use the same prices in Table 3.1 (rendang Rp20.000) and Figure 3.6 (rendang Rp10.000)
+- [x] Use the same prices in Table 3.1 (rendang Rp20.000) and Figure 3.6 (rendang Rp10.000)
 - [x] Add one short justification for YOLO11-seg over v12 (better documented and tested for segmentation)
 
 

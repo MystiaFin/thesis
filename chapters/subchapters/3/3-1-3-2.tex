@@ -10,30 +10,30 @@ Sistem dirancang dengan asumsi pelanggan tidak sengaja menyembunyikan atau menum
 
 Hasil penghitungan diteruskan ke program kalkulasi harga. Program menggunakan tabel harga tetap yang memuat pasangan antara kelas makanan dan harga satuan. Tabel harga hanya digunakan sebagai rujukan untuk mencari harga satuan berdasarkan label kelas dan tidak termasuk dalam proses pengolahan citra. Subtotal setiap kelas dihitung dengan mengalikan jumlah instans yang dikenali dengan harga kelas tersebut, kemudian seluruh subtotal dijumlahkan untuk memperoleh total harga.
 
-% TODO: tabel harga (Tabel 3.1 di PDF proposal) dan gambar contoh checkout (Gambar 3.6) tidak ada di source .tex ini
-% pastikan harga di keduanya SAMA (proposal lama: rendang Rp20.000 di tabel, Rp10.000 di gambar)
-% kerangka tabel jika ingin dikembalikan:
-% \begin{table}[H]
-%     \centering
-%     \caption{Tabel harga satuan setiap kelas}
-%     \label{tab:harga}
-%     \begin{tabular}{lr}
-%         \hline
-%         Kelas & Harga satuan \\
-%         \hline
-%         Nasi & Rp... \\
-%         Rendang & Rp... \\
-%         Ayam goreng & Rp... \\
-%         Perkedel & Rp... \\
-%         Sayur nangka & Rp... \\
-%         Daun singkong & Rp... \\
-%         Telur dadar & Rp... \\
-%         Telur kari & Rp... \\
-%         Sambal & Rp... \\
-%         \hline
-%     \end{tabular}
-% \end{table}
-% gambar contoh checkout: figures/contoh_checkout.pdf, harga harus mengikuti tabel di atas
+Sebagai contoh perhitungan, misalkan hasil pengenalan terdiri atas satu instans nasi, dua instans rendang, dan satu instans perkedel. Untuk ilustrasi, harga satuan nasi ditetapkan Rp5.000, rendang Rp18.000, dan perkedel Rp5.000. Perhitungan subtotal dan total harga ditunjukkan pada Tabel~\ref{tab:contoh-harga}.
+
+\begin{table}[H]
+    \centering
+    \caption{Contoh perhitungan harga \textit{checkout}}
+    \label{tab:contoh-harga}
+    \begin{tabular}{lcrr}
+        \hline
+        Jenis Makanan & Jumlah & Harga Satuan & Subtotal \\
+        \hline
+        Nasi & 1 & Rp5.000 & Rp5.000 \\
+        Rendang & 2 & Rp18.000 & Rp36.000 \\
+        Perkedel & 1 & Rp5.000 & Rp5.000 \\
+        \hline
+        & & Total & Rp46.000 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Berdasarkan contoh tersebut, total harga dihitung sebagai
+\[
+    T = (1 \times 5.000) + (2 \times 18.000) + (1 \times 5.000) = 46.000.
+\]
+Dengan demikian, total pembayaran pada contoh tersebut adalah Rp46.000. Harga yang digunakan pada contoh ini hanya digunakan sebagai ilustrasi perhitungan dan dapat disesuaikan dengan tabel harga yang digunakan pada implementasi.
 
 Informasi yang dihasilkan pada proses \textit{checkout} terdiri atas kelas makanan yang dikenali, jumlah instans pada setiap kelas, harga satuan, subtotal setiap kelas, dan total harga keseluruhan. \textit{Segmentation mask} digunakan untuk merepresentasikan wilayah setiap instans dan tidak digunakan untuk memperkirakan berat, volume, ukuran porsi, luas porsi, maupun kandungan gizi.
 
