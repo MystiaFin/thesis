@@ -2,7 +2,25 @@
 
 Dataset yang telah dianotasi dibagi menjadi data pelatihan, validasi, dan pengujian agar proses pembelajaran, pemilihan model, dan evaluasi akhir menggunakan bagian data yang berbeda.
 
-Dataset dibagi dengan proporsi 70\% untuk data pelatihan, 15\% untuk data validasi, dan 15\% untuk data pengujian. Jumlah citra pada setiap bagian mengikuti jumlah akhir citra yang telah lolos proses seleksi dan anotasi. Pembagian dilakukan dengan memperhatikan keterwakilan sembilan kelas penelitian pada setiap bagian dataset.
+% TODO: perbarui angka ini jika dataset ditambah dan dibagi ulang (lihat CLAUDE.md bagian 0)
+Sebanyak 133 citra dengan 613 instans dibagi menjadi 107 citra untuk data pelatihan, 13 citra untuk data validasi, dan 13 citra untuk data pengujian, atau sekitar 80\%, 10\%, dan 10\%. Pembagian dilakukan dengan memperhatikan keterwakilan sembilan kelas penelitian pada setiap bagian dataset. Jumlah citra dan instans pada setiap bagian ditunjukkan pada Tabel~\ref{tab:pembagian-dataset}.
+
+\begin{table}[H]
+    \centering
+    \caption{Pembagian dataset}
+    \label{tab:pembagian-dataset}
+    \begin{tabular}{lrrr}
+        \hline
+        Bagian & Jumlah citra & Persentase citra & Jumlah instans \\
+        \hline
+        Pelatihan & 107 & 80,5\% & 495 \\
+        Validasi & 13 & 9,8\% & 61 \\
+        Pengujian & 13 & 9,8\% & 57 \\
+        \hline
+        Total & 133 & 100\% & 613 \\
+        \hline
+    \end{tabular}
+\end{table}
 
 Data pelatihan digunakan dalam proses pembelajaran dan pembaruan bobot YOLO11-seg. Data validasi digunakan untuk memantau performa selama pelatihan dan membantu memilih bobot model yang digunakan. Data pengujian disimpan terpisah dan digunakan untuk mengevaluasi model terpilih pada citra yang tidak digunakan untuk memperbarui maupun memilih bobot.
 

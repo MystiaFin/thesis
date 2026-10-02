@@ -4,7 +4,16 @@ Augmentasi diterapkan pada data pelatihan untuk menambah variasi citra yang dite
 
 Augmentasi dilakukan secara dinamis melalui \textit{pipeline} pelatihan YOLO11-seg. Transformasi diberikan ketika citra dimuat untuk proses pelatihan sehingga tidak menghasilkan salinan citra baru yang disimpan secara permanen. Oleh karena itu, augmentasi tidak mengubah jumlah citra asli dalam dataset.
 
-Jenis augmentasi yang digunakan mencakup perubahan warna dan tingkat kecerahan, pergeseran posisi, perubahan skala, pembalikan horizontal, dan \textit{mosaic}. Perubahan warna dan tingkat kecerahan digunakan untuk memberikan variasi kondisi pencahayaan. Pergeseran posisi, perubahan skala, dan pembalikan horizontal digunakan untuk memberikan variasi letak serta ukuran objek pada citra. Sementara itu, \textit{mosaic} menggabungkan beberapa citra pelatihan menjadi satu citra agar model menerima susunan objek yang lebih beragam.
+Jenis augmentasi yang digunakan mencakup variasi kecerahan dan saturasi, pergeseran \textit{hue} dalam rentang kecil, rotasi, pergeseran posisi, perubahan skala, pembalikan horizontal, dan \textit{mosaic}. Variasi kecerahan dan saturasi digunakan untuk memberikan variasi kondisi pencahayaan. Pergeseran \textit{hue} dibatasi pada rentang kecil karena warna merupakan ciri penting untuk membedakan beberapa lauk, misalnya rendang, telur kari, dan sambal. Rotasi, pergeseran posisi, perubahan skala, dan pembalikan horizontal digunakan untuk memberikan variasi orientasi, letak, serta ukuran objek pada citra. Rotasi juga sesuai dengan kondisi penggunaan karena kamera mengambil citra dari arah atas sehingga lauk dapat berada pada orientasi apa pun di atas piring. Sementara itu, \textit{mosaic} menggabungkan beberapa citra pelatihan menjadi satu citra agar model menerima susunan objek yang lebih beragam. Contoh citra pelatihan hasil augmentasi ditunjukkan pada Gambar~\ref{fig:contoh-augmentasi}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/contoh_augmentasi.jpg}
+    \caption{Contoh citra pelatihan hasil augmentasi}
+    \label{fig:contoh-augmentasi}
+    \par\smallskip
+    {\footnotesize Sumber: Dokumentasi pribadi}
+\end{figure}
 
 Pada transformasi yang mengubah posisi atau ukuran objek, perubahan yang sama diterapkan pada anotasi. Dengan demikian, \textit{segmentation mask} tetap mengikuti letak dan bentuk objek pada citra hasil augmentasi. Augmentasi tidak diterapkan secara acak pada data validasi dan pengujian agar keduanya tetap merepresentasikan citra asli saat digunakan untuk mengevaluasi model.
 

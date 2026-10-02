@@ -6,7 +6,34 @@ Pada tahap inferensi, YOLO11-seg menghasilkan prediksi untuk setiap instans obje
 
 Label kelas digunakan untuk menentukan jenis makanan, sedangkan setiap prediksi akhir yang dipertahankan diperlakukan sebagai satu instans. Apabila terdapat lebih dari satu instans dari kelas yang sama, seluruh instans tersebut dihitung dan dikelompokkan berdasarkan kelasnya.
 
-Hasil penghitungan diteruskan ke program kalkulasi harga. Program menggunakan tabel harga tetap yang memuat pasangan antara kelas makanan dan harga satuan. Subtotal setiap kelas dihitung dengan mengalikan jumlah instans yang dikenali dengan harga kelas tersebut, kemudian seluruh subtotal dijumlahkan untuk memperoleh total harga.
+Sistem dirancang dengan asumsi pelanggan tidak sengaja menyembunyikan atau menumpuk lauk untuk menghindari penghitungan; tumpang tindih alami antar lauk tetap menjadi keterbatasan yang dievaluasi.
+
+Hasil penghitungan diteruskan ke program kalkulasi harga. Program menggunakan tabel harga tetap yang memuat pasangan antara kelas makanan dan harga satuan. Tabel harga hanya digunakan sebagai rujukan untuk mencari harga satuan berdasarkan label kelas dan tidak termasuk dalam proses pengolahan citra. Subtotal setiap kelas dihitung dengan mengalikan jumlah instans yang dikenali dengan harga kelas tersebut, kemudian seluruh subtotal dijumlahkan untuk memperoleh total harga.
+
+% TODO: tabel harga (Tabel 3.1 di PDF proposal) dan gambar contoh checkout (Gambar 3.6) tidak ada di source .tex ini
+% pastikan harga di keduanya SAMA (proposal lama: rendang Rp20.000 di tabel, Rp10.000 di gambar)
+% kerangka tabel jika ingin dikembalikan:
+% \begin{table}[H]
+%     \centering
+%     \caption{Tabel harga satuan setiap kelas}
+%     \label{tab:harga}
+%     \begin{tabular}{lr}
+%         \hline
+%         Kelas & Harga satuan \\
+%         \hline
+%         Nasi & Rp... \\
+%         Rendang & Rp... \\
+%         Ayam goreng & Rp... \\
+%         Perkedel & Rp... \\
+%         Sayur nangka & Rp... \\
+%         Daun singkong & Rp... \\
+%         Telur dadar & Rp... \\
+%         Telur kari & Rp... \\
+%         Sambal & Rp... \\
+%         \hline
+%     \end{tabular}
+% \end{table}
+% gambar contoh checkout: figures/contoh_checkout.pdf, harga harus mengikuti tabel di atas
 
 Informasi yang dihasilkan pada proses \textit{checkout} terdiri atas kelas makanan yang dikenali, jumlah instans pada setiap kelas, harga satuan, subtotal setiap kelas, dan total harga keseluruhan. \textit{Segmentation mask} digunakan untuk merepresentasikan wilayah setiap instans dan tidak digunakan untuk memperkirakan berat, volume, ukuran porsi, luas porsi, maupun kandungan gizi.
 

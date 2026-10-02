@@ -2,6 +2,9 @@
 
 YOLO11-seg merupakan varian YOLO11 yang mendukung tugas \textit{instance segmentation}. Model ini digunakan untuk menghasilkan prediksi lokasi objek, kelas, dan \textit{segmentation mask} dalam satu model sehingga proses klasifikasi lauk dan segmentasi tidak memerlukan dua model yang terpisah \cite{khanam2024,qiu2025}.
 
+% TODO: tambahkan sitasi untuk YOLO12 / dokumentasi Ultralytics jika diminta
+YOLO11-seg dipilih dibandingkan versi yang lebih baru seperti YOLO12 karena dokumentasi dan pengujiannya untuk tugas \textit{instance segmentation} lebih lengkap, termasuk ketersediaan bobot pralatih segmentasi dan penerapan pada penelitian terdahulu \cite{qiu2025}.
+
 \subsubsection*{a. Arsitektur YOLO11-seg}
 
 Diagram arsitektur YOLO11-seg memperlihatkan tiga bagian utama, yaitu \textit{backbone}, \textit{neck}, dan \textit{segmentation head}. Aliran pemrosesan dimulai dari citra masukan pada sisi kiri diagram, dilanjutkan dengan ekstraksi dan penggabungan fitur, kemudian berakhir pada tiga blok \textit{Segment}. Secara umum, \textit{backbone} bertugas mengekstraksi fitur dari citra, \textit{neck} menggabungkan fitur pada beberapa skala, sedangkan \textit{segmentation head} menghasilkan informasi kelas, lokasi objek, dan segmentasi untuk setiap instans \cite{khanam2024,qiu2025}.
